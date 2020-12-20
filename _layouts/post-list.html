@@ -13,7 +13,7 @@ layout: compress
     {% include nav.html %}
     <!-- Header -->
     <header class="header" role="banner">
-        <div class="wrapper animated fadeIn">
+        <div class="post_wrapper animated fadeIn">
             <div class="content">
                 <div class="post-title">
                     <h1>{{ page.title }}</h1>
@@ -28,14 +28,20 @@ layout: compress
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
                             <p>{{ post.excerpt }}</p>
-                            <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
+                            <p>{{ post.date | date_to_string }}</p> <!-- 날짜 추가 -->
+                           <!-- <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a> --> <!--Read More버튼 삭제-->
                         </li>
                     </ul>
+                    <hr>    <!-- 포스트 끝에 선 추가 -->
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
+        
+        <!-- 카테고리  -->
+       {% include categorybox.html %}
+        
     </header>
     {% include scripts.html %}
     <script src="{{ site.url }}/assets/js/wow.min.js"></script>
