@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About NOH SU MIN
-tags: [about, Jekyll, theme, moon]
+tags: [about]
 date: 2020-12-20
 comments: false
 ---
