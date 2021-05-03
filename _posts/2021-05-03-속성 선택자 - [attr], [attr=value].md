@@ -12,12 +12,16 @@ comments: true
 ---
 
 # attr
-
 속성 attr을 포함한 요소 선택 [attr]
 
 # attr = value
 속성 attr을 포함하며 속성 값이 value인 요소 선택 [attr = value]
 
+# attr ^= value
+속성 attr을 포함하며 속성 값이 value로 시작하는 요소 선택
+
+# attr $= value
+속성 attr을 포함하며 속성 값이 value로 꿑나는 요소 선택
 
 {% highlight html %}
 
@@ -32,15 +36,34 @@ comments: true
         opacity:0.5;  /* 20% */
         color:red;
       }
+      
       [type="password"]{
         opacity:0.5;  /* 20% */
         color:red;
       }
+      
+      [class^="btn-"]{
+        font-weight: bold;
+        border-radius : 20px;
+      }
+      
+      [class$="success"]{
+        color:green;
+      }
+      
+       [class$="danger"]{
+        color:red;
+      }
+      
     </style>
 	</head>
 	<body>
         <input type="text" value="attr test" disabled/>
         <input type="password" value="1234"/>
+        
+        <button class="btn-success">Success</button>
+        <button class="btn-danger">Danger</button>
+        
 	</body>
 </html>
 
