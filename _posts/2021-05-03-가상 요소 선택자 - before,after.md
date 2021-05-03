@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "가상 요소 선택자 - before"
+title:  "가상 요소 선택자 - before, after"
 date:   2021-05-03
-excerpt: "before"
+excerpt: "before, after"
 tag:
 - css
 - html5
@@ -16,6 +16,11 @@ comments: true
 # before
 
 E 요소 내부의 앞에, 내용(Contnet)을 가상의 요소로서 삽입 'E::before'으로 표기
+
+# after
+
+E 요소 내부의 뒤에, 내용(content)을 삽입
+E::after
 
 {% highlight html %}
 
@@ -35,6 +40,9 @@ E 요소 내부의 앞에, 내용(Contnet)을 가상의 요소로서 삽입 'E::
         color:lightblue;
         margin-right: 20px;
         border-radius: 50%;
+      }
+      ul li::after{ /* 1과 </li> 사이 부분 */
+        content: "!!";  /* 1! <br> 2! ... */
       }
     </style>
 	</head>
