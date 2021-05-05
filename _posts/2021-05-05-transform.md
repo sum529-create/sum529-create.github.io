@@ -102,3 +102,13 @@ position은 배치하고 끝내는 개념이기에 animation되는 것에 특화
 transform을 사용하였기에 다른 애니매이션을 사용할 때 부담없이 사용할 수 있다.
 
 
+**transform 3D 변환 함수**
+> translate3d(x, y, z)                      - 이동(x축, y축, z축)
+> translateZ(z)                             - 이동(z축)
+> scale3d(x, y, z)                          - 크기(x축, y축, z축)
+> rotate3d(x, y, z, a)                      - 회전(x벡터, y 벡터, z벡터, 각도)
+> rotateX(x)                                - 회전(x축)
+> rotateY(y)                                - 회전(y축)
+> rotateZ(z)                                - 회전(z축)
+> perspective(n)                            - 원근법(거리)
+> matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n) - 3차원 변환 효과
