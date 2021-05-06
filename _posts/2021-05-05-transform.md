@@ -127,7 +127,9 @@ img{
 
 **transform 변환 속성** 
 > transform-origin      - 요소 변환의 기준점을 설정
--> rotate를 할시 회전할 기준점을 별도로 설정할 수 있다. 기본적으로 중심이 기준점인 것을 다른 위치로 기준점을 바꾼다 (기본값: 50% 50%(top, bottom, left, right, %))
+-> rotate를 할시 회전할 기준점을 별도로 설정할 수 있다. 기본적으로 중심이 기준점인 것을 다른 위치로 기준점을 바꾼다
+- x축 : left, right, center, %, 단위   기본값:50%
+- y축 : top, bottom, center, %, 단위   기본값:50%
 > transform-style       - 3D 변환 요소이 자식 요소도 3D변환을 사용할지 설정
 > perspective           - 하위 요소를 관찰하는 원근 거리를 설정
 > perspective-origin    - 원근거리의 기준점을 설정
@@ -212,18 +214,23 @@ img{
 {% endhighlight %}
 
 
-** perspective **
+**perspective**
 - 하위 요소를 관찰하는 원근 거리를 설정
 - 단위 : px, em, cm 등 단위로 지정
 - 값이 작을 수록 원근감이 커진다.
 
-** perspective 속성과 함수의 차이점 **
+**perspective 속성과 함수의 차이점**
 > perspective               - 관찰 대상의 부모 요소       - perspective-origin
 > transform: perspective()  - 관찰 대상                  - transform-origin
 => 원근값을 줘야 하는 대상이 본인일 경우 transform: perspective(500px) rotateX(45deg);
 => 내 밑의 자식들에게 원근값을 줘야 하는 경우 prespective : 500px;
 perspective 속성은 관찰 대상의 부모(조상)요소에 적용하여 하위 요소들을 관찰하는 원근거리를 설정하며, 
 transform: perspective() 변환 함수는 관찰대상에 직접 적용하여 그 대상을 관찰하는 원근거리를 설정합니다.
+
+**perspective-origin**
+- 원근 거리의 기준점을 설정
+- x축 : left, right, center, %, 단위   기본값:50%
+- y축 : top, bottom, center, %, 단위   기본값:50%
 
 
 
