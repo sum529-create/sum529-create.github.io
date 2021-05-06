@@ -131,8 +131,9 @@ img{
 > transform-style       - 3D 변환 요소이 자식 요소도 3D변환을 사용할지 설정
 > perspective           - 하위 요소를 관찰하는 원근 거리를 설정
 > perspective-origin    - 원근거리의 기준점을 설정
-> backgface0visivility  - 3D 변환으로 회전된 요소의 뒷면 숨김을 설정
+> backgface-visivility  - 3D 변환으로 회전된 요소의 뒷면 숨김을 설정
 -> 3d로 180도로 돌리게 되면 이미지가 반전 되어 나오게되는 것을 숨김으로 처리한다.
+
 
 # transform-origin 테스트 css
 {% highlight html %}
@@ -144,9 +145,9 @@ img{
     transform-origin: 0% 0%;
     /* x축과 y축을 볼때 왼쪽 모서리를 기준으로 x은 왼쪽->오른쪽, y는 위쪽-> 아래쪽 
         0% 0%; -> left top
-        100% 100% -> right bottom;
-    */
+        100% 100% -> right bottom;    */
 }
+
 {% endhighlight %}
 
 
@@ -154,3 +155,75 @@ img{
 - 3d 변환 요소의 자식 요소도 3d변환을 사용할지 설정
 > flat          - 자식 요소의 3d 변환을 사용하지 않음 (기본값)
 > perserve-3d   - 자식 요소의 3d 변환을 사용함
+
+{% highlight html %}
+<div class="perspective">
+  <div class="grand-parent">
+    <div class="parent">
+      <img src="http://heropy.blog/css/images/logo.png">
+    </div>
+   </div>
+</div>
+{% endhighlight %}
+
+{% highlight html %}
+.perspective{
+  width :200px;
+  perspective: 500px;
+  padding:70px;
+}
+.grand-parent{
+  width:200px;
+  border:3px solid dodgerblue;
+  transition: 1s;
+  transform: rotateX(-45deg);
+  /*transform-style:preserve-3d;를 추가 해야한다.*/
+} 
+.parent{
+  width:200px;
+  border:3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg);
+}
+img{
+   width:200px;
+}
+{% endhighlight %}
+
+grand-parent값에서 'transform-style:flat' 기본값으로 저장되어 있기 때문에, parent에서는 3d값이 지정되지 않는다.
+'transform-style:preserve-3d;'를 적어주어야 적용가능
+
+img도 transform 값을 설정한다면
+
+{% hightlight html %}
+.parent{
+  width:200px;
+  border:3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg);
+  transform-style:preserve-3d;
+}
+img{
+  width:200px;
+  border: 3px solid lightgray;
+  transition: 1s;
+  transform: rotateX(45deg);
+}
+{% endhighlight %}
+
+
+** perspective **
+- 하위 요소를 관찰하는 원근 거리를 설정
+- 단위 : px, em, cm 등 단위로 지정
+- 값이 작을 수록 원근감이 커진다.
+
+** perspective 속성과 함수의 차이점 **
+> perspective               - 관찰 대상의 부모 요소       - perspective-origin
+> transform: perspective()  - 관찰 대상                  - transform-origin
+=> 원근값을 줘야 하는 대상이 본인일 경우 transform: perspective(500px) rotateX(45deg);
+=> 내 밑의 자식들에게 원근값을 줘야 하는 경우 prespective : 500px;
+perspective 속성은 관찰 대상의 부모(조상)요소에 적용하여 하위 요소들을 관찰하는 원근거리를 설정하며, 
+transform: perspective() 변환 함수는 관찰대상에 직접 적용하여 그 대상을 관찰하는 원근거리를 설정합니다.
+
+
+
