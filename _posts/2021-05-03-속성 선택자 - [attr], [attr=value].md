@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "속성 선택자 - [attr], [attr=value]"
+title:  "속성 선택자 - (attr), (attr=value)"
 date:   2021-05-03
-excerpt: "[attr], [attr=value]"
+excerpt: "(attr), (attr=value)"
 tag:
 - css
 - html5
