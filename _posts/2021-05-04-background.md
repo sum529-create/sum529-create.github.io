@@ -63,12 +63,8 @@ comments: true
 
 {% highlight html %}
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-    <style>
+<pre>
+<code>
       <!-- fixed test -->
      section{
         height:300px;
@@ -99,8 +95,8 @@ comments: true
       .for-scroll{
         height:2000px;
       }
-    </style>
-	</head>
+</code>
+</pre>
 	<body>
     <!-- fixed test -->
     <section class="section"></section>
