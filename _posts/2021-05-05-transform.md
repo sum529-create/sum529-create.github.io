@@ -2,7 +2,7 @@
 layout: post
 title:  "transform"
 date:   2021-05-05
-excerpt: "ftansform"
+excerpt: "transform"
 tag:
 - css
 - html5
