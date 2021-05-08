@@ -16,7 +16,7 @@ comments: true
 - *transform: rotate(20deg) translate(10px, 0);* /* position:relative; left:10px;과 동일 */
 - ()가 있으면 함수. deg(degree)-기울기. translate(x, y)
 
-**transform 2D변환 함수**
+# transform 2D변환 함수
 * translate(x, y)         - 이동(x축, y축)
 * transltateX(x)          - 이동(x축)
 * translateY(y)           - 이동(y축)
