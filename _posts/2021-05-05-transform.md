@@ -112,7 +112,7 @@ position은 배치하고 끝내는 개념이기에 animation되는 것에 특화
 transform을 사용하였기에 다른 애니매이션을 사용할 때 부담없이 사용할 수 있다.
 
 
-**transform 3D 변환 함수**
+# transform 3D 변환 함수
 * translate3d(x, y, z)                      - 이동(x축, y축, z축)
 * translateZ(z)                             - 이동(z축) : z축은 눈으로 확인 불가(화면과 사용간의 거리?)
 * scale3d(x, y, z)                          - 크기(x축, y축, z축)
@@ -136,7 +136,7 @@ img{
 </code>
 
 
-**transform 변환 속성** 
+# transform 변환 속성
 * transform-origin      - 요소 변환의 기준점을 설정
 -> rotate를 할시 회전할 기준점을 별도로 설정할 수 있다. 기본적으로 중심이 기준점인 것을 다른 위치로 기준점을 바꾼다
     * x축 : left, right, center, %, 단위   기본값:50%
@@ -166,7 +166,7 @@ img{
 </code>
 
 
-**transform-style**
+# transform-style
 - 3d 변환 요소의 자식 요소도 3d변환을 사용할지 설정
 * flat          - 자식 요소의 3d 변환을 사용하지 않음 (기본값)
 * perserve-3d   - 자식 요소의 3d 변환을 사용함
@@ -231,12 +231,12 @@ img{
 </code>
 
 
-**perspective**
+# perspective
 - 하위 요소를 관찰하는 원근 거리를 설정
 - 단위 : px, em, cm 등 단위로 지정
 - 값이 작을 수록 원근감이 커진다.
 
-**perspective 속성과 함수의 차이점**
+# perspective 속성과 함수의 차이점
 * perspective               - 관찰 대상의 부모 요소       - perspective-origin
 * transform: perspective()  - 관찰 대상                  - transform-origin
 => 원근값을 줘야 하는 대상이 본인일 경우 transform: perspective(500px) rotateX(45deg);
@@ -244,13 +244,13 @@ img{
 perspective 속성은 관찰 대상의 부모(조상)요소에 적용하여 하위 요소들을 관찰하는 원근거리를 설정하며, 
 transform: perspective() 변환 함수는 관찰대상에 직접 적용하여 그 대상을 관찰하는 원근거리를 설정합니다.
 
-**perspective-origin**
+# perspective-origin
 - 원근 거리의 기준점을 설정
 - x축 : left, right, center, %, 단위   기본값:50%
 - y축 : top, bottom, center, %, 단위   기본값:50%
 
 
-**backface-vidsivility**
+# backface-vidsivility
 - 3d변환으로 회전된 요소의 뒷면 숨김을 설정
 * visible       - 뒷면 숨기지 않음 (기본값)
 * hidden        - 뒷면 숨김
@@ -270,7 +270,7 @@ img{
 </code>
 
 
-**matrix(a,b,c,d,e,f)**
+# matrix(a,b,c,d,e,f)
 - a~f 6개의 인수
 - 요소의 2차원 변환(Transforms)효과를 지정
 - scale(), skew(), translate() 그리고 rotate()를 지정
