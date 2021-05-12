@@ -439,196 +439,82 @@ https://codepen.io/sum529-create/embed/BaWjNjw?height=317&theme-id=dark&default-
 
 
 # Bootstrap 활용 - Semmernote
+- html을 모르는 일반 사용자들에게 html태그를 간편하게 사용할 수 있게하는 사이트 (bootstrap사용)
 {% highlight html %}
+<!-- 스타일관련 -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
+<!-- 자바스크립트관련 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
+<!-- 한글관련 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/lang/summernote-ko-KR.min.js"></script>
 
+<script>
+$(document).ready(function(){
+
+    $('#myEditor').summernote({
+        lang: 'ko-KR',
+        height: 300,
+    });
+
+
+});
+</script>
 {% endhighlight %}
+
+
 {% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>summernote</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
+    <div class="container" style="padding-top:50px;">
+        <textarea name="" id="myEditor" class="form-control" cols="30" rows="10"></textarea>
+
+    </div>
+
+
+<!-- 스타일관련 -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
+<!-- 자바스크립트관련 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
+<!-- 한글관련 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/lang/summernote-ko-KR.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $('#myEditor').summernote({
+        lang: 'ko-KR',
+        height: 300,
+    });
+
+
+});
+</script>
+    
+    
+</body>
+</html>
 {% endhighlight %}
-{% highlight html %}
-
-{% endhighlight %}
-{% highlight html %}
-
-{% endhighlight %}
-{% highlight html %}
-
-{% endhighlight %}
-
-{% highlight html %}
-
-{% endhighlight %}
-{% highlight html %}
-
-{% endhighlight %}
-<pre>
-<code>
-</code>
-</pre>
 
 
-<pre>
-<code>
+# Bootstrap 활용 - template
+- 디자인 파일 구매. 유료
+- https://themeforest.net/?gclid=CjwKCAjw-e2EBhAhEiwAJI5jg56M6NNkktT-qzRSXjjU0K85BEx61rOplURdE0kLzFgl3pRUkZsCtBoCtmwQAvD_BwE
 
-</code>
-</pre>
-<pre>
-<code>
+**무료 template**
+- https://startbootstrap.com/themes
 
-</code>
-</pre>
-<pre>
-<code>
 
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
-<pre>
-<code>
-
-</code>
-</pre>
