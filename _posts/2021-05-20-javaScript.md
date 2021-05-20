@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "javaScript"
-date: 2021-05-07
+date: 2021-05-20
 excerpt: "javaScript-fastcampus"
 tag:
 - javaScript
@@ -427,70 +427,888 @@ const hello = function(){} // 함수를 만들때 사용하는 키워드, 함수
 <pre>
 <code>
 hello1();
+
 hello2(); // error | hello2 is not a function
-console.log(hello2, typeof hello2); // undefined
+var hello2();
+console.log(hello2); /* undefined */
+
+hello3();   // error | hello3 is not defined
 
 function hello1() {
-    console.log('hello1');
+   console.log('hello1');
 }
 
 var hello2 = function() {
-  console.log('hello2');  
+   console.log('hello2');  
 };
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
-</code>
-</pre>
-<pre>
-<code>
+
+const hello3 = function() {
+   console.log('hello3'); 
+};
+
 </code>
 </pre>
 
-{% highlight html %}
 
-{% endhighlight %}
-
-
-* +
+## 생성자 함수로 함수를 만드는 방법
 <pre>
 <code>
+const hello = new Function();
+</code>
+</pre>
+<pre>
+<code>
+// 변수를 가질 떄 '' 문자열로 묶어줘야 함. 문자로 인식되기 때문
+// new Function(/* 인자1,인자2, ... , 함수의 바디 */);
+console.log(sum(1, 2, 3)); // error
+
+const sum = new Function('a', 'b', 'c', 'return a + b + c');
+
+console.log(sum(1, 2, 3));
+</code>
+</pre>
+
+## function과 new Function()의 차이점
+<pre>
+<code>
+global.a = 0;
+{
+    const a = 1;
+    
+    const test = new Function('return a'); /* 위에서 선언한 a를 받을 수 없다. */
+    
+    console.log(test()); // 0
+}
+
+{
+    const a = 2;
+    const test = function() {
+        return a;
+    };
+    
+    console.log(test()); // 2
+}
+</code>
+</pre>
+> 전역에서 얻어와서 함수로 사용하고 싶다면 new를 사용할 수 있지만 대부분은 아래와 같은 형식을 많이 사용하게 된다.
+
+## () => {} arrow function
+
+<pre>
+<code>
+// arrow 함수를 만들어 이름이 hello1 인 변수에 할당
+
+const hello1 = () => {
+    console.log('hello1');
+};
+
+</code>
+</pre>
+
+<pre>
+<code>
+// 함수의 매개변수
+// 함수를 호출할 떄 값을 지정
+// 매개변수가 하나일 떄, 괄호 생략 가능
+const hello2 = name => { // 괄호 생략
+    console.log('hello2', name);
+};
+
+const hello3 = (name, age) => {
+    console.log('hello3', name, age);
+};
+
+// 함수의 리턴
+// 함수를 실행하면 얻어지는값
+const hello4 = name => {
+    return 'hello ${name}';
+};
+
+const hello5 = name => 'hello5 ${name}';
+</code>
+</pre>
+
+
+# new 함수
+
+<pre>
+<code>
+// constructor
+function Person(name, age) {
+    console.log(this);
+    this.name = name;
+    this.age = age;
+}
+
+const p = new Person('sum', 12);
+console.log(p, p.name, p,age);
+
+const Cat = (name, age) => {
+    console.log(this);
+    this.name = name;
+    this.age = age;
+};
+
+const c = new Cat('얌', 1); // Cat안에 this를 가지고 있지 않기 때문 | Cat is not a consructor
+</code>
+</pre>
+
+> allow function은 constructor를 만들 수 없다.
+
+
+## 함수 안에서 함수를 만들어 리턴
+
+<pre>
+<code>
+
+// 함수를 호출하려면 함수를 만들어서 리턴
+
+function plus(base) {
+    return function(num) {
+        return base + num;
+    }
+}
+
+const plus5 = plus(10);
+console.log(plus5(5)); // 15
+
+const plus7 = plus(7);
+console.log(plus7(7));  //14 
+
+</code>
+</pre>
+
+## 함수를 호출할 때, 인자로 함수를 사용
+
+<pre>
+<code>
+// 함수를 인자로 하여 함수를 호출
+
+function hello(c) {
+    console.log('hello');
+    c();
+}
+
+hello(function() {
+    console.log('롤백');
+});
+</code>
+</pre>
+
+# 객체
+
+## function 틀() {} => new 틀()
+- 생성자 함수로 객체 만들기
+<pre>
+<code>
+
+// 생성자 함수
+function A() {}
+
+const a = new A();
+console.log(a, typeof a); // A {} 'object' 
+console.log(A()); // return이 없기때문 undefined값이 나옴
+
+// 생성하면서 데이터 넣기
+function B(name, age) {
+    console.log(name,age);
+}
+
+const b = new B();
+const c = new B('name', 11);
+console.log(B());
+</code>
+</pre>
+
+
+## 객체에 속성 추가하기
+
+<pre>
+<code>
+// 값을 속성으로 넣기
+function A() {
+    this.name = 'Mark';
+}
+const a = new A(); // {name: 'Mark'}
+console.log(a);
+
+// 함수를 속성으로 넣기
+function B() {
+    this.hello = function() {
+        cnsole.log('hello');
+    }
+}
+
+new B().hello;
+
+// new Function(); 표준 내장객체에 의해 만들어진 새로운 객체이다
+
+</code>
+</pre>
+
+
+## new Object()
+- object로 객체 만들기
+
+<pre>
+<code>
+// new object
+
+const a = new Object;
+
+console.log(a, typeof a);
+
+const b = new Object(true);
+
+console.log(b, typeof b);
+
+const c = new Object({name: 'mark'});
+
+console.log(c, typeof c);
+</code>
+</pre>
+<pre>
+<code>
+{} object
+[Boolean: true] object
+{ name: 'mark' } object
+</code>
+</pre>
+
+
+## 프로토타입 체인
+
+<pre>
+<code>
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+    // this.hello = function() {
+    //     console.log('hello', this.name, this.age);
+    // };
+}
+
+// const p = new Person('mark', 21);
+// p.hello();
+// console.log(p.toString() + "\n"); // Object로부터 상속받은 기본값을 반환함 returns [Object Object]
+
+
+// 메서드 재정의 위 소스 주석처리
+Person.prototype.hello = function () {
+    console.log('hello', this.name, this.age);
+};
+
+console.log(Person.prototype);
+console.log(Person.prototype.toString);
+console.log(Person.prototype.constructor); // 함수 자체
+console.log(Person.hello); // undefined | 객체로 생성이 되아야 사용가능하다
+
+// 프로토 타입은 hello보다 위에 존재하나 보이진 않는다
+
+console.log(Object.prototype);
+console.log(Object.prototype.toString);
+console.log(Object.prototype.constructor);
+
+// console.log(p instanceof Person);
+// console.log(p instanceof Object); // p라는 객체가 Object라는 인스턴스로 나온 것이냐?
+</code>
+</pre>
+
+<pre>
+<code>
+[Function (anonymous)]
+{ hello: [Function (anonymous)] }
+[Function: toString]
+[Function: Person]
+undefined
+[Object: null prototype] {}
+[Function: toString]
+[Function: Object]
+</code>
+</pre>
+
+
+## 프로토타입을 이용한 객체 확장
+
+<pre>
+<code>
+// prototype 상속
+
+function Person() {}
+
+Person.prototype.hello = function(){
+    console.log('hello');
+}
+
+function Korean(region) {
+    this.region = region;
+    this.where = function(){
+        console.log('where', this.region);
+    };
+}
+
+Korean.prototype = Person.prototype; 
+// korean의 프로토타입을 person의 프로토타입으로 변경
+// 부모의 프로토타입을 자식의 어딘가에 프로토타입으로 받아 활용하는 방법
+
+const k = new Korean('Seoul');
+
+k.hello();
+k.where();
+
+console.log(k instanceof Korean); // true 가장 가까운 곳에 있는 것은 Korean
+console.log(k instanceof Person); // true korean의 프로토타입을 갖고있음
+console.log(k instanceof Object); // true person의 여러 오브젝트들의 프로토타입을 갖고 있다.(toString)
+</code>
+</pre>
+
+
+## 객체 리터럴
+
+<pre>
+<code>
+// 객체 리터럴
+
+// 리터럴 - 객체를 만들 때 숫자형값, 불린 같은 값을 {}을 사용해 객체로 직접 쓰면서 만드는 것 (문자 그대로 사용하는 것)
+
+const a = {};
+
+console.log(a, typeof a); // {} object
+
+const b = {
+    name: 'mark',
+    // 값뿐만 아닌 함수도 올 수 있다
+    hello1() {
+        console.log('hello1', this);
+    },
+    hello2() {
+        console.log('hello2', this);
+    },
+    hello3: () => {
+        console.log('hello3', this);
+    }
+}; // literal
+
+b.hello1();
+b.hello2();
+/*
+hello1 { // hello2
+  name: 'mark',
+  hello1: [Function: hello1],
+  hello2: [Function: hello2],
+  hello3: [Function: hello3]
+}
+// 'hello1', this.name 으로 표기되어 이 객체 자체를 this로 판단하고 있음
+*/
+b.hello3();
+// hello3 {} // arrow 함수는 this적용이 되지 않기떄문. this가 이 객체가 아니라고 인식하게 되어 unddfned형식이 됨
+
+</code>
+</pre>
+
+
+## 표준 내장 객체
+- 객체가 이미 런타임 환경에 만들어 진것
+- 자바스크립트가 기본적으로 가지고 있는 객체들
+- new자가 들어간 function으로 새로운 객체를 만드는것 역시 표준 내장 객체
+> Object
+> Function
+> Array
+> String
+> Boolean
+> Number
+> Math
+> Date
+> RegExp
+
+
+<pre>
+<code>
+// 표준 내장 객체: Array
+
+const a = new Array('red', 'black', 'white'); // array객체를 생성자 함수로 표기해서 사용할 수 있다
+
+console.log(a, typeof a); // ['red', 'black', 'white'] 'object'
+console.log(a instanceof Array);  // true
+console.log(a instanceof Object); // true
+
+const b = ['red', 'gray', 'yellow']; // literal 표기법으로도 사용 가능하다
+console.log(b, typeof b); // ['red', 'gray', 'yellow'] 'object'
+console.log(b instanceof Array);  // true
+console.log(b instanceof Object); // true
+
+console.log(b.slice(0, 1)); // array 함수에 들어있는 함수
+console.log(Array.prototype.slice, Object.prototype.slice); 
+// [Function: slice] undefined => Object안에 slice함수가 있는 것이 아닌 prototype으로 불러온 array안에 위치해 있다.
+</code>
+</pre>
+
+
+# 클래스
+
+## 객체를 만들 수 있는 새로운 방법
+
+<pre>
+<code>
+// class
+// 1) 선언적 방식
+class A {}
+
+console.log(new A()); // A {}
+
+// 2) class 표현식을 변수에 할당
+const B = class {};
+
+console.log(new B()); // B {}
+
+// 선언적 방식이지만 호이스팅은 일어나지 않는다.
+new C();
+
+class C {}
+</code>
+</pre>
+
+## 생성자 (Constructor)
+<pre>
+<code>
+// constructor
+
+class A {}
+console.log(new A());
+
+class B {
+    constructor() {
+        console.log('constructor');
+    }
+}
+
+console.log(new B()); // constructor은 따로 표기하지 않아도 실행된다.
+
+class C {
+    constructor(name, age) {
+        console.log('constructor', name, age);
+    }
+}
+console.log(new C('sum', 12));
+console.log(new C()); // undefined
+
+</code>
+</pre>
+
+
+## 멤버 변수 (객체의 프로퍼티)
+<pre>
+<code>
+// 멤버 변수
+class A {
+    constructor(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+console.log(new A('coco', 7));
+
+// class field는 런타임 확인
+
+class B {
+    name; // this.name = name과 동일
+    age;
+}
+
+console.log(new B());
+
+class C {
+    name = 'no name';
+    age = 0;
+
+    // constructor로 재정의 시킬 수 있다.
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+console.log(new C('coco', 7));
+</code>
+</pre>
+
+
+## 멤버 함수
+<pre>
+<code>
+// 멤버 함수
+
+class A {
+    hello1() {
+        console.log('hello1', this);
+    };
+
+    hello2 = () => {
+        console.log('hello2', this);
+    };
+}
+
+new A().hello1();
+new A().hello2();
+
+
+class B {
+    name = 'coco';
+    hello() {
+        console.log('hello', this.name);
+    }
+}
+
+new B().hello();
+</code>
+</pre>
+
+
+## get, set
+<pre>
+<code>
+// get, set
+
+class A {
+    _name = 'no name';
+
+    get name() {
+        return this._name + "@@@";
+    }
+    set name(value) {
+        this._name = value + '!!!';
+    }
+}
+
+const a = new A();
+console.log(a);
+a.name = 'Mark';
+console.log(a);
+console.log(a.name);
+console.log(a._name);
+
+// readonly
+class B {
+    _name = 'no name'; /* _ => 외부에서 값을 바꾸지 말자! */
+
+    get name() {
+        return this._name + "@@@";
+    }
+}
+
+const b = new B();
+console.log(b); // no name
+b.name = 'Mark';
+console.log(b); // no name | set 함수가 없어서 마치 readonly만 되는것처럼 기능이 사용된다.
+</code>
+</pre>
+
+
+## static 변수, 함수
+- 객체가 아니고, 클래스와 변수와 함수
+<pre>
+<code>
+// static 변수, 함수
+
+class A {
+    static age = 12;
+    static hello() {
+        console.log(A.age);
+    }
+}
+
+console.log(A, A.age);
+A.hello();
+
+class B {
+    age = 12;
+    static hello() {
+        console.log(this.age);
+    }
+}
+console.log(B, B.age);  // undefined
+B.hello();              // undefined
+// new B.hello(); // static이기떄문 객체에 속해있는 속성이 아니기에 new는 사용불가
+
+class C {
+    static name = '이 클래스의 이름은 C가 아니다.'; // static name은 클래스의 이름을 뜻한다.
+}
+
+console.log(C);
+</code>
+</pre>
+<pre>
+<code>
+[class A] { age: 12 } 12
+12
+[class B] undefined
+undefined
+[class 이 클래스의 이름은 C가 아니다.] { name: '이 클래스의 이름은 C가  아니다.' }
+</code>
+</pre>
+
+
+## 상속 기본
+<pre>
+<code>
+class Parent {
+    name = 'Lee';
+
+    hello() {
+        console.log('hello', this.name);
+    }
+}
+
+class Child extends Parent {}
+
+const p = new Parent();
+const c = new Child();
+console.log(p, c);
+
+c.hello();
+c.name = 'Anna';
+c.hello();
+</code>
+</pre>
+<pre>
+<code>
+Parent { name: 'Lee' } Child { name: 'Lee' }
+hello Lee
+</code>
+</pre>
+
+
+## override
+- 클래스의 상속 멤버 변수 및 함수 오버라이딩, 추가
+
+<pre>
+<code>
+class Parent {
+    name = 'Lee';
+
+    hello() {
+        console.log('hello', this.name);
+    }
+}
+
+class Child extends Parent {
+    age = 12;
+
+    hello() {
+        console.log('hello', this.name, this.age);
+    }
+}
+
+const p = new Parent();
+const c = new Child();
+console.log(p, c);
+
+c.hello();
+c.name = 'Anna';
+c.hello();
+
+</code>
+</pre>
+<pre>
+<code>
+Parent { name: 'Lee' } Child { name: 'Lee', age: 12 }
+hello Lee 12
+hello Anna 12
+</code>
+</pre>
+
+
+## super
+- 클래스의 상속 생성자 함수 변경
+<pre>
+<code>
+// super
+
+class Parent {
+    name;
+
+    constructor(name){
+        this.name = name;
+    }
+    hello() {
+        console.log('hello', this.name);
+    }
+}
+
+class Child extends Parent {
+    age;
+
+    constructor(name, age){
+        super(name);
+        this.age = age;
+    }
+    hello() {
+        console.log('hello', this.name, this.age);
+    }
+}
+
+const p = new Parent('sum');
+const c = new Child('sum', 22);
+
+console.log(p, c);
+</code>
+</pre>
+<pre>
+<code>
+Parent { name: 'sum' } Child { name: 'sum', age: 22 }
+</code>
+</pre>
+
+
+## static
+- 클래스의 상속 static 상속
+<pre>
+<code>
+// static 상속
+
+class Parent {
+    static age = 12;
+}
+
+class Child extends Parent {}
+console.log(Parent.age, Child.age); //12 12
+</code>
+</pre>
+
+
+# Promise
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- Promise 객체는 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타냅니다.
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
 </code>
 </pre>
