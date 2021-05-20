@@ -1184,19 +1184,84 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Pr
 
 <pre>
 <code>
+console.log(Promise); // [Function: Promise]
 
+/*
+    생성자를 통해서 프로미스 객체를 만들 수 있습니다.
+    생성자의 인자로 executor라는 함수를 이용합니다.
+*/
+
+/*
+    executor 함수는 resolve와 reject를 인자로 가집니다.
+    (resolve, reject) => { ... }
+    resolve와 reject는 함수입니다.
+    resolve(), reject()
+*/
+
+new Promise(/* executor */(resolver, reject) => {}); // pending (대기)
+
+/*
+    생성자를 통해서 프로미스 객체를 만드는 순간 pending(대기) 상태라고 합니다.
+*/
+
+/*
+    executor 함수 인자 중 하나인 resolve 함수를 실행하면, fulfilled (이행(실행이 됐다라고 알려주는 것)) 상태가 됩니다.
+*/
+new Promise((resolve, reject) => {
+    // ...
+    // 어떤 상태를 정상적으로 마무리 했을 때 resolve(); 함수를 사용하여 이행된 상태로 바뀌게 된다.
+    resolve(); // fulfilled
+});
+
+/*
+    executor 함수 인자 중 하나만 reject 함수를 실행하면, rejected (거부) 상태가 됩니다.
+*/
+new Promise((resolve, reject) => {
+   reject(); // rejected
+});
+
+/*
+    pending 중에 어떤 비동기적인 행동을 하게되고 정상적으로 실행된다면 fulfilled 함수를 호출하고,
+    어떤 에러 상황이 발생하게 된다면 rejected 상태로 만들어주게 된다.
+*/
 </code>
 </pre>
 
+> p 라는 프로미스 객체는 1000ms 후에 fulfilled 됩니다.
 <pre>
 <code>
+/*
+    p 라는 프로미스 객체는 1000ms 후에 fulfilled 됩니다.
+*/
 
+new Promise((resolve, reject) => {
+    /* pending */
+    setTimeout(() => {
+        resolve();  /* fulfilled */
+    }, 1000)
+});
 </code>
 </pre>
 
+> p 라는 프로미스 객체가 fulfilled 되는 시점에 p.then 안에 설정한 callback 함수가 실행됩니다.
 <pre>
 <code>
+/*
+    p 라는 프로미스 객체가 fulfilled 되는 시점에 p.then 안에 설정한 callback 함수가 실행됩니다.
+*/
 
+const p = new Promise((resolve, reject) => {
+    /* pending */
+    setTimeout(() => {
+        resolve();  /* fulfilled */
+    }, 1000)
+});
+
+/* 1초 후에 실행됨 */
+p.then(() => {
+    /* callback */
+    
+})
 </code>
 </pre>
 
