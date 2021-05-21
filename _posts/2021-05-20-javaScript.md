@@ -1210,14 +1210,14 @@ new Promise(/* executor */(resolver, reject) => {}); // pending (대기)
 new Promise((resolve, reject) => {
     // ...
     // 어떤 상태를 정상적으로 마무리 했을 때 resolve(); 함수를 사용하여 이행된 상태로 바뀌게 된다.
-    resolve(); // fulfilled
+    resolve(); // fulfilled (이행)
 });
 
 /*
     executor 함수 인자 중 하나만 reject 함수를 실행하면, rejected (거부) 상태가 됩니다.
 */
 new Promise((resolve, reject) => {
-   reject(); // rejected
+   reject(); // rejected (거부)
 });
 
 /*
@@ -1260,51 +1260,177 @@ const p = new Promise((resolve, reject) => {
 /* 1초 후에 실행됨 */
 p.then(() => {
     /* callback */
-    
-})
+   console.log('1000ms 후에 fulfilled 됩니다.');
+});
 </code>
 </pre>
+
+> then을 설정하는 시점을 정확히하고, 함수의 실행과 동시에 프로미스 객체를 만들면서 pending이 시작하도록 하기 위해 프로미스 객체를 생성하면서 리턴하는 함수 (p) 를 만들어 함수 (p) 실행과 동시에 then 을 설정합니다.
+<pre>
+<code>
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            resolve();  /* fulfilled */
+        }, 1000);
+    });
+}
+
+p().then(() => {
+    console.log('1000ms 후에 fulfilled 됩니다.');
+});
+</code>
+</pre>
+
+
+> 마찬가지로 프로미스 객체가 rejected 되는 시점에 p.catch 안에 설정한 callback 함수가 실행됩니다.
+<pre>
+<code>
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            reject();  /* rejected */
+        }, 1000);
+    });
+}
+
+p()
+    .then(() => {
+        console.log('1000ms 후에 fulfilled 됩니다.');
+    })
+    .catch(() => {
+        console.log('1000ms 후에 rejected 됩니다.');
+    });
+</code>
+</pre>
+
+
+> executor의 resolve 함수를 실행할 때 인자를 넣어 실행하면, then의 callback 함수의 인자로 받을 수 있습니다. 
+> resolve('hello');
+> then((message) => {...})
+<pre>
+<code>
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            resolve('hello'); /* 보내고 싶은 문자열을 작성한다 */
+        }, 1000);
+    });
+}
+
+p()
+    .then((message => { /* 받을 시 message로 받는다 */
+        console.log('1000ms 후에 fulfilled 됩니다.', message); /* message 추가 */
+    })
+    .catch(() => {
+        console.log('1000ms 후에 rejected 됩니다.');
+    });
+</code>
+</pre>
+
+
+> 마찬가지로, executor의 reject 함수를 실행할 때 인자를 넣어 실행하면, catch의 callback 함수의 이자로 받을 수 있다
+> reject('error');
+> then((reason) => {...})
 
 <pre>
 <code>
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            reject('error');
+        }, 1000);
+    });
+}
 
+p()
+    .then((message => {
+        console.log('1000ms 후에 fulfilled 됩니다.', message);
+    })
+    .catch((reason => {
+        console.log('1000ms 후에 rejected 됩니다.', reason);
+    });
 </code>
 </pre>
 
+> 보통 reject 함수를 실행하며 rejected 되는 이유를 넘기는데, 표준 내장 객체인 Error의 생성자를 이용하여 Error 객체를 만들어 준다.
 <pre>
 <code>
 
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            reject(new Error('bad'));
+        }, 1000);
+    });
+}
+
+p()
+    .then((message => {
+        console.log('1000ms 후에 fulfilled 됩니다.', message);
+    })
+    .catch((reason => {
+        console.log('1000ms 후에 rejected 됩니다.', reason);
+    });
 </code>
 </pre>
-
+> fulfilled 되거나 rejected 된 후에 최종적으로 실행할 것이 있다면, .finally()를 설정하고, 함수를 인자로 넣습니다.
 <pre>
 <code>
 
+function p() {
+    return new Promise((resolve, reject) => {
+        /* pending */
+        setTimeout(() => {
+            reject(new Error('bad'));
+        }, 1000);
+    });
+}
+
+p()
+    .then((message => {
+        console.log('1000ms 후에 fulfilled 됩니다.', message);
+    })
+    .catch((reason => {
+        console.log('1000ms 후에 rejected 됩니다.', reason);
+    })
+    .finally((=>{
+        console.log('end');
+    });
 </code>
 </pre>
 
+> 보통 비동기 작업을 할때, callback 함수를 인자로 넣어 로직이 끝나면 callback 함수를 호출합니다. 이런 경우 함수가 아래로 진행되지 않고, callback 함수 안으로 진행됩니다.
+> 콜백 함수를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있습니다.
 <pre>
 <code>
+function c(callback) {
+    setTimeout(() => {
+        callback();
+    }, 1000);
+}
 
+c(() => {
+    console.log('1000ms 후에 callback 함수가 실행됩니다.');
+});
+c(() => {
+    c(() => {
+        c(() => {
+            console.log('3000ms 후에 callback 함수가 실행됩니다.');
+        });
+    });
+});
 </code>
 </pre>
-<pre>
-<code>
 
-</code>
-</pre>
 
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
+> then 함수에서 다시 프로미스 객체를 리턴하는 방법을 통해 체이닝하면, 비동기 작업을 순차적으로 아래로 표현할 수 있습니다.
+> then에 함수를 넣는 여러 방법을 확인해보자
 
 <pre>
 <code>
