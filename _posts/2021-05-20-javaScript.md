@@ -1785,14 +1785,14 @@ function p(ms) {
 (async function main() {
     const results = await Promise.all([p(1000), p(2000), p(3000)]);
     console.log(results);
-})();
+})(); // 3초 후에 실행
 
 
 // Promise.race
 (async function main() {
     const results = await Promise.race([p(1000), p(2000), p(3000)]);
     console.log(results);
-})();
+})(); // 1초 후에 실행
 
 </code>
 </pre>
