@@ -1613,7 +1613,7 @@ function p(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             // resolve(ms);
-            rejected(new Error('reason'));
+            reject(new Error('reason'));
         }, ms)
     });
 }
@@ -1630,6 +1630,7 @@ function p(ms) {
 
 
 > async function 에서 return 되는 값은 **Promise.resolve** 함수로 감싸서 리턴된다.
+> asyncP를 비동기로 불러서 p()로 가서 다시 받은 ms를 문자열과 합쳐서 보내줌
 
 <pre>
 <code>
@@ -1637,7 +1638,79 @@ function p(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(ms);
-            // rejected(new Error('reason'));
+            // reject(new Error('reason'));
+        }, ms)
+    });
+}
+
+async function asyncP() {
+    const ms = await p(1000);
+    return 'Mark:' + ms;
+}
+
+(async function main(){
+    try{
+        const name = await asyncP(); /* 1초 */
+        console.log(name);
+    } catch (error) {
+        console.log(error);
+    }
+})();
+</code>
+</pre>
+
+
+> error의 전파 (reject 사용)
+
+<pre>
+<code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(ms);
+            reject(new Error('reason'));
+        }, ms)
+    });
+}
+
+// ayncP에서 어떤 에러를 처리한 다음에 정상적인 결과를 보내고 싶다면 try-catch문으로 감싸서 error에 대한 처리를 하고 정상적으로 밑으로 흘러서 처리될 수 있도록 함
+async function asyncP() {
+    const ms = await p(1000); /* reject가 불리면서 이 부분에서 error가 throw가 되게된다. */
+    // 대부분 throw catch를 사용하여 에러의 예외처리를 해주지만
+    // return 자체를 해주고 싶지 않을 경우에는 catch를 따로 적어주지 않는다.
+    // 바로 하단의 catch부분으로 넘어가게 된다.
+    return 'Mark:' + ms;
+}
+
+// async 비동기 함수를 출력하면서 그 밑에서 일어나는 일들을 모두 try-catch문으로 처리
+(async function main(){
+    try{
+        const name = await asyncP();
+        console.log(name);
+    } catch (error) {
+        console.log(error);
+    }
+})();
+
+</code>
+</pre>
+
+<pre>
+<code>
+Error: reason
+</code>
+</pre>
+
+
+> finally
+
+<pre>
+<code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(ms);
+            reject(new Error('reason'));
         }, ms)
     });
 }
@@ -1653,88 +1726,74 @@ async function asyncP() {
         console.log(name);
     } catch (error) {
         console.log(error);
+    } finally {
+        console.log('end');
     }
 })();
+
 </code>
 </pre>
 
 
-> error의 전파
+## 연속된 Promise에 대한 처리와 연속된 async await에 대한 처리의 비교
 
 <pre>
 <code>
 function p(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(ms);
-            // rejected(new Error('reason'));
+            // resolve(ms);
+            reject(new Error('reason'));
         }, ms)
     });
 }
 
-async function asyncP() {
-    const ms = await p(1000);
-    return 'Mark:' + ms;
-}
+// Promise
+p(1000)
+    .then(() => p(1000))
+    .then(() => p(1000))
+    .then(()=> {
+        console.log('3000ms 후에 실행');
+    });
 
-(async function main(){
-    try{
-        const name = await asyncP();
-        console.log(name);
-    } catch (error) {
-        console.log(error);
-    }
+
+// async await
+
+(async function main() {
+    await p(1000);
+    await p(1000);
+    await p(1000);
+    console.log('3000ms 후에 실행');
 })();
 </code>
 </pre>
 
 
-> 
-
+## Promise.all 과 Promise.race 의 차이점
 <pre>
 <code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(ms);
+            reject(new Error('reason'));
+        }, ms)
+    });
+}
+
+// Promise.all
+(async function main() {
+    const results = await Promise.all([p(1000), p(2000), p(3000)]);
+    console.log(results);
+})();
+
+
+// Promise.race
+(async function main() {
+    const results = await Promise.race([p(1000), p(2000), p(3000)]);
+    console.log(results);
+})();
 
 </code>
 </pre>
 
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
