@@ -1636,15 +1636,51 @@ function p(ms) {
 function p(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            // resolve(ms);
-            rejected(new Error('reason'));
+            resolve(ms);
+            // rejected(new Error('reason'));
         }, ms)
     });
 }
 
+async function asyncP() {
+    const ms = await p(1000);
+    return 'Mark:' + ms;
+}
+
 (async function main(){
     try{
-        const ms = await p(1000);
+        const name = await asyncP();
+        console.log(name);
+    } catch (error) {
+        console.log(error);
+    }
+})();
+</code>
+</pre>
+
+
+> error의 전파
+
+<pre>
+<code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+            // rejected(new Error('reason'));
+        }, ms)
+    });
+}
+
+async function asyncP() {
+    const ms = await p(1000);
+    return 'Mark:' + ms;
+}
+
+(async function main(){
+    try{
+        const name = await asyncP();
+        console.log(name);
     } catch (error) {
         console.log(error);
     }
@@ -1654,6 +1690,48 @@ function p(ms) {
 
 
 > 
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
+
+<pre>
+<code>
+
+</code>
+</pre>
 
 <pre>
 <code>
