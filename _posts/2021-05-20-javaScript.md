@@ -1244,6 +1244,7 @@ new Promise((resolve, reject) => {
 </pre>
 
 > p 라는 프로미스 객체가 fulfilled 되는 시점에 p.then 안에 설정한 callback 함수가 실행됩니다.
+> p.then으로 callback 함수를 설정했기 때문에 fulfilled 되면서 callback이 실행됩니다.
 <pre>
 <code>
 /*
@@ -1264,6 +1265,7 @@ p.then(() => {
 });
 </code>
 </pre>
+
 
 > then을 설정하는 시점을 정확히하고, 함수의 실행과 동시에 프로미스 객체를 만들면서 pending이 시작하도록 하기 위해 프로미스 객체를 생성하면서 리턴하는 함수 (p) 를 만들어 함수 (p) 실행과 동시에 then 을 설정합니다.
 <pre>
@@ -1379,6 +1381,8 @@ p()
     });
 </code>
 </pre>
+
+
 > fulfilled 되거나 rejected 된 후에 최종적으로 실행할 것이 있다면, .finally()를 설정하고, 함수를 인자로 넣습니다.
 <pre>
 <code>
@@ -1434,69 +1438,222 @@ c(() => {
 
 <pre>
 <code>
+function p() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 1000);
+    });
+}
+
+/* 1초 후 실행 */
+p().then(() => {
+    return p();
+})
+/* 2초 후 실행 */
+.then(() => p())
+/* 3초 후 실행 */
+.then(p)
+/* 4초 후 실행 */
+.then(() => {
+    console.log('4000ms후에 fulfilled 됩니다.');
+])
 
 </code>
 </pre>
+
+
+> value가 프로미스 객체인지 아닌지 알 수 없는 경우, 사용하면 연결된 then 메서드를 실행합니다. value가 프로미스 객체면, resolve된 then메서드를 실행합니다. value가 프로미스 객체가 아니면, value를 인자로 보내면서 then 메서드를 실행합니다.
+<pre>
+<code>
+Promise.resolve(/* value */);
+
+Promise.resolve(
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('foo');
+        }, 1000);
+    }),
+).then(data => {
+    console.log(
+        '프로미스 객체인 경우, resolve 된 결과를 받아 then 이 실행됩니다.',
+        data,
+    );
+});
+
+Promise.resolve('bar').then(data => {
+    console.log('then 메서드가 없는 경우, fulfilled 됩니다');
+});
+// promise 객체가 아닌 아래가 먼저 시작하게 된다.
+</code>
+</pre>
+<pre>
+<code>
+then 메서드가 없는 경우, fulfilled 됩니다. bar
+프로미스 객체인 경우, resolve 된 결과를 받아 then이 실행됩니다. foo
+</code>
+</pre>
+
+
+> Promise.reject를 사용하면, catch로 연결된 rejected 상태로 변경됩니다.
+<pre>
+<code>
+Promise.reject(/* value */);
+
+Promise.reject(new Error('reason'))
+    .then(error => {})
+    .catch(error => {
+        console.log(error);
+    });
+</code>
+</pre>
+
+
+> 프로미스 객체 여러개를 생성하여, 배열로 만들어 인자로 넣고 Promise.all을 실행하면, 배열의 모든 프로미스 객체들이 fulfilled 되었을 때, then의 함수가 실행됩니다. then의 함수의 인자로 프로미스 객체들의 resolve 인자값을 배열로 돌려줍니다.
+<pre>
+<code>
+// Promise.all([프로미스 객체들]);
+
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms);
+    })
+}
+
+Promise.all([p(1000), p(2000), p(3000)].then((messages) => {
+    console.log('모두 fulfilled 된 이후에 실행됩니다.', messages);
+});
+// 5초 후에 실행이 된다. (모두 실행)
+</code>
+</pre>
+
+
+> 프로미스 객체 여러개를 생성하여, 배열로 만들어 인자로 넣고 Promise.race를 실행하면, 배열의 모든 프로미스 객체들 중 가장 먼저 fulfilled된 것으로, then의 함수가 실행됩니다. then의 함수의 인자로 가장 먼저 fulfilled 된 프로미스 객체의 resolve 인자값을 돌려줍니다.
 
 <pre>
 <code>
+// Promise.race([프로미스 객체들]);
 
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms);
+    })
+}
+
+Promise.race([p(1000), p(2000), p(3000)].then((messages) => {
+    console.log('가장 빠른 하나가 fulfilled 된 이후에 실행됩니다.', messages);
+});
+// 1초 후에 실행된다. (가장 빠르게 fulfilled 된 프로미스 객체)
 </code>
 </pre>
+
+# async function과 await
+### async function 함수이름() {}
+### const 함수이름 = async() => {}
 
 <pre>
 <code>
+// Promise 객체를 리턴하는 함수
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms);
+    });
+}
+
+// Promise 객체를 이용해서 비동기 로직을 수행할 때
+p(1000).then(ms => {
+    console.log('${ms}' ms 후에 실행된다.');
+});
+
+// Promise 객체를 리턴하는 함수를 await로 호출하는 방법
+const ms = await p(1000);
+console.log('${ms} ms 후에 실행된다.');
+
+// 두개 모두 같은 방법
+// await 에서 eroor가 발생하게 된다.
 
 </code>
 </pre>
+<pre>
+<code>
+SyntaxError: await is only valid in async function
+</code>
+</pre>
+
+
+> await를 사용하는 경우, 항상 async 함수 안에서 사용되어야 한다.
+<pre>
+<code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms)
+    });
+}
+
+(async function main(){
+    const ms = await p(1000);
+    console.log('${ms} ms 후에 실행된다.');
+})();
+// main();으로 호출하여도 무방하나, main이 만들자 마자 실행되는 형태이기 때문에 위와 같은 형태로 해줘도 된다.
+</code>
+</pre>
+
+> Promise 객체가 rejected 된 경우의 처리를 위해 **try catch**를 이용한다
+<pre>
+<code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(ms);
+            rejected(new Error('reason'));
+        }, ms)
+    });
+}
+
+(async function main(){
+    try{
+        const ms = await p(1000);
+    } catch (error) {
+        console.log(error);
+    }
+})();
+</code>
+</pre>
+
+
+> async function 에서 return 되는 값은 **Promise.resolve** 함수로 감싸서 리턴된다.
 
 <pre>
 <code>
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(ms);
+            rejected(new Error('reason'));
+        }, ms)
+    });
+}
 
+(async function main(){
+    try{
+        const ms = await p(1000);
+    } catch (error) {
+        console.log(error);
+    }
+})();
 </code>
 </pre>
 
-<pre>
-<code>
 
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
-
-<pre>
-<code>
-
-</code>
-</pre>
+> 
 
 <pre>
 <code>
