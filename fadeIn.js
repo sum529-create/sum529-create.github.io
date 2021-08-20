@@ -30,3 +30,26 @@ $(window).on("wheel", function (e) {
 
   $html.animate({ scrollTop: posTop });
 });
+
+$(document).ready(function () {
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+
+    // this.hash => in a tag -> #test
+    var target = this.hash; // var target = #test
+    var $target = $(target); // $(taget); -> document.getElementById('#test');
+
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: $target.offset().top, // offset() -> 선택자 위치값을 top, left형식을 반환하여줌
+        },
+        900,
+        "swing",
+        function () {
+          window.location.hash = target;
+        }
+      );
+  });
+});

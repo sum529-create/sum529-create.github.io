@@ -1,3 +1,8 @@
+/* google font */
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
 /* COMMON */
 .body__container{
     font-family: 'Roboto', sans-serif;
@@ -31,7 +36,8 @@ header .logo a{
     display: block;
     font-size: 36px;
     letter-spacing: 10px;
-    color:#333;
+    color:rgb(77, 76, 76);
+    text-shadow:1px 1px 2px rgb(146, 138, 145);
     padding: 0 10px;
 }
 header .main-menu {
@@ -84,6 +90,7 @@ header .main-menu li a:hover {
 /* SECTION & INNER */
 .section{
     position: relative; /* 큰 영역에서는 position:relative 속성을 많이 사용함 */
+    background: rgba(255, 255, 255, 0.692);
 }
 .section--fixed{
     position: fixed;
@@ -99,9 +106,42 @@ header .main-menu li a:hover {
 }
 
 /* SECTION INTRODUCE */
+.introduce{
+    position: absolute;
+    top: 50%;left: 50%;
+    margin:-150px 0 0 -150px;
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2em white ;
+    text-align: center;
+}
+.introduce .introduce__myself{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 25% 12px;
+    font-size: 20px;
+    color:#444;
+    box-sizing: border-box;
+    /* font-family: 'Hanna', sans-serif; */
+    font-family: 'Jeju Gothic', sans-serif;
+    
+}
+.introduce .introduce__myself p{
+    color:darkorange;
+    line-height: 2.5rem;
+}
+.introduce #myself{
+    font-size: 32px;
+    color:tomato;
+    height: 50px;
+    padding: 10px 0;
+    font-family: 'Nanum Pen Script', cursive;
+}
 
-
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1024px){
     header .section .inner{
         max-width: 980px;
         height: auto;
@@ -122,10 +162,43 @@ header .main-menu li a:hover {
         padding: 16px 0;
     }    
     header .toggle{
-        display: none;
+        /* display: none; */
+        visibility: hidden;
+    }
+    header .toggle ul{
+        visibility: hidden;
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease;
+
     }
     header .toggle.on{
+        /* display: block; */
+        visibility: visible;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.521);
+        position: absolute;
+        padding: 0px 20px;
+        top:100px;
+        left: 0px;
+    }
+    header .toggle.on a{
+        color: #444;
         display: block;
+        font: bold 16px/50px sans-serif;
+        padding: 0 25px;
+        text-align: center;
+        text-decoration: none;
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+         transition: all .25s ease;
+    }
+    header .toggle.on a:hover{
+        color:salmon;
     }
     #toggle-btn{
         display: block;

@@ -1,0 +1,12 @@
+@keyframes cursor{
+    50%{ border-color: transparent; }
+  }
+   
+  .text{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    height: 32px;
+    border-right: .05em solid black;
+    animation: cursor 0.5s ease infinite;
+  }
