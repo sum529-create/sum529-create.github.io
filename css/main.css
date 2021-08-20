@@ -85,6 +85,12 @@ header .main-menu li a:hover {
 .section{
     position: relative; /* 큰 영역에서는 position:relative 속성을 많이 사용함 */
 }
+.section--fixed{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
 .section .inner{
     max-width: 980px; /* 크기지정하여 가운데로 정렬 */
     margin: 0 auto;
@@ -93,31 +99,6 @@ header .main-menu li a:hover {
 }
 
 /* SECTION INTRODUCE */
-
-
-/* TEST */
-html{overflow: hidden;}
- 
-html, body{width: 100%; height: 100%;}
- 
-.content{
-	width: 100%; height: 100%;
-	background-color: blueviolet;
-	
-	position: relative;
-}
-.content > h1{
-	position: absolute;
-	top: 50%; left: 50%;
-	transform: translate(-50%,-50%);
- 
-	font-size: 20em;
-	font-weight: bold;
-	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
- 
-}
-.content:nth-child(even){background-color: #333;}
-
 
 
 @media screen and (max-width:1024px) {
