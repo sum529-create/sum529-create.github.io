@@ -1,48 +1,152 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* COMMON */
+.body__container{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+a{
+    text-decoration: none;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0,0,0,.75);
+    box-shadow: 0 0 5px rgba(0,0,0,.75);
+    background: #FFF;
 }
-body {
-	line-height: 1;
+header .inner {
+    height: 102px;
 }
-ol, ul {
-	list-style: none;
+header .menu-group, header .logo {
+    display: flex;
+    align-items: center;
+    height: 100%; /* inner heihgt값 사용 */
+    padding: 0 12px;
 }
-blockquote, q {
-	quotes: none;
+header .logo a{
+    width: 172px;
+    height: 36px;
+    display: block;
+    font-size: 36px;
+    letter-spacing: 10px;
+    color:#333;
+    padding: 0 10px;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+header .main-menu {
+    display: flex;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+header .main-menu li a {
+    padding: 10px;
+    display: block;
+    color: #333;
+}
+header .main-menu li a:hover {
+    color: #4078c0;
+}
+
+
+
+/* Toggle button */
+#toggle-btn {
+    display: none;
+    background: url("../img/toggle-btn.svg");
+    background-size: 36px 42px;
+    width: 36px;
+    height: 42px;
+    position: absolute;
+    top: 27px;
+    right: 40px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+/* FLOAT CLEARFIX */
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: '';
+    line-height: 0;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.float--left {
+    float: left;
+}
+.float--right {
+    float: right;
+}
+
+/* SECTION & INNER */
+.section{
+    position: relative; /* 큰 영역에서는 position:relative 속성을 많이 사용함 */
+}
+.section .inner{
+    max-width: 980px; /* 크기지정하여 가운데로 정렬 */
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative; /* inner기준으로 다른것이 배치될 경우대비 */
+}
+
+/* SECTION INTRODUCE */
+
+
+/* TEST */
+html{overflow: hidden;}
+ 
+html, body{width: 100%; height: 100%;}
+ 
+.content{
+	width: 100%; height: 100%;
+	background-color: blueviolet;
+	
+	position: relative;
+}
+.content > h1{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+ 
+	font-size: 20em;
+	font-weight: bold;
+	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+ 
+}
+.content:nth-child(even){background-color: #333;}
+
+
+
+@media screen and (max-width:1024px) {
+    header .section .inner{
+        max-width: 980px;
+        height: auto;
+        padding: 0 20px;
+    }
+    header .menu-group {
+        float:none;
+        display: block;
+    }
+    header .main-menu{
+        display: block;
+        margin-bottom: 10px;
+    }
+    header .main-menu li{
+        border-top: 1px solid #e5e5e5;
+    }
+    header .main-menu li a{
+        padding: 16px 0;
+    }    
+    header .toggle{
+        display: none;
+    }
+    header .toggle.on{
+        display: block;
+    }
+    #toggle-btn{
+        display: block;
+    }
 }
