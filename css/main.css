@@ -156,16 +156,16 @@ header .main-menu li a:hover {
 }
 .content--skills .inner > h3, .content--otherSkills .inner > h3{
     text-align: center;
-    font-size: 26px;
+    font-size: 38px;
     font-weight: 600;
     padding: 1% 0;
-    color:rgb(30, 32, 49);
-    text-shadow: 3px 2px 1px rgba(82, 82, 82, 0.521);
+    color:rgba(255, 255, 255, 0.856);
+    text-shadow: 2px 2px 1px rgba(56, 56, 56, 0.521);
 }
 .content--skills p, .content--otherSkills p{
-    font-size: 14px;
-    color:#ffffff;
-    text-shadow: 3px 2px 3px rgba(31, 13, 114, 0.521);
+    font-size: 21px;
+    color:#1818189c;
+    text-shadow: 3px 2px 3px rgba(110, 66, 114, 0.521);
     text-align: center;
 }
 .content--skills ul, .content--otherSkills ul{
@@ -298,7 +298,7 @@ header .main-menu li a:hover {
     text-align: left;
     font-size: 18px;
 }
-.contact__form .link__medium .myInstaID > h5{
+.contact__form .link__medium .myInstaID  h5{
     font-size:10px;
     color:gray;
 }
@@ -329,6 +329,12 @@ header .main-menu li a:hover {
     width: 50%;
     margin-bottom: 10px;
 }
+.link__bottom .myContact .myHeart{
+    float: left;
+}
+.link__bottom .myContact .fullHeart{
+    display: none;
+}
 .link__bottom .myContact .myHeart, 
 .link__bottom .myContact .myGit,
 .link__bottom .myContact .myFacebook{
@@ -337,6 +343,13 @@ header .main-menu li a:hover {
     margin-left: 3%;
     cursor: pointer;
 }
+.contact__form .link__medium .myInstaID a,
+.link__bottom .myContact .myGit a,
+.link__bottom .myContact .myFacebook a{ 
+    text-decoration: none;
+    color:black;
+
+}
 .contact__link .link__bottom .myComment{
     padding:5px 10px;
 }
@@ -344,13 +357,16 @@ header .main-menu li a:hover {
     width: 30%;
     height: 5%;
     margin-bottom: 10px;
+    font-weight: 600;
 }
-.contact__link .link__bottom .myLikes .myLikes__num{
+.contact__link .link__bottom .myLikes #myLikes__num{
     display: contents;
 }
-.contact__link .link__bottom .myPhone{
-    width: 60%;
+.contact__link .link__bottom .myTag{
+    /*width: 60%;*/
     height: 5%;
+    color:blue;
+    cursor: pointer;
 }
 
 @media screen and (max-width:1024px){

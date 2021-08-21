@@ -53,3 +53,19 @@ $(document).ready(function () {
     vertex: {},
   });
 });
+$(".emptyHeart").click(function () {
+  $(".emptyHeart").css("display", "none");
+  $(".fullHeart").css("display", "block");
+  let num = document.getElementById("myLikes__num");
+  let number = num.innerText;
+  number = parseInt(number) + 1;
+  num.innerText = number;
+});
+$(".fullHeart").click(function () {
+  $(".fullHeart").css("display", "none");
+  $(".emptyHeart").css("display", "block");
+  let num = document.getElementById("myLikes__num");
+  let number = num.innerText;
+  number = parseInt(number) - 1;
+  num.innerText = number;
+});
