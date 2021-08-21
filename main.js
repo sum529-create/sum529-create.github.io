@@ -27,3 +27,19 @@
     });
   }
 })(window, document);
+
+// otherskill 이동
+var element = $(".moreSkills a");
+element.hide();
+shown = false;
+
+setInterval(function () {
+  var position = $(window).scrollTop();
+  if (position > 700 && position < 1470) {
+    setTimeout(function () {
+      setTimeout(function () {
+        element.show();
+      }, 200);
+    }, 700);
+  }
+}, 500);
