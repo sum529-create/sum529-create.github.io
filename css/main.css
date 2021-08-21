@@ -436,6 +436,10 @@ header .main-menu li a:hover {
         width: 98%;
         box-sizing: border-box;
     }
+    .content--contact .contact__title .float--right,
+    .content--contact .contact__title .float--left{
+        width: 100%;
+    }
     .content--contact .contact__title .float--right{
         float: none;
     }
