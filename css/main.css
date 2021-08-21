@@ -230,7 +230,7 @@ header .main-menu li a:hover {
 }
 .content--contact h2{
     text-align: left;
-    padding: 12px 0;
+    padding: 12px 10px;
     font-size: 32px;
     font-weight: 500;
     font-family: 'Nanum Pen Script', cursive;
@@ -239,6 +239,7 @@ header .main-menu li a:hover {
     font-family: 'Gowun Batang', serif;
     color:rgb(34, 34, 34);
     font-size: 16px;
+    padding: 10px 20px;
 }
 
 @media screen and (max-width:1024px){
