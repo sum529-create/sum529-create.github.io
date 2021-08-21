@@ -207,7 +207,7 @@ header .main-menu li a:hover {
 .moreSkills__mark{
     width: 100px;
     height: auto;
-    display: inline-block;
+    display: inline-flex;
     animation: motion 0.3s linear 0s infinite alternate; margin-top: 0;
 }
 @keyframes motion {
