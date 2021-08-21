@@ -300,13 +300,13 @@ header .main-menu li a:hover {
     header .toggle.on a:hover{
         color:salmon;
     }
-    .content--skills ul, .content--otherSkills ul {
-        height: 60%;
-    }
     .content--skills li, .content--otherSkills li {
         width: 50%;
         height: 30%;
         padding: 0;
+    }
+    .content--contact .contact__text{
+        width: 100%;
     }
     #toggle-btn{
         display: block;
