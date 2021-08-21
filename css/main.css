@@ -355,7 +355,6 @@ header .main-menu li a:hover {
 .contact__link .link__bottom .myLikes{
     width: 30%;
     height: 5%;
-    margin-bottom: 10px;
     font-weight: 600;
 }
 .contact__link .link__bottom .myLikes #myLikes__num{
