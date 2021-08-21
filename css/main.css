@@ -150,15 +150,22 @@ header .main-menu li a:hover {
 }
 .content--skills .inner, .content--otherSkills .inner{
     padding-top:130px;
+    height: 100%;
 }
 .content--skills .inner > h3, .content--otherSkills .inner > h3{
     text-align: center;
     font-size: 26px;
     padding: 1% 0;
 }
+.content--skills p, .content--otherSkills p{
+    font-size: 14px;
+    color:#767676;
+    text-align: center;
+}
 .content--skills ul, .content--otherSkills ul{
     padding: 3% 50px;
     margin-left: 0px;
+    opacity: 0;
 }
 .content--skills li, .content--otherSkills li{
     padding: 20px 24px;
@@ -179,10 +186,6 @@ header .main-menu li a:hover {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
-}
-.content--skills ul li p, .content--otherSkills ul li p{
-    font-size: 14px;
-    color:#767676;
 }
 
 @media screen and (max-width:1024px){
@@ -244,8 +247,12 @@ header .main-menu li a:hover {
     header .toggle.on a:hover{
         color:salmon;
     }
+    .content--skills ul, .content--otherSkills ul {
+        height: 80%;
+    }
     .content--skills li, .content--otherSkills li {
         width: 50%;
+        height: 30%;
         padding: 0;
     }
     #toggle-btn{

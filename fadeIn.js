@@ -53,3 +53,24 @@ $(document).ready(function () {
       );
   });
 });
+setInterval(function () {
+  /*console.log("현재위치" + $(window).scrollTop());
+  console.log("윈도우 높이값" + $(window).height() / 2);*/
+  var ele = $(".content ul");
+  var any = Array();
+
+  ele.each(function (i) {
+    any[i] = $(this).offset().top;
+  });
+
+  $(window).scroll(function () {
+    var pos = $(window).scrollTop() + $(window).height() / 2;
+    //console.log("상단위치값:" + pos);
+    ele.each(function (i) {
+      // 밑으로 슬라이드 했을 시
+      if (pos > any[i]) {
+        $(this).animate({ opacity: "1" }, 500);
+      }
+    });
+  });
+}, 100);
