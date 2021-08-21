@@ -261,7 +261,7 @@ header .main-menu li a:hover {
 .content--contact .contact__form{
     border:1px solid rgba(138, 138, 138, 0.5);
     background: #FFF;
-    height: 98%;
+    height: 100%;
     box-shadow: 3px 3px 8px rgb(150, 150, 150);
 }
 .contact__form .link__top{
@@ -275,7 +275,6 @@ header .main-menu li a:hover {
     font-family: 'Nanum Pen Script', cursive;
     font-size: 34px;
     color:rgb(71, 66, 66);
-    line-height: 1.5;
 }
 .contact__form .link__medium{
     cursor: pointer;
