@@ -43,3 +43,13 @@ setInterval(function () {
     }, 700);
   }
 }, 500);
+
+// Geometryangle
+$(document).ready(function () {
+  $(".content--skills").Geometryangle({
+    mesh: {},
+    lights: [{}],
+    line: {},
+    vertex: {},
+  });
+});

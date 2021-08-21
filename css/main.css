@@ -2,6 +2,7 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
 
 /* COMMON */
 .body__container{
@@ -98,7 +99,11 @@ header .main-menu li a:hover {
     left: 0;
     z-index: 1030;
 }
-.section .inner{
+.content .inner{
+    padding-top:130px;
+    height: 100%;
+}
+.section .inner, .content .inner{
     max-width: 980px; /* 크기지정하여 가운데로 정렬 */
     margin: 0 auto;
     box-sizing: border-box;
@@ -143,29 +148,32 @@ header .main-menu li a:hover {
 
 /* CONTENT SKILLS */
 .content--skills {
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /*background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);*/
+    background: rgba(255, 255, 255, 0.747);
 }
 .content--otherSkills{
-    background-image: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-.content--skills .inner, .content--otherSkills .inner{
-    padding-top:130px;
-    height: 100%;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 .content--skills .inner > h3, .content--otherSkills .inner > h3{
     text-align: center;
     font-size: 26px;
+    font-weight: 600;
     padding: 1% 0;
+    color:rgb(30, 32, 49);
+    text-shadow: 3px 2px 1px rgba(82, 82, 82, 0.521);
 }
 .content--skills p, .content--otherSkills p{
     font-size: 14px;
-    color:#767676;
+    color:#ffffff;
+    text-shadow: 3px 2px 3px rgba(31, 13, 114, 0.521);
     text-align: center;
 }
 .content--skills ul, .content--otherSkills ul{
     padding: 3% 50px;
-    margin-left: 0px;
+    margin-top: 10px;
     opacity: 0;
+    background: rgba(255, 255, 255, 0.699);
+    border-radius: 50px;
 }
 .content--skills li, .content--otherSkills li{
     padding: 20px 24px;
@@ -189,8 +197,12 @@ header .main-menu li a:hover {
 }
 .moreSkills{
     text-align: center;
-
+    
     width: 100%;
+}
+.moreSkills a{
+    color:rgba(255, 255, 255, 0.959);
+    text-shadow: 1px 2px 3px rgba(12, 2, 2, 0.521);
 }
 .moreSkills__mark{
     width: 100px;
@@ -202,8 +214,31 @@ header .main-menu li a:hover {
 	0% {margin-top: 0px;}
 	100% {margin-top: 10px;}
 }
-.moreSkills a{
-    color:rgb(94, 94, 94);
+
+
+/* CONTENT WORKS */
+.content--works{
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+/* CONTENT CONTACT ME */
+.content--contact{
+    background-image: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.content--contact .contact__text{
+    width:50%;
+}
+.content--contact h2{
+    text-align: left;
+    padding: 12px 0;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'Nanum Pen Script', cursive;
+}
+.content--contact .contact__main{
+    font-family: 'Gowun Batang', serif;
+    color:rgb(34, 34, 34);
+    font-size: 16px;
 }
 
 @media screen and (max-width:1024px){
