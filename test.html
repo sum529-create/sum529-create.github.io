@@ -1,22 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <link rel="stylesheet" href="./fadeIn.css">
-    <script src="./fadeIn.js"></script> -->
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/40bcbb1be7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./test.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HI</title>
+  <link rel="stylesheet" href="test.css">
+      <!-- fontawesome -->
+      <script src="https://kit.fontawesome.com/40bcbb1be7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="text" id="myself"></h1>
-    <script src="./test.js"></script>
-    <!-- <script src="script.js"></script> -->
-    <i class="fab fa-js-square"></i>
+    <ul class="slides">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+        <div class="slide">
+          <img src="https://i.pinimg.com/originals/ab/c1/38/abc1384a20170a315274db9d19a5fe7f.gif" />
+          <div class="slide__text">
+              <h5># 프로젝트 설명</h5>
+              <p>- 이 프로젝트는 </p>
+              <br/>
+              <h5># 세부사항</h5>
+              <p>- 개발 일자 :</p>
+              <p>- 개발 업무 :</p>
+              <h5># 사용 기술</h5>
+                <div></div>
+              <div class="slide__git">
+                  <a href="https://github.com/sum529-create"><i class="fab fa-github fa-3x" ></i></a>
+                  <a href="https://github.com/sum529-create"><i class="fas fa-play fa-3x"></i></a>
+              </div>
+          </div>
+        </div>
+        <div class="nav">
+          <label for="img-6" class="prev">&#x2039;</label>
+          <label for="img-2" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+            </div>
+        <div class="nav">
+          <label for="img-1" class="prev">&#x2039;</label>
+          <label for="img-3" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+            </div>
+        <div class="nav">
+          <label for="img-2" class="prev">&#x2039;</label>
+          <label for="img-4" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-4" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+            </div>
+        <div class="nav">
+          <label for="img-3" class="prev">&#x2039;</label>
+          <label for="img-5" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-5" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+            </div>
+        <div class="nav">
+          <label for="img-4" class="prev">&#x2039;</label>
+          <label for="img-6" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-6" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+            </div>
+        <div class="nav">
+          <label for="img-5" class="prev">&#x2039;</label>
+          <label for="img-1" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+        </li>
+    </ul>
 </body>
 </html>

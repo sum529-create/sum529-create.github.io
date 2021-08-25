@@ -154,7 +154,7 @@ header .main-menu li a:hover {
 .content--otherSkills{
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
-.content--skills .inner > h3, .content--otherSkills .inner > h3{
+.content--skills .inner > h3, .content--otherSkills .inner > h3, .content--works .inner > h3{
     text-align: center;
     font-size: 38px;
     font-weight: 600;
@@ -162,11 +162,12 @@ header .main-menu li a:hover {
     color:rgba(255, 255, 255, 0.856);
     text-shadow: 2px 2px 1px rgba(56, 56, 56, 0.521);
 }
-.content--skills p, .content--otherSkills p{
+.content--skills p, .content--otherSkills p, .content--works .inner > p{
     font-size: 21px;
     color:#1818189c;
     text-shadow: 3px 2px 3px rgba(110, 66, 114, 0.521);
     text-align: center;
+    padding-bottom: 10px;
 }
 .content--skills ul, .content--otherSkills .clearfix{
     padding: 3% 50px;
@@ -260,7 +261,7 @@ header .main-menu li a:hover {
     padding: 12px 0;
 }
 .content--contact .contact__link{
-    height: 50%;
+    height: 80%;
     padding: 1%;
     margin: 1%;
 
@@ -444,13 +445,42 @@ header .main-menu li a:hover {
         height: 30%;
         padding: 0;
     }
+    .content--skills .inner h3, .content--skills ul li h3, .content--otherSkills ul li h3, .content--works .inner h3{
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    .content--skills ul li i, .content--otherSkills ul li i{
+        font-size: 50px;
+    }
+    .content--skills .inner .moreSkills .moreSkills__mark a{
+        font-size: 16px;
+    }
+    .content--skills p, .content--works .inner p{
+        font-size: 8px;
+    }
     .content--contact .contact__text, .content--contact .contact__link{
         width: 98%;
         box-sizing: border-box;
     }
+    .content--contact .contact__text{
+        height: 25%;
+        padding-top: 15px;
+    }
+    .content--contact .contact__link{
+        height: 60%;
+    }
+    .content--contact .contact__main p{
+        padding:0;
+        font-size: 10px;
+    }
+    .content--contact .contact__title h2{
+        font-size: 24px;
+    }
     .content--contact .contact__title .float--right,
     .content--contact .contact__title .float--left{
-        width: 100%;
+        width: 90%;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     .content--contact .contact__title .float--right{
         float: none;
@@ -460,6 +490,16 @@ header .main-menu li a:hover {
     }
     .content--contact .contact__form{
         height: 100%;
+    }
+    .content--contact .contact__form .link__medium{
+        width: 55%;
+    }
+    .content--contact .contact__form .myInstaID a{
+        font-size: 14px;
+    }
+    .content--contact .contact__form .myContact{
+        font-size: 8px;
+        margin: 0;
     }
     .content--otherSkills .clearfix{
         margin: 20% 10px 25%;
