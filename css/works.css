@@ -39,9 +39,24 @@ body{
     transition: all .7s ease-in-out;
 }
 
-.slide img {
-    width: 60%;
-    height: 90%;
+.slide img, .slide .slide__img {
+  width: 60%;
+  height: 90%;
+}
+.slide .slide__img {
+  float:left;
+}
+.slide #img__6{
+  background-image: url("../img/paintjs.jpg");
+}
+.slide #img__6:hover{
+  background-image: url("../img/movie__app.jpg");
+}
+.slide #img__7{
+  background-image: url("../img/movie__app.jpg");
+}
+.slide #img__7:hover {
+  background-image: url("../img/movie_app.gif");
 }
 .slide .slide__text{
     width: 40%;
