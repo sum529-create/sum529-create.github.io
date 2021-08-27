@@ -62,7 +62,9 @@ body{
     width: 40%;
     height: 90%;
     float: right;
-    background: blanchedalmond;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+    /*background: blanchedalmond;*/
     padding: 20px;
     box-sizing: border-box;
     display: inline-block;
@@ -201,9 +203,8 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
     height: 55%;
   }
   .slide .slide__text .slide__git{
-    position: absolute;
-    left: 100px;
-    top: 220px;
+    position: relative;
+    top: -135px;
   }
   .slide img, .slide .slide__img {
     width: 100%;
