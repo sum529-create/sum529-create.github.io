@@ -207,6 +207,7 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
     position: relative;
     top: -135px;
     left: 0;
+    margin: auto;
   }
   .slide img, .slide .slide__img {
     width: 100%;
