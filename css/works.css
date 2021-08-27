@@ -205,9 +205,7 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
   .slide .slide__text .slide__git{
     position: relative;
     top: -135px;
-  }
-  .slide .slide__text .slide__git a{
-    float: left;
+    left: 0;
   }
   .slide img, .slide .slide__img {
     width: 100%;
