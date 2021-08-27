@@ -83,6 +83,12 @@ body{
   opacity: 1;transform: scale(1);
   color:rgb(0, 0, 0);
 }
+.slide .slide__text:hover .projectSkills{
+  border: none;
+}
+.slide .slide__text:hover .projectSkills > i, .slide .slide__text:hover .projectSkills > img{
+  display: none;
+}
 .slide .slide__text .slide__git i:hover{
   color:black;
 }

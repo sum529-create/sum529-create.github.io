@@ -228,6 +228,30 @@ header .main-menu li a:hover {
 .content--works{
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
+.content--works ul li .slide__text h3{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.content--works ul li .slide__text h4{
+    font-size: 16px;
+}
+.content--works ul li .slide__text h5{
+    font-size: 14px;
+    font-weight: 600;
+    margin: 3px;
+}
+.content--works ul li .slide__text ul li{
+    list-style: inside;
+}
+.content--works ul li .slide__text .projectSkills{
+    float: left;
+    border: 1px solid #444;
+    border-radius: 20%;
+    padding: 1px;
+    margin: 3px;
+}
+
 
 /* CONTENT CONTACT ME */
 .content--contact{
