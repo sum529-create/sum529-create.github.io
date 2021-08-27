@@ -89,11 +89,12 @@ body{
 .slide .slide__text .slide__git i{
   width: 100%;
   margin: 10px 0;
-  color:rgba(53, 53, 53, 0.815);
+  color:rgba(71, 17, 87, 0.726);
 }
 .slide .slide__text:hover{
-  box-shadow: 
-  inset 0 0 0px 100px rgba(148, 110, 110, 0.6);
+  /*box-shadow: 
+  inset 0 0 0px 100px rgba(148, 110, 110, 0.6);*/
+  background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
   color:rgba(0, 0, 0, 0);
 }
 .slide .slide__text:hover .slide__git{
