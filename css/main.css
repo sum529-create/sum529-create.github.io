@@ -3,6 +3,12 @@
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=IBM+Plex+Sans+KR:wght@300&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 /* COMMON */
 .body__container{
@@ -159,7 +165,7 @@ header .main-menu li a:hover {
     font-size: 38px;
     font-weight: 600;
     padding: 1% 0;
-    color:rgba(255, 255, 255, 0.856);
+    color:rgba(255, 255, 255, 0.973);
     text-shadow: 2px 2px 1px rgba(56, 56, 56, 0.521);
 }
 .content--skills p, .content--otherSkills p, .content--works .inner > p{
@@ -232,24 +238,31 @@ header .main-menu li a:hover {
     font-size: 24px;
     font-weight: 600;
     padding-bottom: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 .content--works ul li .slide__text h4{
     font-size: 16px;
+    font-family: 'Hahmlet', serif;
 }
 .content--works ul li .slide__text h5{
     font-size: 14px;
     font-weight: 600;
     margin: 3px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
 .content--works ul li .slide__text ul li{
     list-style: inside;
+    font-family: 'Gowun Batang', serif;
+    font-size: 12px;
 }
 .content--works ul li .slide__text .projectSkills{
     float: left;
-    border: 1px solid #444;
+    border: 1px solid rgb(173, 173, 173);
+    background: #FFF;
     border-radius: 20%;
     padding: 1px;
     margin: 3px;
+    font-family: 'Jura', sans-serif;
 }
 
 

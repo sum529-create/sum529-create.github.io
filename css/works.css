@@ -48,6 +48,7 @@ body{
 }
 .slide #img__1,
 .slide #img__2,
+.slide #img__3,
 .slide #img__4,
 .slide #img__5,
 .slide #img__6,
@@ -66,6 +67,12 @@ body{
 }
 .slide #img__2:hover{
   background-image: url("../img/githubpage.gif");
+}
+.slide #img__3{
+  background-image: url("../img/classick.PNG");
+}
+.slide #img__3:hover{
+  background-image: url("../img/classick.gif");
 }
 .slide #img__4{
   background-image: url("../img/checklist.PNG");
@@ -107,14 +114,14 @@ body{
 }
 .slide .slide__text .slide__git{
   position: absolute;
-  top:95px;
+  top:75px;
   left:745px;
   box-sizing: border-box;
   transition: all 0.5s ease-in-out;
   opacity: 0;
   transform: scale(0);
   text-align: center;
-  height: 150px;
+  height: 200px;
   width: 80px;
   margin: 20px auto;
   padding: 20px 0;
@@ -136,12 +143,18 @@ body{
 }
 .slide .slide__text:hover .projectSkills{
   border: none;
+  background: none;
 }
-.slide .slide__text:hover .projectSkills > i, .slide .slide__text:hover .projectSkills > img{
+.slide .slide__text:hover .projectSkill, 
+.slide .slide__text:hover .projectSkills > i, 
+.slide .slide__text:hover .projectSkills > img,
+.slide .slide__text:hover h3,
+.slide .slide__text:hover h4,
+.slide .slide__text:hover h5{
   display: none;
 }
 .slide .slide__text .slide__git i:hover{
-  color:black;
+  color:rgba(170, 10, 175, 0.904);
 }
 
 .nav label {
@@ -238,7 +251,7 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
   }
   .slide .slide__text .slide__git{
     position: relative;
-    top: -135px;
+    top: -85px;
     left: 0;
     margin: auto;
   }
