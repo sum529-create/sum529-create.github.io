@@ -9,6 +9,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Besley:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
 
 /* COMMON */
 .body__container{
@@ -43,6 +46,7 @@ header .logo a{
     display: block;
     font-size: 36px;
     letter-spacing: 10px;
+    font-family: 'Montserrat', sans-serif;
     color:rgb(77, 76, 76);
     text-shadow:1px 1px 2px rgb(146, 138, 145);
     padding: 0 10px;
@@ -165,7 +169,8 @@ header .main-menu li a:hover {
     font-size: 38px;
     font-weight: 600;
     padding: 1% 0;
-    color:rgba(255, 255, 255, 0.973);
+    color:rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 1px rgba(56, 56, 56, 0.521);
 }
 .content--skills p, .content--otherSkills p, .content--works .inner > p{
@@ -232,7 +237,9 @@ header .main-menu li a:hover {
 
 /* CONTENT WORKS */
 .content--works{
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-color: #DCD9D4;
+ background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+ background-blend-mode: soft-light,screen;
 }
 .content--works ul li .slide__text h3{
     font-size: 24px;
