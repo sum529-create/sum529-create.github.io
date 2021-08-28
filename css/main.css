@@ -504,7 +504,11 @@ header .main-menu li a:hover {
         height: 30%;
         padding: 0;
     }
-    .content--skills .inner h3, .content--skills ul li h3, .content--otherSkills ul li h3, .content--works .inner h3{
+    .content--skills .inner h3,
+    .content--otherSkills .inner h3,
+    .content--skills ul li h3, 
+    .content--otherSkills ul li h3, 
+    .content--works .inner h3{
         font-size: 16px;
         padding-top: 10px;
     }
@@ -514,7 +518,9 @@ header .main-menu li a:hover {
     .content--skills .inner .moreSkills .moreSkills__mark a{
         font-size: 16px;
     }
-    .content--skills p, .content--works .inner p{
+    .content--skills p, 
+    .content--otherSkills p,
+    .content--works .inner p{
         font-size: 8px;
     }
     .content--contact .contact__text, .content--contact .contact__link{
@@ -561,7 +567,7 @@ header .main-menu li a:hover {
         margin: 0;
     }
     .content--otherSkills .clearfix{
-        margin: 20% 10px 25%;
+        margin: 10px;
     }
     #toggle-btn{
         display: block;
