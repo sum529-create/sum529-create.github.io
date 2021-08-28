@@ -57,7 +57,7 @@ header .main-menu {
 header .main-menu li a {
     padding: 10px;
     display: block;
-    color: #333;
+    color: rgba(68, 68, 68, 0.959);
 }
 header .main-menu li a:hover {
     color: #4078c0;
@@ -257,6 +257,10 @@ header .main-menu li a:hover {
     margin: 3px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 }
+.content--works ul li .slide__text ul{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+}
 .content--works ul li .slide__text ul li{
     list-style: inside;
     font-family: 'Gowun Batang', serif;
@@ -270,6 +274,7 @@ header .main-menu li a:hover {
     padding: 1px;
     margin: 3px;
     font-family: 'Jura', sans-serif;
+    font-size: 1px;
 }
 
 
