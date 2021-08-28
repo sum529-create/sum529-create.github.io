@@ -56,7 +56,7 @@ $(document).ready(function () {
 setInterval(function () {
   /*console.log("현재위치" + $(window).scrollTop());
   console.log("윈도우 높이값" + $(window).height() / 2);*/
-  var ele = $(".content ul");
+  var ele = $(".inner");
   var any = Array();
 
   ele.each(function (i) {

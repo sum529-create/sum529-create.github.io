@@ -60,7 +60,7 @@ body{
   background-image: url("../img/portfolio.jpg");
 }
 .slide #img__1:hover{
-  background-image: url("../img/githubpage.gif");
+  background-image: url("../img/portfolio.gif");
 }
 .slide #img__2{
   background-image: url("../img/githubpage.jpg");
@@ -102,8 +102,7 @@ body{
     width: 40%;
     height: 90%;
     float: right;
-    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
-    background-blend-mode: screen;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     /*background: blanchedalmond;*/
     padding: 20px;
     box-sizing: border-box;

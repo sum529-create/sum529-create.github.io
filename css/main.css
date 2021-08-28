@@ -110,6 +110,7 @@ header .main-menu li a:hover {
     z-index: 1030;
 }
 .content .inner{
+    opacity: 0;
     padding-top:110px;
     height: 100%;
 }
@@ -166,24 +167,24 @@ header .main-menu li a:hover {
 }
 .content--skills .inner > h3, .content--otherSkills .inner > h3, .content--works .inner > h3{
     text-align: center;
-    font-size: 38px;
-    font-weight: 600;
+    font-size: 34px;
+    font-weight: 500;
     padding: 1% 0;
-    color:rgb(255, 255, 255);
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 2px 2px 1px rgba(56, 56, 56, 0.521);
+    color:rgb(36, 36, 36);
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 2px rgba(26, 26, 26, 0.521);
 }
 .content--skills p, .content--otherSkills p, .content--works .inner > p{
     font-size: 21px;
-    color:#1818189c;
-    text-shadow: 3px 2px 3px rgba(110, 66, 114, 0.521);
+    color:#3f3f3ff8;
+    text-shadow: 3px 2px 3px rgba(189, 189, 189, 0.973);
     text-align: center;
     padding-bottom: 10px;
 }
 .content--skills ul, .content--otherSkills .clearfix{
     padding: 3% 50px;
     margin: 10px;
-    opacity: 0;
     background: rgba(255, 255, 255, 0.699);
     border-radius: 50px;
 }
@@ -370,15 +371,21 @@ header .main-menu li a:hover {
     background-color: black;
     box-sizing: border-box;
     text-align: center;
+    overflow: hidden;
 }
 .contact__form .link__bottom .myPhoto__img{
     width: 50%;
     height: 100%;
     background-image: url("../img/sumin.jpg");
-    background-size: contain ;
+    background-size: cover !important ;
     background-repeat: no-repeat;
     text-align: center;
     display: inline-block;
+    transition: transform .2s;
+}
+.contact__form .link__bottom .myPhoto__img:hover{
+    transform: scale(1.8);
+    overflow: hidden;
 }
 .contact__form .link__bottom .myContact{
     height: 10%;
@@ -420,8 +427,11 @@ header .main-menu li a:hover {
 .contact__link .link__bottom .myTag{
     /*width: 60%;*/
     height: 5%;
-    color:blue;
+    color:rgb(26, 26, 145);
     cursor: pointer;
+}
+.contact__link .link__bottom .myTag a{
+    color:rgb(26, 26, 145);    
 }
 
 @media screen and (max-width:1024px){
