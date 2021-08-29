@@ -125,6 +125,8 @@ body{
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
+  bottom:1000px;
 }
 .slide .slide__text .iconButton i{
   width: 100%;
@@ -137,6 +139,9 @@ body{
   background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
  background-blend-mode: normal,color-burn;
   color:rgba(0, 0, 0, 0);
+}
+.slide .slide__text:hover .slide__button{
+  bottom:0;
 }
 .slide .slide__text:hover .iconButton{
   opacity: 1;transform: scale(1);
