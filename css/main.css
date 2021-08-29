@@ -239,35 +239,40 @@ header .main-menu li a:hover {
 /* CONTENT WORKS */
 .content--works{
     background-color: #DCD9D4;
- background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
- background-blend-mode: soft-light,screen;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+    background-blend-mode: soft-light,screen;
+}
+.content--works .inner{
+    max-width: 100%;
 }
 .content--works ul li .slide__text h3{
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 600;
     padding-bottom: 5px;
     font-family: 'Noto Sans KR', sans-serif;
 }
 .content--works ul li .slide__text h4{
-    font-size: 16px;
+    font-size: 21px;
     font-family: 'Hahmlet', serif;
+    padding-bottom: 20px;
 }
 .content--works ul li .slide__text h5{
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     margin: 3px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 }
 .content--works ul li .slide__text ul{
     border-bottom: 1px solid lightgray;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 .content--works ul li .slide__text ul li{
     list-style: inside;
     font-family: 'Gowun Batang', serif;
-    font-size: 12px;
+    font-size: 17px;
 }
-.content--works ul li .slide__text .projectSkills{
+.content--works ul li .slide__text .projectSkill .projectSkills{
     float: left;
     border: 1px solid rgb(173, 173, 173);
     background: #FFF;
@@ -275,7 +280,7 @@ header .main-menu li a:hover {
     padding: 1px;
     margin: 3px;
     font-family: 'Jura', sans-serif;
-    font-size: 1px;
+    /* font-size: 4px; */
 }
 
 

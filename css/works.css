@@ -7,7 +7,7 @@ body{
 .slides {
     padding: 0;
     width: 100%;
-    height: 420px;
+    height: 70%;
     display: block;
     margin: 0 auto;
     position: relative;
@@ -30,7 +30,7 @@ body{
     top: 0;
     opacity: 0;
     width: 100%;
-    height: 420px;
+    height: 100%;
     display: block;
     position: absolute;
 
@@ -111,21 +111,22 @@ body{
 .slide .slide__text p{
   font-size: 12px;
 }
-.slide .slide__text .slide__git{
-  position: absolute;
-  top:75px;
-  left:745px;
+.slide .slide__text .iconButton{
   box-sizing: border-box;
   transition: all 0.5s ease-in-out;
   opacity: 0;
   transform: scale(0);
   text-align: center;
-  height: 200px;
   width: 80px;
   margin: 20px auto;
   padding: 20px 0;
 }
-.slide .slide__text .slide__git i{
+.slide .slide__text .slide__button{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.slide .slide__text .iconButton i{
   width: 100%;
   margin: 10px 0;
   color:rgba(66, 66, 66, 0.726);
@@ -137,12 +138,13 @@ body{
  background-blend-mode: normal,color-burn;
   color:rgba(0, 0, 0, 0);
 }
-.slide .slide__text:hover .slide__git{
+.slide .slide__text:hover .iconButton{
   opacity: 1;transform: scale(1);
   color:rgb(0, 0, 0);
 }
 .slide .slide__text:hover ul{
   border:0px;
+  display: none;
 }
 .slide .slide__text:hover .projectSkills{
   border: none;
@@ -156,7 +158,7 @@ body{
 .slide .slide__text:hover h5{
   display: none;
 }
-.slide .slide__text .slide__git i:hover{
+.slide .slide__text .iconButton i:hover{
   color:rgba(37, 37, 37, 0.904);
 }
 
@@ -252,10 +254,22 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
     width: 100%;
     height: 55%;
   }
-  .slide .slide__text .slide__git{
-    position: relative;
-    top: -85px;
-    left: 0;
+  .slide .slide__text h3{
+    font-size: 24px;
+  }
+  .slide .slide__text h4{
+    font-size: 16px;
+  }
+  .slide .slide__text h5{
+    font-size: 14px;
+  }
+  .slide .slide__text ul li{
+    font-size: 12px;
+  }
+  .slide .slide__text .projectSkills{
+    font-size: 1px;
+  }
+  .slide .slide__text .iconButton{
     margin: auto;
   }
   .slide img, .slide .slide__img {
@@ -271,16 +285,21 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
   }
   .content--works ul li .slide__text h4{
     font-size: 10px;
+    padding: 0;
   }
   .content--works ul li .slide__text h5{
     font-size: 8px;
   }
+  .content--works ul li .slide__text ul{
+    margin: 0;
+  }
   .content--works ul li .slide__text ul li{
     font-size: 4px;
   }
-  .content--works ul li .slide__text .projectSkills{
+  .content--works ul li .slide__text .projectSkill .projectSkills{
     font-size: 1px;
     padding: 0;
     margin: 1px;
+    padding-right: 2px;
   }
 }
