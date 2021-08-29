@@ -45,6 +45,7 @@ body{
 }
 .slide .slide__img {
   float:left;
+  background: #000;
 }
 .slide #img__1,
 .slide #img__2,
