@@ -309,3 +309,9 @@ input#img-7:checked ~ .nav-dots label#img-dot-7 {
     padding-right: 2px;
   }
 }
+
+@media screen and (max-height:945px){
+  .content--works ul li .slide__text .hide{
+    display: none;
+  }
+}
