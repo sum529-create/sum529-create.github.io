@@ -9,10 +9,6 @@
 <script>
 export default {
   name: "Footer",
-
-  mounted() {
-    console.log('???!!!');
-  }
 }
 </script>
 
@@ -22,6 +18,8 @@ export default {
   color: #fff;
   padding: 20px 0;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .container {

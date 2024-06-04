@@ -22,6 +22,8 @@ export default {
 header{
     background: #333;
     color: #fff;
+    position: relative;
+    z-index: 1;
 }
 nav{
     ul{
