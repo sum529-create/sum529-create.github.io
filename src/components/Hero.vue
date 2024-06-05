@@ -13,13 +13,13 @@
           <span v-html="typedText"></span><span class="cursor" v-if="showCursor && !showCursorFlag">|</span>
         </h2>
       </div>
-      <div class="hero__content">
-        <h1 class="hero__content-title" ref="title" :class="{ 'in-view': titleInView }">Welcome</h1>
-        <p class="hero__content-subtitle" ref="subtitle" :class="{ 'in-view': subtitleInView }">Scroll down to see more</p>
-        <div class="hero__content-description">
-          <p class="hero__content-description-01" ref="description1" :class="{ 'in-view': description1InView }">Discover my work and projects</p>
-          <p class="hero__content-description-02" ref="description2" :class="{ 'in-view': description2InView }">Discover my work and projects</p>
-          <p class="hero__content-description-03" ref="description3" :class="{ 'in-view': description3InView }">Discover my work and projects</p>
+      <div class="hero__middle">
+        <h1 class="hero__middle-title" ref="title" :class="{ 'in-view': titleInView }">Welcome</h1>
+        <p class="hero__middle-subtitle" ref="subtitle" :class="{ 'in-view': subtitleInView }">Scroll down to see more</p>
+        <div class="hero__middle-description">
+          <p class="hero__middle-description-01" ref="description1" :class="{ 'in-view': description1InView }">Discover my work and projects</p>
+          <p class="hero__middle-description-02" ref="description2" :class="{ 'in-view': description2InView }">Discover my work and projects</p>
+          <p class="hero__middle-description-03" ref="description3" :class="{ 'in-view': description3InView }">Discover my work and projects</p>
         </div>
       </div>
     </div>
@@ -197,7 +197,7 @@ export default {
     opacity: 0;
   }
 }
-.hero__content {
+.hero__middle {
   position: sticky;
   top: 50%;
   transform: translateY(-50%);
@@ -210,26 +210,26 @@ export default {
   color: #4cd137 !important;
 }
 
-.hero__content-title,
-.hero__content-subtitle,
-.hero__content-description-01,
-.hero__content-description-02,
-.hero__content-description-03
+.hero__middle-title,
+.hero__middle-subtitle,
+.hero__middle-description-01,
+.hero__middle-description-02,
+.hero__middle-description-03
  {
    margin-bottom: 0.5em;
    transition: transform 0.5s, opacity 0.5s;
    opacity: 0;
    transform: translateY(50px);
   }
-.hero__content-title{
+.hero__middle-title{
   font-size: 3em;
 }
 
-.hero__content-subtitle {
+.hero__middle-subtitle {
   font-size: 2em;
 }
 
-.hero__content-description {
+.hero__middle-description {
   font-size: 1.5em;
   transform: translateY(100%);
 }
