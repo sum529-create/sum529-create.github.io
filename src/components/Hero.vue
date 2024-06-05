@@ -9,12 +9,18 @@
         <p class="hero__headline-txt" :class="{ 'in-view': roleInView }">Front-End Developer</p>
       </div>
       <div class="hero__portfolio">
-        <h2 class="hero__portfolio-txt" ref="portfolio" :class="{ 'in-view': portfolioInView }" v-show="!titleInView" v-html="typedText"></h2>
+        <h2 class="hero__portfolio-txt" ref="portfolio" :class="{ 'in-view': portfolioInView }" v-show="portfolioInView">
+          <span v-html="typedText"></span><span class="cursor" v-if="showCursor && !showCursorFlag">|</span>
+        </h2>
       </div>
       <div class="hero__content">
         <h1 class="hero__content-title" ref="title" :class="{ 'in-view': titleInView }">Welcome</h1>
         <p class="hero__content-subtitle" ref="subtitle" :class="{ 'in-view': subtitleInView }">Scroll down to see more</p>
-        <p class="hero__content-description" ref="description" :class="{ 'in-view': descriptionInView }">Discover my work and projects</p>
+        <div class="hero__content-description">
+          <p class="hero__content-description-01" ref="description1" :class="{ 'in-view': description1InView }">Discover my work and projects</p>
+          <p class="hero__content-description-02" ref="description2" :class="{ 'in-view': description2InView }">Discover my work and projects</p>
+          <p class="hero__content-description-03" ref="description3" :class="{ 'in-view': description3InView }">Discover my work and projects</p>
+        </div>
       </div>
     </div>
   </div>
@@ -29,8 +35,12 @@ export default {
       portfolioInView: false,
       titleInView: false,
       subtitleInView: false,
-      descriptionInView: false,
+      description1InView: false,
+      description2InView: false,
+      description3InView: false,
       typedText: '',
+      showCursor: true,
+      showCursorFlag: false,
     };
   },
   mounted() {
@@ -40,7 +50,11 @@ export default {
     setTimeout(() => {
       this.roleInView = true; // Trigger the animation on load
       this.portfolioInView = true; // Trigger the animation on load
-    }, 500); // Adjust the delay as needed
+    }, 500); 
+
+    setInterval(() => {
+      this.showCursor = !this.showCursor;
+    }, 500);
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -50,14 +64,19 @@ export default {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      const titleTrigger = windowHeight * 0.3;
-      const subtitleTrigger = windowHeight * 0.5;
-      const descriptionTrigger = windowHeight * 0.7;
+      const titleTrigger = windowHeight * 0.2;
+      const subtitleTrigger = windowHeight * 0.3;
+      const description1Trigger = windowHeight * 0.5;
+      const description2Trigger = windowHeight * 0.55;
+      const description3Trigger = windowHeight * 0.6;
+      const middleTxtFlag = windowHeight * 0.8;
 
       if (scrollPosition > titleTrigger) {
         this.titleInView = true;
+        this.portfolioInView = false;
       } else {
         this.titleInView = false;
+        this.portfolioInView = true;
       }
 
       if (scrollPosition > subtitleTrigger) {
@@ -66,21 +85,40 @@ export default {
         this.subtitleInView = false;
       }
 
-      if (scrollPosition > descriptionTrigger) {
-        this.descriptionInView = true;
+      if (scrollPosition > description1Trigger) {
+        this.description1InView = true;
       } else {
-        this.descriptionInView = false;
+        this.description1InView = false;
+      }
+      if (scrollPosition > description2Trigger) {
+        this.description2InView = true;
+      } else {
+        this.description2InView = false;
+      }
+      if (scrollPosition > description3Trigger) {
+        this.description3InView = true;
+      } else {
+        this.description3InView = false;
+      }
+
+      if (scrollPosition > middleTxtFlag) {
+        this.titleInView = false;
+        this.subtitleInView = false;
+        this.description1InView = false;
+        this.description2InView = false;
+        this.description3InView = false;
       }
     },
     async handleTextAnimation() {
-      await this.typeText("SUMIN'S PORTFOLIO", 'portfolioInView', 100);
+      await this.typeText("SUMIN'S PORTFOLIO", 100);
+      this.showCursorFlag = true;
     },
-    async typeText(text, prop, delay) {
+    async typeText(text, delay) {
       this.typedText = '';
       for (let i = 0; i < text.length; i++) {
         await this.delay(delay);
         this.typedText = text.substring(0, i + 1);
-        this.typedText = this.typedText.replace("SUMIN'S", "SUMIN'S<br>");
+        this.typedText = this.typedText.replace("SUMIN'S", "<span class='highlight'>SUMIN</span>'S<br>");
       }
     },
     delay(ms) {
@@ -90,7 +128,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .hero {
   position: relative;
 }
@@ -142,8 +180,23 @@ export default {
 .hero__portfolio-txt {
   font-size: 4em;
   margin: 0;
+  white-space: pre;
+}
+.cursor {
+  font-weight: 100;
+  font-size: 1em;
+  color: white;
+  animation: blink 0.7s steps(1) infinite;
 }
 
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
+}
 .hero__content {
   position: sticky;
   top: 50%;
@@ -153,14 +206,23 @@ export default {
   color: white;
 }
 
+.highlight {
+  color: #4cd137 !important;
+}
+
 .hero__content-title,
 .hero__content-subtitle,
-.hero__content-description {
+.hero__content-description-01,
+.hero__content-description-02,
+.hero__content-description-03
+ {
+   margin-bottom: 0.5em;
+   transition: transform 0.5s, opacity 0.5s;
+   opacity: 0;
+   transform: translateY(50px);
+  }
+.hero__content-title{
   font-size: 3em;
-  margin-bottom: 0.5em;
-  transition: transform 0.5s, opacity 0.5s;
-  opacity: 0;
-  transform: translateY(50px);
 }
 
 .hero__content-subtitle {
@@ -169,6 +231,7 @@ export default {
 
 .hero__content-description {
   font-size: 1.5em;
+  transform: translateY(100%);
 }
 
 .in-view {

@@ -15,7 +15,5 @@ export default {
 <style>
 .main{
   position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
 }
 </style>
