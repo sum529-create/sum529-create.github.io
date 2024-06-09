@@ -1,19 +1,19 @@
 <template>
   <div class="main">
-    <hero/>
+    <hero />
   </div>
 </template>
 
 <script>
-import Hero from './Hero.vue'
+import Hero from "./AppHero.vue";
 export default {
   components: { Hero },
-  name: "HOME"
-}
+  name: "HOME",
+};
 </script>
 
 <style>
-.main{
+.main {
   position: relative;
 }
 </style>

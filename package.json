@@ -14,27 +14,34 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
-    "babel-eslint": "^10.1.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "cache-loader": "^4.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.12"
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.32.12",
+    "sass-loader": "^10.1.1",
+    "vue-template-compiler": "^2.6.12",
+    "@babel/eslint-parser": "^7.12.16",
+    "@babel/core": "^7.12.16"
   },
   "eslintConfig": {
-    "root": true,
+    "parserOptions": {
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
+    },
     "env": {
-      "node": true
+      "browser": true,
+      "es6": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/essential"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
+    "plugins": [
+      "vue"
+    ],
     "rules": {}
   },
   "browserslist": [
