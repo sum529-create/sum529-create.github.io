@@ -88,12 +88,19 @@
             ref="description4"
             :class="{ 'in-view': description4InView }"
           >
-            UI/UX 디자인과 개발을 통해 가치를 더합니다
+            UI/UX 디자인과 개발을 통해 가치를 더하는
           </p>
         </div>
       </div>
       <div class="hero__bottom">
         <div class="hero__bottom-txt">
+          <h1
+            class="hero__bottom-title hero__bottom-back-title"
+            ref="title"
+            :class="{ 'in-view': title3InView, 'font-white': !title2InView }"
+          >
+            FrontEnd-Developer
+          </h1>
           <h1
             class="hero__bottom-title"
             ref="title"
@@ -132,6 +139,7 @@ export default {
       portfolioInView: false,
       title1InView: false,
       title2InView: false,
+      title3InView: false,
       subtitle1InView: false,
       subtitle2InView: false,
       description1InView: false,
@@ -168,10 +176,11 @@ export default {
       const titleTrigger = windowHeight * 0.05;
       const subtitle1Trigger = windowHeight * 0.2;
       const subtitle2Trigger = windowHeight * 0.3;
-      const description1Trigger = windowHeight * 0.5;
-      const description2Trigger = windowHeight * 0.6;
-      const description3Trigger = windowHeight * 0.7;
-      const description4Trigger = windowHeight * 0.8;
+      const description1Trigger = windowHeight * 0.4;
+      const description2Trigger = windowHeight * 0.5;
+      const description3Trigger = windowHeight * 0.6;
+      const description4Trigger = windowHeight * 0.7;
+      const titlebackTrigger = windowHeight * 0.8;
       const middleTxtFlag = windowHeight * 0.9;
 
       if (scrollPosition > titleTrigger) {
@@ -217,6 +226,11 @@ export default {
         this.description4InView = true;
       } else {
         this.description4InView = false;
+      }
+      if (scrollPosition > titlebackTrigger) {
+        this.title3InView = true;
+      } else {
+        this.title3InView = false;
       }
 
       if (scrollPosition > middleTxtFlag) {
@@ -438,11 +452,6 @@ export default {
   color: white;
 }
 
-.highlight {
-  color: #007dfe !important;
-  font-weight: 700;
-}
-
 .hero__middle-title,
 .hero__middle-subtitle,
 .hero__middle-description-01,
@@ -494,5 +503,18 @@ export default {
 .hero__bottom-img.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+.hero__bottom-back-title {
+  margin-bottom: -25px;
+  font-size: 5em;
+  color: #3d3d3d;
+}
+.hero__bottom-back-title.font-white {
+  color: #fff;
+}
+
+.highlight {
+  color: #007dfe !important;
+  font-weight: 700;
 }
 </style>
