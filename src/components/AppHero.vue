@@ -63,31 +63,35 @@
         </p>
         <div class="hero__middle-description">
           <p
-            class="hero__middle-description-01"
+            class="hero__middle-description-01 highlight-text"
             ref="description1"
             :class="{ 'in-view': description1InView }"
           >
+            <i class="material-icons check-icon">check</i>
             지속 가능한 웹 솔루션을 향한 노력
           </p>
           <p
-            class="hero__middle-description-02"
+            class="hero__middle-description-02 highlight-text"
             ref="description2"
             :class="{ 'in-view': description2InView }"
           >
+            <i class="material-icons check-icon">check</i>
             프로젝트 성공을 위한 열정과 헌신
           </p>
           <p
-            class="hero__middle-description-03"
+            class="hero__middle-description-03 highlight-text"
             ref="description3"
             :class="{ 'in-view': description3InView }"
           >
+            <i class="material-icons check-icon">check</i>
             팀과의 협업을 통해 더 나은 결과를 창출
           </p>
           <p
-            class="hero__middle-description-04"
+            class="hero__middle-description-04 highlight-text"
             ref="description4"
             :class="{ 'in-view': description4InView }"
           >
+            <i class="material-icons check-icon">check</i>
             UI/UX 디자인과 개발을 통해 가치를 더하는
           </p>
         </div>
@@ -476,6 +480,10 @@ export default {
 .hero__middle-subtitle {
   font-size: 2em;
 }
+.hero__middle-description {
+  width: fit-content;
+  margin: 0 auto;
+}
 
 .hero__middle-description,
 .hero__bottom-description {
@@ -519,5 +527,39 @@ export default {
 .highlight {
   color: #007dfe !important;
   font-weight: 700;
+}
+/* 형광펜 효과와 체크 아이콘 등장 애니메이션 CSS */
+.highlight-text {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+.highlight-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 0;
+  height: 0.4em;
+  background-color: yellow;
+  z-index: -1;
+  opacity: 0.2;
+  transition: width 1.3s ease;
+}
+
+.check-icon {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.highlight-text.in-view::before {
+  width: 100%;
+}
+
+.highlight-text.in-view .check-icon {
+  opacity: 1;
 }
 </style>
