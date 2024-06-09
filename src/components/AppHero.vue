@@ -340,8 +340,7 @@ export default {
   height: 200vh;
   overflow: hidden;
   margin: 0 auto;
-  max-width: 1140px;
-  width: calc(100% - 40px);
+  max-width: 1028px;
 }
 .hero__video-container {
   position: absolute;
@@ -389,13 +388,16 @@ export default {
 .hero__portfolio {
   position: fixed;
   bottom: 0;
-  width: inherit;
+  width: 100%;
+  max-width: 1028px;
   display: flex;
   justify-content: space-between;
   text-align: right;
   align-items: center;
   z-index: 1;
   color: white;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .hero__portfolio-img {
   height: 40vh;
@@ -491,7 +493,8 @@ export default {
   z-index: 1;
   bottom: 0px;
   text-align: center;
-  width: inherit;
+  width: 100%;
+  max-width: 1028px;
   color: white;
 }
 .hero__bottom-img {
