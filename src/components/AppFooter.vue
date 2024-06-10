@@ -19,7 +19,7 @@ export default {
   padding: 20px 0;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 99;
 }
 
 .container {

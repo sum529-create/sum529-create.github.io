@@ -23,7 +23,7 @@ header {
   background: #333;
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 99;
 }
 nav {
   ul {

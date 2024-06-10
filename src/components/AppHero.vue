@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="content">
     <div class="hero__section">
       <video class="hero__video-container" autoplay muted loop>
         <source src="../assets/main_video.mp4" type="video/mp4" />
@@ -150,6 +150,7 @@ export default {
       description2InView: false,
       description3InView: false,
       description4InView: false,
+      description5InView: false,
       typedText: "",
       showCursor: true,
       showCursorFlag: false,
@@ -336,7 +337,7 @@ export default {
     transform: translateY(-20px);
   }
 }
-.hero {
+.content {
   position: relative;
   overflow: hidden;
 }
@@ -347,12 +348,13 @@ export default {
   max-width: 1028px;
 }
 .hero__video-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
   filter: brightness(70%) grayscale(30%);
 }
 .hero__headline {
@@ -488,7 +490,7 @@ export default {
 .hero__middle-description,
 .hero__bottom-description {
   font-size: 1.5em;
-  transform: translateY(50%);
+  /* transform: translateY(50%); */
   line-height: 1.5;
 }
 
@@ -546,7 +548,7 @@ export default {
   height: 0.4em;
   background-color: yellow;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.3;
   transition: width 1.3s ease;
 }
 
