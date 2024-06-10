@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="hero__section">
+    <div class="section hero__section">
       <video class="hero__video-container" autoplay muted loop>
         <source src="../assets/main_video.mp4" type="video/mp4" />
         My browser does not support the video tag.
@@ -341,11 +341,13 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.hero__section {
-  height: 200vh;
+.section {
   overflow: hidden;
   margin: 0 auto;
   max-width: 1028px;
+}
+.hero__section {
+  height: 200vh;
 }
 .hero__video-container {
   position: fixed;

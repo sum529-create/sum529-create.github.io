@@ -1,9 +1,11 @@
 <template>
     <div class="content">
         <left-nav :in-view="inView" />
-        <div class="main__section" :class="{ 'in-view': inView }">
-          <h2>About me.</h2>
-          <p>안녕하세요 이건 테스트용 텍스트입니다.</p>
+        <div class="main__content" :class="{ 'in-view': inView }">
+            <div class="section">
+                <h2>About me.</h2>
+                <p>안녕하세요 이건 테스트용 텍스트입니다.</p>
+            </div>
     </div>
   </div>
 </template>
@@ -40,7 +42,7 @@ export default {
 </script>
 
 <style>
-.main__section{
+.main__content{
   position: fixed;
   bottom: -100vh; /* 화면 아래로 숨기기 */
   left: 0;
@@ -52,7 +54,7 @@ export default {
   z-index: 10; /* 다른 요소들 위에 표시 */
   height: 100vh; /* 임시 */
 }
-.main__section.in-view{
+.main__content.in-view{
     bottom:0;
 }
 </style>
