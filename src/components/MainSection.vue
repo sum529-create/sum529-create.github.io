@@ -3,8 +3,7 @@
         <left-nav :in-view="inView" />
         <div class="main__content" :class="{ 'in-view': inView }">
             <div class="section">
-                <h2>About me.</h2>
-                <p>안녕하세요 이건 테스트용 텍스트입니다.</p>
+                <about-me/>
             </div>
     </div>
   </div>
@@ -12,9 +11,10 @@
 
 <script>
 import LeftNav from './LeftNav.vue';
+import AboutMe from './AboutMe.vue';
 export default {
     name: "MainSection",
-    components: {LeftNav},
+    components: {LeftNav, AboutMe},
     data() {
         return {
             inView: false,
