@@ -345,6 +345,7 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   max-width: 1028px;
+  padding: 60px 40px;
 }
 .hero__section {
   height: 200vh;
@@ -565,5 +566,8 @@ export default {
 
 .highlight-text.in-view .check-icon {
   opacity: 1;
+}
+i.material-icons{
+  vertical-align: bottom;
 }
 </style>

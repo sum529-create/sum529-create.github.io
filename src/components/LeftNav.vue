@@ -106,7 +106,7 @@ export default {
 
 <style scoped>
 .nav__section{
-    position: fixed;
+    position: relative;
     color: #FFF;
     z-index: 97;
     left: -100%;

@@ -1,7 +1,7 @@
 <template>
     <div class="content">
-        <left-nav :in-view="inView" />
         <div class="main__content" :class="{ 'in-view': inView }">
+            <left-nav :in-view="inView" />
             <div class="section">
                 <about-me/>
             </div>
@@ -53,6 +53,12 @@ export default {
   transition: bottom 1s ease-out;
   z-index: 10; /* 다른 요소들 위에 표시 */
   height: 100vh; /* 임시 */
+  display: table;
+  table-layout: fixed;
+}
+.main__content > *{
+    display: table-cell;
+    vertical-align: top;
 }
 .main__content.in-view{
     bottom:0;
