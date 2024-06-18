@@ -44,7 +44,7 @@ export default {
 <style>
 .main__content{
   position: fixed;
-  bottom: -100vh; /* 화면 아래로 숨기기 */
+  bottom: -200vh; /* 화면 아래로 숨기기 */
   left: 0;
   width: 100%;
   background: #000;

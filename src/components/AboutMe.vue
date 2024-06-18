@@ -10,7 +10,7 @@
               <span class="about-me__name-eng">(NohSuMin)</span>
             </div>
             <div class="about-me-intro">
-              <p>저는 창의적이고 열정적인 프론트엔드 개발자 홍길동입니다.</p>
+              <p>저는 창의적이고 열정적인 프론트엔드 개발자 노수민입니다.</p>
             </div>
           </div>
         </div>

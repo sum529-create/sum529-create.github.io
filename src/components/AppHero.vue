@@ -6,7 +6,7 @@
         My browser does not support the video tag.
       </video>
       <div class="hero__headline">
-        <p class="hero__headline-txt" :class="{ 'in-view': roleInView }">
+        <p class="hero__headline-txt fs-2" :class="{ 'in-view': roleInView }">
           Front-End Developer
         </p>
       </div>
@@ -30,24 +30,24 @@
           :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
         />
         <h2
-          class="hero__portfolio-txt"
+          class="hero__portfolio-txt fs-4"
           ref="portfolio"
           :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
         >
           <span v-html="typedText"></span
-          ><span class="cursor" v-if="showCursor && !showCursorFlag">|</span>
+          ><span class="cursor fs-1" v-if="showCursor && !showCursorFlag">|</span>
         </h2>
       </div>
       <div class="hero__middle">
         <h1
-          class="hero__middle-title"
+          class="hero__middle-title fs-3"
           ref="title"
           :class="{ 'in-view': title1InView }"
         >
           안녕하세요!
         </h1>
         <p
-          class="hero__middle-subtitle"
+          class="hero__middle-subtitle fs-2"
           ref="subtitle"
           :class="{ 'in-view': subtitle1InView }"
         >
@@ -55,7 +55,7 @@
           개발자를 찾으시나요?
         </p>
         <p
-          class="hero__middle-subtitle"
+          class="hero__middle-subtitle fs-2"
           ref="subtitle"
           :class="{ 'in-view': subtitle2InView }"
         >
@@ -99,14 +99,14 @@
       <div class="hero__bottom">
         <div class="hero__bottom-txt">
           <h1
-            class="hero__bottom-title hero__bottom-back-title"
+            class="hero__bottom-title fs-3 hero__bottom-back-title fs-5"
             ref="title"
             :class="{ 'in-view': title3InView, 'font-white': !title2InView }"
           >
             FrontEnd-Developer
           </h1>
           <h1
-            class="hero__bottom-title"
+            class="hero__bottom-title fs-3"
             ref="title"
             :class="{ 'in-view': title2InView }"
           >
@@ -182,10 +182,10 @@ export default {
       const subtitle1Trigger = windowHeight * 0.2;
       const subtitle2Trigger = windowHeight * 0.3;
       const description1Trigger = windowHeight * 0.4;
-      const description2Trigger = windowHeight * 0.5;
-      const description3Trigger = windowHeight * 0.6;
-      const description4Trigger = windowHeight * 0.7;
-      const titlebackTrigger = windowHeight * 0.8;
+      const description2Trigger = windowHeight * 0.45;
+      const description3Trigger = windowHeight * 0.5;
+      const description4Trigger = windowHeight * 0.55;
+      const titlebackTrigger = windowHeight * 0.7;
       const middleTxtFlag = windowHeight * 0.9;
 
       if (scrollPosition > titleTrigger) {
@@ -342,6 +342,7 @@ export default {
   overflow: hidden;
 }
 .section {
+  position: relative;
   overflow: hidden;
   margin: 0 auto;
   max-width: 1028px;
@@ -369,7 +370,6 @@ export default {
 }
 .hero__headline-txt {
   border-bottom: 1px solid #fff;
-  font-size: 2em;
   opacity: 0;
   transform: translateX(100%);
   transition: transform 1s, opacity 1s;
@@ -380,9 +380,10 @@ export default {
   transform: translateX(0);
 }
 .hero__icons {
-  position: absolute;
+  position: relative;
   opacity: 0;
   transform: translateX(-100px);
+  z-index: 2;
   transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 .hero__icons.in-view {
@@ -395,8 +396,8 @@ export default {
   transform: translateY(-20px);
 }
 .hero__portfolio {
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  top: 20%;
   width: 100%;
   max-width: 1028px;
   display: flex;
@@ -425,7 +426,6 @@ export default {
   transform: translateY(-20px);
 }
 .hero__portfolio-txt {
-  font-size: 4em;
   margin: 0;
   white-space: pre;
   opacity: 0;
@@ -439,7 +439,6 @@ export default {
 }
 .cursor {
   font-weight: 100;
-  font-size: 1em;
   color: white;
   animation: blink 0.7s steps(1) infinite;
 }
@@ -455,9 +454,9 @@ export default {
   }
 }
 .hero__middle {
-  position: sticky;
-  top: 40%;
-  transform: translateY(-40%);
+  position: relative;
+  top: 10%;
+  transform: translateY(-10%);
   z-index: 1;
   text-align: center;
   color: white;
@@ -478,12 +477,8 @@ export default {
 }
 .hero__bottom-title,
 .hero__middle-title {
-  font-size: 3em;
   font-weight: 400;
   line-height: 1;
-}
-.hero__middle-subtitle {
-  font-size: 2em;
 }
 .hero__middle-description {
   width: fit-content;
@@ -509,6 +504,8 @@ export default {
   width: 100%;
   max-width: 1028px;
   color: white;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .hero__bottom-img {
   height: 50vh;
@@ -522,7 +519,6 @@ export default {
 }
 .hero__bottom-back-title {
   margin-bottom: -25px;
-  font-size: 5em;
   color: #3d3d3d;
 }
 .hero__bottom-back-title.font-white {
@@ -569,5 +565,46 @@ export default {
 }
 i.material-icons{
   vertical-align: bottom;
+}
+@media (max-width:1024px) and (min-width:768px){
+  .icon{
+    width: 60px;
+    height: 60px;
+    background-size: 240px 240px;
+  }
+  .icon2{
+    background-position: -60px 0;
+    left: 6vh;
+    top: 35vh;
+  }
+  .icon3{
+    background-position: -120px 0;
+    left: 14vh;
+    top: 44vh;
+  }
+  .icon4{
+    background-position: -180px 0;
+    left: 31vh;
+  }
+  .icon5{
+    background-position: 0 -60px;
+    left: 17vh;
+    top: 34vh;
+  }
+  .icon6{
+    background-position: -60px -60px;
+    top: 39vh;
+    left: 27vh;
+  }
+  .hero__portfolio-img{
+    height: 30vh;
+  }
+}
+@media (max-width:768px){
+  .hero__portfolio{
+    flex-direction: column;
+    top:10%;
+    text-align: center;
+  }
 }
 </style>
