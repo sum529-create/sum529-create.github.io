@@ -24,9 +24,10 @@
               <span>경력</span>
             </h3>
             <ul class="about-me__list">
-              <li class="about-me__list-item">[Detail 1]</li>
-              <li class="about-me__list-item">[Detail 2]</li>
+              <li class="about-me__list-item">유아이랩</li>
+              <li class="about-me__list-item">(2021.10 ~ 2024.08)</li>
             </ul>
+            <card-lists />
           </div>
           <div class="about-me__info">
             <h3 class="about-me__sub-title">
@@ -55,8 +56,12 @@
 </template>
 
 <script>
+import CardLists from "./CardLists";
 export default {
-  name: 'AboutMe',
+  name: "AboutMe",
+  components: {
+    CardLists,
+  },
 };
 </script>
 
