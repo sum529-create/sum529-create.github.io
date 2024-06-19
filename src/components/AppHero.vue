@@ -338,12 +338,13 @@ export default {
 .content {
   position: relative;
   overflow: hidden;
+  word-break: keep-all;
 }
 .section {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  max-width: 1028px;
+  max-width: 1280px;
   padding: 60px 40px;
 }
 .hero__section {
@@ -381,7 +382,6 @@ export default {
   position: relative;
   top: 20%;
   width: 100%;
-  max-width: 1028px;
   display: flex;
   justify-content: space-between;
   text-align: right;
@@ -467,7 +467,6 @@ export default {
   line-height: 1;
 }
 .hero__middle-description {
-  width: fit-content;
   margin: 0 auto;
   font-size: 1.5em;
   top: 50%;
@@ -493,7 +492,6 @@ export default {
   z-index: 1;
   text-align: center;
   width: 100%;
-  max-width: 1028px;
   color: white;
 }
 .hero__bottom-img {

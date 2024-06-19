@@ -1,7 +1,5 @@
 <template>
-  <section class="about-me">
-    <div class="about-me__container">
-      <div class="about-me__content">
+    <div class="about-me">
         <div class="about-me__photo">
           <div class="about-me__img-area">
             <div class="circle" :class="{ active: isCircleActive }"></div>
@@ -53,9 +51,7 @@
             </ul>
           </div>
         </div>
-      </div>
     </div>
-  </section>
 </template>
 
 <script>
@@ -119,12 +115,8 @@ export default {
 </script>
 
 <style scoped>
-.about-me__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.about-me__content {
+.about-me {
   display: flex;
   flex-direction: row;
   align-items: flex-start;

@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import LeftNav from './LeftNav.vue';
-import AboutMe from './AboutMe.vue';
+import LeftNav from './LeftNav';
+import AboutMe from './AboutMe';
 export default {
     name: "MainSection",
     components: {LeftNav, AboutMe},
