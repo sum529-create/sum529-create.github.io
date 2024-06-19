@@ -3,7 +3,10 @@
     <div class="about-me__container">
       <div class="about-me__content">
         <div class="about-me__photo">
-          <img src="../assets/my-ar-img.jpeg" alt="노수민 AR 이미지" class="about-me__image">
+          <div class="about-me__img-area">
+            <div class="circle" :class="{ active: isCircleActive }"></div>
+            <img src="../assets/my-ar-img.jpeg" alt="노수민 AR 이미지" class="about-me__image">
+          </div>
           <div class="about-me__profile">
             <div class="about-me__name">
               <h3 class="about-me__name-kor">노수민</h3>
@@ -57,6 +60,56 @@
 <script>
 export default {
   name: 'AboutMe',
+  props: {
+    inView: {
+      type: Boolean,
+      required: true,
+      default: false,
+    }
+  },
+  data() {
+    return {
+      isSecFlag: false,
+      isCircleActive: false,
+      timer: null,
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  watch: {
+    // eslint-disable-next-line
+    inView(_newVal, _oldVal) {
+      this.isSecFlag = !this.isSecFlag
+    }
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  },
+  methods: {
+    handleScroll() {
+      if (this.isSecFlag) {
+        this.setCircleActiveWithDelay(true);
+      } else {
+        this.setCircleActiveWithDelay(false);
+      }
+    },
+    setCircleActiveWithDelay(active) {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      if (active) {
+        this.timer = setTimeout(() => {
+          this.isCircleActive = active;
+        }, 100);
+      } else {
+        this.isCircleActive = active;
+      }
+    }
+  }
 };
 </script>
 
@@ -74,7 +127,7 @@ export default {
 
 .about-me__photo {
   flex: 1;
-  text-align: flex-start;
+  position: relative;
 }
 
 .about-me__image {
@@ -144,5 +197,22 @@ export default {
 }
 .about-me__list-item:nth-child(even){
   text-align: right;
+}
+/* Circle animaiton */
+.circle {
+  position: absolute;
+  top: 50%;
+  left: -132px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  transition: opacity 0.5s, transform 1s;
+}
+.circle.active {
+  opacity: 1;
+  transform: translate(239px, -105px) scale(5.3);
 }
 </style>

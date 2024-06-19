@@ -3,7 +3,7 @@
         <div class="main__content" :class="{ 'in-view': inView }">
             <left-nav :in-view="inView" />
             <div class="section">
-                <about-me/>
+                <about-me :in-view="inView" />
             </div>
     </div>
   </div>
@@ -30,8 +30,9 @@ export default {
         handleScroll() {
             const scrollPosition = window.scrollY;
             const windowHeight = window.innerHeight;
+            const middleTxtFlag = windowHeight * 0.6;
 
-            if (scrollPosition + windowHeight >= document.body.scrollHeight - 100) {
+            if (scrollPosition > middleTxtFlag) {
                 this.inView = true;
             } else {
                 this.inView = false;
@@ -52,7 +53,6 @@ export default {
   text-align: center;
   transition: bottom 1s ease-out;
   z-index: 10; /* 다른 요소들 위에 표시 */
-  height: 100vh; /* 임시 */
   display: table;
   table-layout: fixed;
 }

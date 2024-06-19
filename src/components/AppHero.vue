@@ -10,25 +10,25 @@
           Front-End Developer
         </p>
       </div>
-      <div
-        class="hero__icons"
-        :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
-      >
-        <div class="icon icon1"></div>
-        <div class="icon icon2"></div>
-        <div class="icon icon3"></div>
-        <div class="icon icon4"></div>
-        <div class="icon icon5"></div>
-        <div class="icon icon6"></div>
-      </div>
       <div class="hero__portfolio">
-        <img
-          src="../assets/developer_img.png"
-          alt="개발자 이미지"
-          class="hero__portfolio-img"
-          ref="portfolioImg"
-          :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
-        />
+        <div class="hero__img-area" :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }">
+          <div
+            class="hero__icons"
+          >
+            <div class="icon icon1"></div>
+            <div class="icon icon2"></div>
+            <div class="icon icon3"></div>
+            <div class="icon icon4"></div>
+            <div class="icon icon5"></div>
+            <div class="icon icon6"></div>
+          </div>
+          <img
+            src="../assets/developer_img.png"
+            alt="개발자 이미지"
+            class="hero__portfolio-img"
+            ref="portfolioImg"
+          />
+        </div>
         <h2
           class="hero__portfolio-txt fs-4"
           ref="portfolio"
@@ -178,15 +178,15 @@ export default {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      const titleTrigger = windowHeight * 0.05;
-      const subtitle1Trigger = windowHeight * 0.2;
-      const subtitle2Trigger = windowHeight * 0.3;
-      const description1Trigger = windowHeight * 0.4;
-      const description2Trigger = windowHeight * 0.45;
-      const description3Trigger = windowHeight * 0.5;
-      const description4Trigger = windowHeight * 0.55;
-      const titlebackTrigger = windowHeight * 0.7;
-      const middleTxtFlag = windowHeight * 0.9;
+      const titleTrigger = windowHeight * 0.025;
+      const subtitle1Trigger = windowHeight * 0.05;
+      const subtitle2Trigger = windowHeight * 0.075;
+      const description1Trigger = windowHeight * 0.1;
+      const description2Trigger = windowHeight * 0.125;
+      const description3Trigger = windowHeight * 0.15;
+      const description4Trigger = windowHeight * 0.175;
+      const titlebackTrigger = windowHeight * 0.2;
+      const middleTxtFlag = windowHeight * 0.4;
 
       if (scrollPosition > titleTrigger) {
         this.title1InView = true;
@@ -285,40 +285,38 @@ export default {
 }
 .icon1 {
   background-position: 0 0;
-  top: 40vh;
   animation: moveUpDown 1s infinite alternate;
 }
 
 .icon2 {
   background-position: -96px 0;
-  left: 12vh;
-  top: 33vh;
+  left: 8vh;
+  top: -8vh;
   animation: moveUpDownReverse 1s infinite alternate;
 }
 
 .icon3 {
   background-position: -192px 0;
-  left: 20vh;
-  top: 42vh;
+  left: 18vh;
   animation: moveUpDownReverse 1s infinite alternate;
 }
 
 .icon4 {
   background-position: -288px 0;
   left: 37vh;
-  top: 45vh;
+  top: 6vh;
   animation: moveUpDown 1s infinite alternate;
 }
 .icon5 {
   background-position: 0 -96px;
-  left: 22vh;
-  top: 28vh;
+  left: 26vh;
+  top: -8vh;
   animation: moveUpDown 1s infinite alternate;
 }
 .icon6 {
   background-position: -96px -96px;
-  left: 31vh;
-  top: 36vh;
+  left: 33vh;
+  top: 1vh;
   animation: moveUpDownReverse 1s infinite alternate;
 }
 @keyframes moveUpDown {
@@ -379,22 +377,6 @@ export default {
   opacity: 1;
   transform: translateX(0);
 }
-.hero__icons {
-  position: relative;
-  opacity: 0;
-  transform: translateX(-100px);
-  z-index: 2;
-  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
-}
-.hero__icons.in-view {
-  opacity: 1;
-  transform: translateX(0);
-}
-.hero__icons.fade-out {
-  transition-duration: 0.1s;
-  opacity: 0;
-  transform: translateY(-20px);
-}
 .hero__portfolio {
   position: relative;
   top: 20%;
@@ -409,21 +391,27 @@ export default {
   margin: 0 auto;
   box-sizing: border-box;
 }
-.hero__portfolio-img {
-  height: 40vh;
-  margin-right: 20px;
+.hero__img-area{
   opacity: 0;
   transform: translateX(-100px);
   transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
-.hero__portfolio-img.in-view {
+.hero__img-area.in-view {
   opacity: 1;
   transform: translateX(0);
 }
-.hero__portfolio-img.fade-out {
+.hero__img-area.fade-out {
   transition-duration: 0.1s;
   opacity: 0;
   transform: translateY(-20px);
+}
+.hero__icons {
+  position: absolute;
+  z-index: 2;
+}
+.hero__portfolio-img {
+  width: 40vh;
+  margin-right: 20px;
 }
 .hero__portfolio-txt {
   margin: 0;
@@ -455,8 +443,6 @@ export default {
 }
 .hero__middle {
   position: relative;
-  top: 10%;
-  transform: translateY(-10%);
   z-index: 1;
   text-align: center;
   color: white;
@@ -483,12 +469,18 @@ export default {
 .hero__middle-description {
   width: fit-content;
   margin: 0 auto;
+  font-size: 1.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+  position: absolute;
 }
 
-.hero__middle-description,
 .hero__bottom-description {
   font-size: 1.5em;
-  /* transform: translateY(50%); */
+  top: 50%;
+  transform: translateY(-50%);
   line-height: 1.5;
 }
 
@@ -497,15 +489,12 @@ export default {
   transform: translateY(0);
 }
 .hero__bottom {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  bottom: 0px;
   text-align: center;
   width: 100%;
   max-width: 1028px;
   color: white;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .hero__bottom-img {
   height: 50vh;
@@ -566,7 +555,7 @@ export default {
 i.material-icons{
   vertical-align: bottom;
 }
-@media (max-width:1024px) and (min-width:768px){
+@media (max-width:1024px) {
   .icon{
     width: 60px;
     height: 60px;
@@ -575,12 +564,10 @@ i.material-icons{
   .icon2{
     background-position: -60px 0;
     left: 6vh;
-    top: 35vh;
   }
   .icon3{
     background-position: -120px 0;
     left: 14vh;
-    top: 44vh;
   }
   .icon4{
     background-position: -180px 0;
@@ -589,18 +576,19 @@ i.material-icons{
   .icon5{
     background-position: 0 -60px;
     left: 17vh;
-    top: 34vh;
   }
   .icon6{
     background-position: -60px -60px;
-    top: 39vh;
     left: 27vh;
   }
   .hero__portfolio-img{
-    height: 30vh;
+    width: 30vh;
   }
 }
 @media (max-width:768px){
+  .hero__headline{
+    margin:0;
+  }
   .hero__portfolio{
     flex-direction: column;
     top:10%;
