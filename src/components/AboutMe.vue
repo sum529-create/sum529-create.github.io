@@ -3,7 +3,7 @@
         <div class="about-me__photo">
           <div class="about-me__img-area">
             <div class="circle" :class="{ active: isCircleActive }"></div>
-            <img src="../assets/my-ar-img.jpeg" alt="노수민 AR 이미지" class="about-me__image">
+            <img src="../assets/my-ar-img.jpeg" alt="노수민 AR 이미지" class="about-me__image" :class="{ active: isImgShow }">
           </div>
           <div class="about-me__profile">
             <div class="about-me__name">
@@ -69,6 +69,7 @@ export default {
     return {
       isSecFlag: false,
       isCircleActive: false,
+      isImgShow: false,
       timer: null,
     }
   },
@@ -102,9 +103,13 @@ export default {
       if (active) {
         this.timer = setTimeout(() => {
           this.isCircleActive = active;
+        }, 100);  
+        this.timer = setTimeout(() => {
+          this.isImgShow = active;
         }, 100);
       } else {
         this.isCircleActive = active;
+        this.isImgShow = active;
       }
     }
   },
@@ -131,8 +136,14 @@ export default {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
-
+.about-me__image.active{
+  opacity: 1;
+}
 .about-me__profile{
   margin: 1rem 0;
   width: 100%;
