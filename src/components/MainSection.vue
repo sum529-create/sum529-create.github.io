@@ -48,17 +48,16 @@ export default {
   bottom: -200vh; /* 화면 아래로 숨기기 */
   left: 0;
   width: 100%;
+  height: 100vh;
   background: #000;
   color: #fff;
   text-align: center;
   transition: bottom 1s ease-out;
   z-index: 10; /* 다른 요소들 위에 표시 */
-  display: table;
-  table-layout: fixed;
+  display: flex;
 }
 .main__content > *{
-    display: table-cell;
-    vertical-align: top;
+    width: 100%;
 }
 .main__content.in-view{
     bottom:0;
