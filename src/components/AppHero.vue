@@ -11,10 +11,11 @@
         </p>
       </div>
       <div class="hero__portfolio">
-        <div class="hero__img-area" :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }">
-          <div
-            class="hero__icons"
-          >
+        <div
+          class="hero__img-area"
+          :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
+        >
+          <div class="hero__icons">
             <div class="icon icon1"></div>
             <div class="icon icon2"></div>
             <div class="icon icon3"></div>
@@ -35,32 +36,36 @@
           :class="{ 'in-view': portfolioInView, 'fade-out': fadeOut }"
         >
           <span v-html="typedText"></span
-          ><span class="cursor fs-1" v-if="showCursor && !showCursorFlag">|</span>
+          ><span class="cursor fs-1" v-if="showCursor && !showCursorFlag"
+            >|</span
+          >
         </h2>
       </div>
       <div class="hero__middle">
-        <h1
-          class="hero__middle-title fs-3"
-          ref="title"
-          :class="{ 'in-view': title1InView }"
-        >
-          안녕하세요!
-        </h1>
-        <p
-          class="hero__middle-subtitle fs-2"
-          ref="subtitle"
-          :class="{ 'in-view': subtitle1InView }"
-        >
-          <span class="highlight">안정적이고 효율적인 코드</span>를 작성하는
-          개발자를 찾으시나요?
-        </p>
-        <p
-          class="hero__middle-subtitle fs-2"
-          ref="subtitle"
-          :class="{ 'in-view': subtitle2InView }"
-        >
-          그렇다면 잘 찾아오셨습니다!
-        </p>
+        <div class="hero__middle-main">
+          <h1
+            class="hero__middle-title fs-3"
+            ref="title"
+            :class="{ 'in-view': title1InView }"
+          >
+            안녕하세요!
+          </h1>
+          <p
+            class="hero__middle-subtitle fs-2"
+            ref="subtitle"
+            :class="{ 'in-view': subtitle1InView }"
+          >
+            <span class="highlight">안정적이고 효율적인 코드</span>를 작성하는
+            개발자를 찾으시나요?
+          </p>
+          <p
+            class="hero__middle-subtitle fs-2"
+            ref="subtitle"
+            :class="{ 'in-view': subtitle2InView }"
+          >
+            그렇다면 잘 찾아오셨습니다!
+          </p>
+        </div>
         <div class="hero__middle-description">
           <p
             class="hero__middle-description-01 highlight-text"
@@ -178,15 +183,15 @@ export default {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      const titleTrigger = windowHeight * 0.025;
-      const subtitle1Trigger = windowHeight * 0.05;
-      const subtitle2Trigger = windowHeight * 0.075;
-      const description1Trigger = windowHeight * 0.1;
-      const description2Trigger = windowHeight * 0.125;
-      const description3Trigger = windowHeight * 0.15;
-      const description4Trigger = windowHeight * 0.175;
-      const titlebackTrigger = windowHeight * 0.2;
-      const middleTxtFlag = windowHeight * 0.4;
+      const titleTrigger = windowHeight * 0.1;
+      const subtitle1Trigger = windowHeight * 0.2;
+      const subtitle2Trigger = windowHeight * 0.3;
+      const description1Trigger = windowHeight * 0.4;
+      const description2Trigger = windowHeight * 0.5;
+      const description3Trigger = windowHeight * 0.6;
+      const description4Trigger = windowHeight * 0.7;
+      const titlebackTrigger = windowHeight * 0.8;
+      const middleTxtFlag = windowHeight * 0.9;
 
       if (scrollPosition > titleTrigger) {
         this.title1InView = true;
@@ -391,7 +396,7 @@ export default {
   margin: 0 auto;
   box-sizing: border-box;
 }
-.hero__img-area{
+.hero__img-area {
   opacity: 0;
   transform: translateX(-100px);
   transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
@@ -441,8 +446,12 @@ export default {
     opacity: 0;
   }
 }
-.hero__middle {
-  position: relative;
+.hero__middle,
+.hero__bottom {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
   color: white;
@@ -466,19 +475,12 @@ export default {
   font-weight: 400;
   line-height: 1;
 }
-.hero__middle-description {
-  margin: 0 auto;
-  font-size: 1.5em;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 1.5;
-  position: absolute;
+.hero__middle-main {
+  transform: translateY(50%);
 }
-
+.hero__middle-description,
 .hero__bottom-description {
   font-size: 1.5em;
-  top: 50%;
   transform: translateY(-50%);
   line-height: 1.5;
 }
@@ -488,7 +490,6 @@ export default {
   transform: translateY(0);
 }
 .hero__bottom {
-  position: relative;
   z-index: 1;
   text-align: center;
   width: 100%;
@@ -550,46 +551,46 @@ export default {
 .highlight-text.in-view .check-icon {
   opacity: 1;
 }
-i.material-icons{
+i.material-icons {
   vertical-align: bottom;
 }
-@media (max-width:1024px) {
-  .icon{
+@media (max-width: 1024px) {
+  .icon {
     width: 60px;
     height: 60px;
     background-size: 240px 240px;
   }
-  .icon2{
+  .icon2 {
     background-position: -60px 0;
     left: 6vh;
   }
-  .icon3{
+  .icon3 {
     background-position: -120px 0;
     left: 14vh;
   }
-  .icon4{
+  .icon4 {
     background-position: -180px 0;
     left: 31vh;
   }
-  .icon5{
+  .icon5 {
     background-position: 0 -60px;
     left: 17vh;
   }
-  .icon6{
+  .icon6 {
     background-position: -60px -60px;
     left: 27vh;
   }
-  .hero__portfolio-img{
+  .hero__portfolio-img {
     width: 30vh;
   }
 }
-@media (max-width:768px){
-  .hero__headline{
-    margin:0;
+@media (max-width: 768px) {
+  .hero__headline {
+    margin: 0;
   }
-  .hero__portfolio{
+  .hero__portfolio {
     flex-direction: column;
-    top:10%;
+    top: 10%;
     text-align: center;
   }
 }
