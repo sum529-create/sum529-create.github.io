@@ -1,11 +1,11 @@
 <template>
   <div class="content">
-    <div class="main__content" :class="{ 'in-view': inView }">
-      <left-nav :in-view="inView" />
+    <div class="main__content" :class="{ 'in-view': inView }" ref="section">
       <div class="section">
         <about-me :in-view="inView" />
       </div>
     </div>
+    <left-nav :in-view="inView" />
   </div>
 </template>
 
@@ -21,23 +21,28 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    this.createObserver();
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   },
   methods: {
-    handleScroll() {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const middleTxtFlag = windowHeight * 0.9;
+    createObserver() {
+      const options = {
+        root: null, // viewport를 기준으로 함
+        rootMargin: '0px',
+        threshold: 0.6,
+      };
 
-      if (scrollPosition > middleTxtFlag) {
-        this.inView = true;
-        console.log("here!!");
-      } else {
-        this.inView = false;
-      }
+      this.observer = new IntersectionObserver(this.handleIntersect, options);
+      this.observer.observe(this.$refs.section);
+    },
+    handleIntersect(entries) {
+      entries.forEach(entry => {
+        this.inView = entry.isIntersecting;
+      });
     },
   },
 };
@@ -47,7 +52,6 @@ export default {
 .main__content {
   position: relative;
   width: 100%;
-  height: 100vh;
   background: #000;
   color: #fff;
   text-align: center;

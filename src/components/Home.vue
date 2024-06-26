@@ -54,8 +54,6 @@ export default {
 <style>
 .main {
   position: relative;
-  background-color: #000;
-  z-index: -1;
 }
 .arrow-container {
   position: fixed;

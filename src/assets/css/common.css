@@ -78,25 +78,43 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .pr0{padding-right:0 !important}.pr5{padding-right:5px !important}.pr10{padding-right:10px !important}.pr15{padding-right:15px !important}.pr20{padding-right:20px !important}.pr25{padding-right:25px !important}.pr30{padding-right:30px !important}.pr35{padding-right:35px !important}.pr40{padding-right:40px !important}.pr45{padding-right:45px !important}.pr50{padding-right:50px !important}.pr55{padding-right:55px !important}.pr60{padding-right:60px !important}
 .pb0{padding-bottom:0 !important}.pb5{padding-bottom:5px !important}.pb10{padding-bottom:10px !important}.pb15{padding-bottom:15px !important}.pb20{padding-bottom:20px !important}.pb25{padding-bottom:25px !important}.pb30{padding-bottom:30px !important}.pb35{padding-bottom:35px !important}.pb40{padding-bottom:40px !important}.pb45{padding-bottom:45px !important}.pb50{padding-bottom:50px !important}.pb55{padding-bottom:55px !important}.pb60{padding-bottom:60px !important}
 .pl0{padding-left:0 !important}.pl5{padding-left:5px !important}.pl8{padding-left:8px !important;}.pl10{padding-left:10px !important}.pl15{padding-left:15px !important}.pl20{padding-left:20px !important}.pl25{padding-left:25px !important}.pl30{padding-left:30px !important}.pl35{padding-left:35px !important}.pl40{padding-left:40px !important}.pl45{padding-left:45px !important}.pl50{padding-left:50px !important}.pl55{padding-left:55px !important}.pl60{padding-left:60px !important}
+/*** 팝업 label color ***/
+.label-purple{background-color: #5E4DB2;}
+/* Vue.js */ .label-green {background-color: #2b7a57;color: #e0ffe0;}
+/* Nuxt.js */ .label-teal {background-color: #007d67;color: #e0fffa;}
+/* TypeScript */ .label-blue {background-color: #005ea6;color: #d9f1ff;}
+/* SCSS */ .label-pink {background-color: #8a2a60;color: #ffe0f0;}
+/* CSS */ .label-darkblue {background-color: #1d3c7c;color: #dce4ff;}
+/* JavaScript */ .label-yellow {background-color: #b89f00;color: #fff5d1;}
+/* HTML */ .label-orange {background-color: #b5411e;color: #ffe3d3;}
+/* GitLab */ .label-darkorange {background-color: #a8531c;color: #ffe8d9;}
+/* SourceTree */ .label-lightblue {background-color: #00429d;color: #d9eaff;}
+/* npm */ .label-red {background-color: #8a1b1b;color: #ffdad9;}
+/* Node.js */ .label-darkgreen {background-color: #2a5e2a;color: #e0ffe0;}
 /*** font color ***/
-.fc_keycolor{color:#0b7f3d !important}
-.fc_subcolor{color:#5b677a}
+.fc_keycolor{color:#007dfe !important;}
+.fc_subcolor{color:#51a6fe !important;}
 .fc_grey{color:#aaa}
 .fc_666{color:#666}
 .fc_black{color:#333}
 .fc_white{color:#fff}
-.fc_red{color:#e22222}
-.fc_green{color:#0c9648}
-.fc_orange{color:#de6a04}
-.fc_scarlet{color:#e95145}
+.fc_green {color: #42b883;}
+.fc_teal {color: #00c58e;}
+.fc_blue {color: #007acc;}
+.fc_pink {color: #c6538c;}
+.fc_darkblue {color: #2965f1;}
+.fc_yellow {color: #f7df1e;}
+.fc_orange {color: #e34c26;}
+.fc_darkorange {color: #fc6d26;}
+.fc_lightblue {color: #0052cc;}
+.fc_red {color: #cb3837;}
+.fc_darkgreen {color: #339933;}
 /*** font size ***/
 .fz10{font-size:10px !important}.fz11{font-size:11px !important}.fz12{font-size:12px !important}.fz13{font-size:13px !important}.fz14{font-size:14px !important}.fz15{font-size:15px !important}
 .fz16{font-size:16px !important}.fz17{font-size:17px !important}.fz18{font-size:18px !important}.fz19{font-size:19px !important}.fz20{font-size:20px !important}.fz21{font-size:21px !important}
 .fz22{font-size:22px !important}.fz23{font-size:23px !important}.fz24{font-size:24px !important}.fz25{font-size:25px !important}.fz26{font-size:26px !important}.fz27{font-size:27px !important}.fz28{font-size:28px !important}.fz29{font-size:29px !important}.fz30{font-size:30px !important}
 .fs-0-75 {font-size: 0.75em;}.fs-1 {font-size: 1em;}.fs-1-25 {font-size: 1.25em;}.fs-1-5 {font-size: 1.5em;}.fs-2 {font-size: 2em;}.fs-3 {font-size: 3em;}.fs-4 {font-size: 4em;}.fs-5 {font-size: 5em;}
-@media(max-width:1024px){
-    .fs-2 {font-size: 1.5em;}.fs-3 {font-size: 2em;}.fs-4 {font-size: 3em;}.fs-5 {font-size: 4em;}
-}
+@media(max-width:1024px){.fs-2 {font-size: 1.5em;}.fs-3 {font-size: 2em;}.fs-4 {font-size: 3em;}.fs-5 {font-size: 4em;}}
 
 /*** font weight ***/
 .fw300{font-weight:300 !important}.fw400{font-weight:400 !important}.fw500{font-weight:500 !important}.fw700{font-weight:700 !important}.fw900{font-weight:900 !important}

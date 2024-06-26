@@ -55,7 +55,7 @@
             ref="subtitle"
             :class="{ 'in-view': subtitle1InView }"
           >
-            <span class="highlight">안정적이고 효율적인 코드</span>를 작성하는
+            <span class="fc_keycolor fw700">안정적이고 효율적인 코드</span>를 작성하는
             개발자를 찾으시나요?
           </p>
           <p
@@ -115,15 +115,15 @@
             ref="title"
             :class="{ 'in-view': title2InView }"
           >
-            프론트엔드 개발자 <span class="highlight">노수민</span>입니다.
+            프론트엔드 개발자 <span class="fc_keycolor fw700">노수민</span>입니다.
           </h1>
           <p
             class="hero__bottom-description"
             ref="subtitle"
             :class="{ 'in-view': description5InView }"
           >
-            <span class="highlight">세련된 디자인</span>과
-            <span class="highlight">원활한 사용자 경험</span>을<br />
+            <span class="fc_subcolor fw700">세련된 디자인</span>과
+            <span class="fc_subcolor fw700">원활한 사용자 경험</span>을<br />
             제공하는 웹 개발을 즐기는 개발자입니다.
           </p>
         </div>
@@ -269,7 +269,7 @@ export default {
         this.typedText = text.substring(0, i + 1);
         this.typedText = this.typedText.replace(
           "SUMIN'S",
-          "<span class='highlight'>SUMIN</span>'S<br>"
+          "<span class='fc_keycolor fw700'>SUMIN</span>'S<br>"
         );
       }
     },
@@ -350,7 +350,7 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   max-width: 1280px;
-  padding: 60px 40px;
+  padding: 60px 55px;
 }
 .hero__section {
   height: 200vh;
@@ -511,11 +511,6 @@ export default {
 }
 .hero__bottom-back-title.font-white {
   color: #fff;
-}
-
-.highlight {
-  color: #007dfe !important;
-  font-weight: 700;
 }
 /* 형광펜 효과와 체크 아이콘 등장 애니메이션 CSS */
 .highlight-text {

@@ -23,10 +23,10 @@
         <h2 class="about-me__title">About Me</h2>
       </div>
       <div class="about-me__info">
-        <h3 class="about-me__sub-title">
+        <div class="about-me__sub-title">
           <i class="material-icons work-icon">work</i>
-          <span>경력</span>
-        </h3>
+          <h3>경력</h3>
+        </div>
         <ul class="about-me__list">
           <li class="about-me__list-item">유아이랩</li>
           <li class="about-me__list-item">(2021.10 ~ 2024.08)</li>
@@ -34,20 +34,20 @@
         <card-lists />
       </div>
       <div class="about-me__info">
-        <h3 class="about-me__sub-title">
+        <div class="about-me__sub-title">
           <i class="material-icons construction-icon">construction</i>
-          <span>기술 스택</span>
-        </h3>
+          <h3>기술 스택</h3>
+        </div>
         <ul class="about-me__list">
           <li class="about-me__list-item">[Detail 1]</li>
           <li class="about-me__list-item">[Detail 2]</li>
         </ul>
       </div>
       <div class="about-me__info">
-        <h3 class="about-me__sub-title">
+        <div class="about-me__sub-title">
           <i class="material-icons school-icon">school</i>
-          <span>교육</span>
-        </h3>
+          <h3>교육</h3>
+        </div>
         <ul class="about-me__list">
           <li class="about-me__list-item">[Detail 1]</li>
           <li class="about-me__list-item">[Detail 2]</li>
@@ -104,6 +104,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-left: 55px;
 }
 
 .about-me__photo {
@@ -152,6 +153,8 @@ export default {
   border-bottom-left-radius: 1rem;
 }
 .about-me__sub-title {
+  display: flex;
+  align-items: center;
   font-size: 1.125rem;
   color: #efefef;
   text-align: left;
@@ -170,7 +173,7 @@ export default {
 
 .about-me__list-item {
   font-size: 1rem;
-  color: #666;
+  color: #dcdde1;
   flex: 0 0 50%;
   box-sizing: border-box;
   padding: 10px;

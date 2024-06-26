@@ -105,14 +105,14 @@ export default {
 
 <style scoped>
 .nav__section {
-  position: relative;
+  position: fixed;
   color: #fff;
   z-index: 97;
   left: -100%;
   top: 0;
   height: 100vh;
   width: 55px;
-  background: #bababa;
+  background: #e9ecf1;
   padding: 5rem 0;
   transition: left 1.2s ease, width 0.5s ease-out;
 }
