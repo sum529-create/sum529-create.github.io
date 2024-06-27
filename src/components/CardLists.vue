@@ -5,7 +5,14 @@
         <h2>EBS OC 운영팀 파견 근무</h2>
         <i class="material-icons error-icon" @click="togglePopup()">error</i>
       </div>
-      <p class="mt10">※ 온라인 교육 플랫폼의 <span class="fc_subcolor fw700">개발 및 운영</span>에 대한 깊은 이해를 쌓았으며,<br/><span class="fc_subcolor fw700">사용자 중심의 서비스 제공</span>과 <span class="fc_subcolor fw700">문제 해결 능력</span>을 배양하였습니다.</p>
+      <p class="mt10">
+        ※ 온라인 교육 플랫폼의
+        <span class="fc_subcolor fw700">개발 및 운영</span>에 대한 깊은 이해를
+        쌓았으며,<br /><span class="fc_subcolor fw700"
+          >사용자 중심의 서비스 제공</span
+        >과 <span class="fc_subcolor fw700">문제 해결 능력</span>을
+        배양하였습니다.
+      </p>
     </div>
 
     <div class="lists-container">
@@ -31,7 +38,7 @@
                   <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진">
+                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진" />
                 </div>
               </div>
             </div>
@@ -52,7 +59,7 @@
                   <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진">
+                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진" />
                 </div>
               </div>
             </div>
@@ -77,7 +84,7 @@
                   <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진">
+                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진" />
                 </div>
               </div>
             </div>
@@ -98,44 +105,57 @@
                   <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진">
+                  <img src="../assets/card_member.jpeg" alt="카드 멤버 사진" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
     <!-- Popup Layer -->
-    <popup-card :isOpen="showPopup" @close="closePopup" :typeFlag="typeFlag"/>
+    <popup-card :isOpen="showPopup" @close="closePopup" :typeFlag="typeFlag" />
   </div>
 </template>
 
-
 <script>
-import PopupCard from './PopupCard';
+import PopupCard from "./PopupCard";
 export default {
   name: "CardLists",
   data() {
     return {
       formattedDate: "",
       showPopup: false,
-      typeFlag: '',
+      typeFlag: "",
     };
   },
+  props: {
+    inView: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  },
   components: {
-    PopupCard
+    PopupCard,
   },
   mounted() {
     this.getFormattedDate();
   },
+  watch: {
+    // eslint-disable-next-line
+    inView(newVal, _oldVal) {
+      if (!newVal) {
+        this.showPopup = false;
+      }
+    },
+  },
   methods: {
     togglePopup(type) {
       if (type) {
-        this.typeFlag = type
+        this.typeFlag = type;
       } else {
-        this.typeFlag = '';
+        this.typeFlag = "";
       }
       this.showPopup = !this.showPopup;
     },
@@ -171,7 +191,7 @@ export default {
   line-height: 1.2;
 }
 
-.board-header .board-title{
+.board-header .board-title {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -182,7 +202,7 @@ export default {
   justify-content: center;
   margin-top: 20px;
   align-items: flex-end;
-  gap:12px;
+  gap: 12px;
 }
 
 .list {
@@ -217,8 +237,8 @@ export default {
   cursor: pointer;
 }
 
-.card:hover{
-  border-color:#c5e1ff;
+.card:hover {
+  border-color: #c5e1ff;
 }
 
 .card-header {
@@ -233,7 +253,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.card-header .card-labels{
+.card-header .card-labels {
   display: flex;
   gap: 3px;
   justify-content: flex-start;
@@ -242,7 +262,7 @@ export default {
   margin-bottom: 6px;
 }
 
-.card-header .card-labels .card-color-label{
+.card-header .card-labels .card-color-label {
   display: inline-flex;
   width: 40px;
   height: 8px;
@@ -253,7 +273,7 @@ export default {
   padding: 10px;
 }
 
-.card-details p{
+.card-details p {
   line-height: 1.5;
 }
 .card-actions {
@@ -263,27 +283,28 @@ export default {
   margin-top: 10px;
 }
 
-.card-date{
+.card-date {
   line-height: 1.1;
 }
 
-.card-member{
+.card-member {
   width: 24px;
   height: 24px;
   background: #000;
   border-radius: 50%;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.card-member img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.card-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition-duration: 0.3s;
 }
 
-.card-member img:hover{
-  transform: scale(1.2, 1.2); transition-duration: 0.5s;
+.card-member img:hover {
+  transform: scale(1.2, 1.2);
+  transition-duration: 0.5s;
 }
 
 .action-button {

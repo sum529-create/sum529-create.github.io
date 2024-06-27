@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="main__content" :class="{ 'in-view': inView }" ref="section">
-      <div class="section">
+      <div class="section ml55">
         <about-me :in-view="inView" />
       </div>
     </div>
@@ -32,7 +32,7 @@ export default {
     createObserver() {
       const options = {
         root: null, // viewport를 기준으로 함
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.6,
       };
 
@@ -40,7 +40,7 @@ export default {
       this.observer.observe(this.$refs.section);
     },
     handleIntersect(entries) {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         this.inView = entry.isIntersecting;
       });
     },

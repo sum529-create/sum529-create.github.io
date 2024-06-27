@@ -31,7 +31,7 @@
           <li class="about-me__list-item">유아이랩</li>
           <li class="about-me__list-item">(2021.10 ~ 2024.08)</li>
         </ul>
-        <card-lists />
+        <card-lists :in-view="inView" />
       </div>
       <div class="about-me__info">
         <div class="about-me__sub-title">
@@ -82,19 +82,11 @@ export default {
   },
   data() {
     return {
-      isSecFlag: false,
-      isImgShow: false,
       timer: null,
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-  },
-  watch: {
-    // eslint-disable-next-line
-    inView(_newVal, _oldVal) {
-      this.isSecFlag = !this.isSecFlag;
-    },
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -116,7 +108,6 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-left: 55px;
 }
 
 .about-me__photo {
