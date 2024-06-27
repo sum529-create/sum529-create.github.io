@@ -135,6 +135,12 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .bdr0{border-right:0 !important}
 .bdb0{border-bottom:0 !important}
 .bdl0{border-left:0 !important}
+/*** line-height ***/
+.lh1{line-height: 1 !important;}
+.lh1-5{line-height: 1.5 !important;}
+.lh2{line-height: 2 !important;}
+.lh2-5{line-height: 2.5 !important;}
+.lh3{line-height: 3 !important;}
 /*** border radius ***/
 .bdrs0{border-radius:0 !important}.bdrs4{border-radius:4px !important}.bdrs5{border-radius:5px !important}.bdrs10{border-radius:10px !important}
 /*** 말줄임 ***/

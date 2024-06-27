@@ -46,11 +46,23 @@
       <div class="about-me__info">
         <div class="about-me__sub-title">
           <i class="material-icons school-icon">school</i>
-          <h3>교육</h3>
+          <h3>자격증</h3>
         </div>
         <ul class="about-me__list">
-          <li class="about-me__list-item">[Detail 1]</li>
-          <li class="about-me__list-item">[Detail 2]</li>
+          <li class="about-me__list-item">
+            <div class="list-image">
+              <img src="../assets/ico_k_data.png" alt="K-data 아이콘">
+            </div>
+            <p>SQL 개발자(SQLD, SQL Developer)</p>
+          </li>
+          <li class="about-me__list-item">2021.xx.xx</li>
+          <li class="about-me__list-item">
+            <div class="list-image">
+              <img src="../assets/ico_q_net.png" alt="Q-net 아이콘">
+            </div>
+            <p>정보처리기사</p>
+          </li>
+          <li class="about-me__list-item">2022.xx.xx</li>
         </ul>
       </div>
     </div>
@@ -169,6 +181,8 @@ export default {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.5;
 }
 
 .about-me__list-item {
@@ -183,5 +197,15 @@ export default {
 }
 .about-me__list-item:nth-child(even) {
   text-align: right;
+}
+
+.about-me__list-item .list-image{
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  border:1px solid #FFF;
+  float:left;
+  margin-right: 10px;
 }
 </style>
