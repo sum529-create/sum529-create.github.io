@@ -53,14 +53,14 @@
             <div class="list-image">
               <img src="../assets/ico_k_data.png" alt="K-data 아이콘">
             </div>
-            <p>SQL 개발자(SQLD, SQL Developer)</p>
+            <p class="ml34">SQL 개발자(SQLD, SQL Developer)</p>
           </li>
           <li class="about-me__list-item">2021.xx.xx</li>
           <li class="about-me__list-item">
             <div class="list-image">
               <img src="../assets/ico_q_net.png" alt="Q-net 아이콘">
             </div>
-            <p>정보처리기사</p>
+            <p class="ml34">정보처리기사</p>
           </li>
           <li class="about-me__list-item">2022.xx.xx</li>
         </ul>
