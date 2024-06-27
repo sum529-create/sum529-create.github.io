@@ -55,8 +55,8 @@
             ref="subtitle"
             :class="{ 'in-view': subtitle1InView }"
           >
-            <span class="fc_keycolor fw700">안정적이고 효율적인 코드</span>를 작성하는
-            개발자를 찾으시나요?
+            <span class="fc_keycolor fw700">안정적이고 효율적인 코드</span>를
+            작성하는 개발자를 찾으시나요?
           </p>
           <p
             class="hero__middle-subtitle fs-2"
@@ -115,7 +115,8 @@
             ref="title"
             :class="{ 'in-view': title2InView }"
           >
-            프론트엔드 개발자 <span class="fc_keycolor fw700">노수민</span>입니다.
+            프론트엔드 개발자
+            <span class="fc_keycolor fw700">노수민</span>입니다.
           </h1>
           <p
             class="hero__bottom-description"
@@ -448,6 +449,7 @@ export default {
 }
 .hero__middle,
 .hero__bottom {
+  width: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -478,6 +480,10 @@ export default {
 .hero__middle-main {
   transform: translateY(50%);
 }
+.hero__middle-description {
+  width: fit-content;
+  margin: 0 auto;
+}
 .hero__middle-description,
 .hero__bottom-description {
   font-size: 1.5em;
@@ -492,7 +498,6 @@ export default {
 .hero__bottom {
   z-index: 1;
   text-align: center;
-  width: 100%;
   color: white;
 }
 .hero__bottom-img {
