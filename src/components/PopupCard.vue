@@ -24,6 +24,22 @@
             <div v-if="typeFlag === '1'" class="labels-container">
               <span class="label label-green">Vue.js</span>
               <span class="label label-teal">Nuxt</span>
+              <span class="label label-blue">UX/UI</span>
+            </div>
+            <div v-else-if="typeFlag === '2'" class="labels-container">
+              <span class="label label-darkblue">성능 최적화</span>
+              <span class="label label-pink">협업</span>
+              <span class="label label-yellow">커뮤니케이션</span>
+            </div>
+            <div v-else-if="typeFlag === '3'" class="labels-container">
+              <span class="label label-darkorange">GitLab</span>
+              <span class="label label-lightblue">SourceTree</span>
+              <span class="label label-sky">Trello</span>
+            </div>
+            <div v-else-if="typeFlag === '4'" class="labels-container">
+              <span class="label label-orange">보안 인식</span>
+              <span class="label label-darkgreen">시간 관리</span>
+              <span class="label label-red">코딩 스킬</span>
             </div>
             <div v-else class="labels-container">
               <span class="label label-green">Vue.js</span>

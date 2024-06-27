@@ -5,7 +5,7 @@
         <h2>EBS OC 운영팀 파견 근무</h2>
         <i class="material-icons error-icon" @click="togglePopup()">error</i>
       </div>
-      <p class="mt10">※ 온라인 교육 플랫폼의 개발 및 운영에 대한 깊은 이해를 쌓았으며,<br/>사용자 중심의 서비스 제공과 문제 해결 능력을 배양하였습니다.</p>
+      <p class="mt10">※ 온라인 교육 플랫폼의 <span class="fc_subcolor fw700">개발 및 운영</span>에 대한 깊은 이해를 쌓았으며,<br/><span class="fc_subcolor fw700">사용자 중심의 서비스 제공</span>과 <span class="fc_subcolor fw700">문제 해결 능력</span>을 배양하였습니다.</p>
     </div>
 
     <div class="lists-container">
@@ -17,7 +17,10 @@
         <div class="cards">
           <div class="card" @click="togglePopup('1')">
             <div class="card-header">
-              <div class="card_color-label label-green">
+              <div class="card-labels">
+                <div class="card-color-label label-green"></div>
+                <div class="card-color-label label-teal"></div>
+                <div class="card-color-label label-blue"></div>
               </div>
               <h4>#1 프론트엔드 개발</h4>
             </div>
@@ -35,7 +38,10 @@
           </div>
           <div class="card" @click="togglePopup('2')">
             <div class="card-header">
-              <div class="card_color-label label-yellow">
+              <div class="card-labels">
+                <div class="card-color-label label-darkblue"></div>
+                <div class="card-color-label label-pink"></div>
+                <div class="card-color-label label-yellow"></div>
               </div>
               <h4>#2 서비스 운영 및 유지보수</h4>
             </div>
@@ -57,7 +63,10 @@
         <div class="cards">
           <div class="card" @click="togglePopup('3')">
             <div class="card-header">
-              <div class="card_color-label label-red">
+              <div class="card-labels">
+                <div class="card-color-label label-darkorange"></div>
+                <div class="card-color-label label-lightblue"></div>
+                <div class="card-color-label label-sky"></div>
               </div>
               <h4>#3 프로젝트 관리 및 협업</h4>
             </div>
@@ -75,7 +84,10 @@
           </div>
           <div class="card" @click="togglePopup('4')">
             <div class="card-header">
-              <div class="card_color-label label-purple">
+              <div class="card-labels">
+                <div class="card-color-label label-orange"></div>
+                <div class="card-color-label label-darkgreen"></div>
+                <div class="card-color-label label-red"></div>
               </div>
               <h4>#4 세부 담당 업무</h4>
             </div>
@@ -189,6 +201,7 @@ export default {
   color: #ffffff;
   text-align: center;
   border-radius: 4px 4px 0 0;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -220,12 +233,20 @@ export default {
   margin-bottom: 10px;
 }
 
-.card-header .card_color-label{
+.card-header .card-labels{
+  display: flex;
+  gap: 3px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-bottom: 6px;
+}
+
+.card-header .card-labels .card-color-label{
   display: inline-flex;
   width: 40px;
   height: 8px;
   border-radius: 4px;
-  margin-bottom: 4px;
 }
 
 .card-details {
@@ -299,11 +320,5 @@ export default {
 .error-icon {
   font-size: 16px;
   cursor: pointer;
-}
-/* mark */
-.accent{
-  font-weight: 700;
-  color: #228efe;
-  /* text-decoration: underline; */
 }
 </style>

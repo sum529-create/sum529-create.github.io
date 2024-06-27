@@ -91,6 +91,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 /* SourceTree */ .label-lightblue {background-color: #00429d;color: #d9eaff;}
 /* npm */ .label-red {background-color: #8a1b1b;color: #ffdad9;}
 /* Node.js */ .label-darkgreen {background-color: #2a5e2a;color: #e0ffe0;}
+/* Trello */ .label-sky {background-color: #0079bf; color:#d9f1ff;}
 /*** font color ***/
 .fc_keycolor{color:#007dfe !important;}
 .fc_subcolor{color:#51a6fe !important;}
