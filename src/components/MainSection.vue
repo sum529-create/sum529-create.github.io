@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="main__content" :class="{ 'in-view': inView }" ref="section">
-      <div class="section ml55">
+      <div class="section">
         <about-me :in-view="inView" />
       </div>
     </div>
@@ -58,6 +58,7 @@ export default {
   transition: bottom 1s ease-out;
   z-index: 10; /* 다른 요소들 위에 표시 */
   display: flex;
+  padding-left: 55px;
 }
 .main__content > * {
   width: 100%;
