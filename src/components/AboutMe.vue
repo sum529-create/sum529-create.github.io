@@ -51,18 +51,18 @@
         <ul class="about-me__list">
           <li class="about-me__list-item">
             <div class="list-image">
-              <img src="../assets/ico_k_data.png" alt="K-data 아이콘">
+              <img src="../assets/ico_k_data.png" alt="K-data 아이콘" />
             </div>
             <p class="ml34">SQL 개발자(SQLD, SQL Developer)</p>
           </li>
-          <li class="about-me__list-item">2021.xx.xx</li>
+          <li class="about-me__list-item">2020.12.20</li>
           <li class="about-me__list-item">
             <div class="list-image">
-              <img src="../assets/ico_q_net.png" alt="Q-net 아이콘">
+              <img src="../assets/ico_q_net.png" alt="Q-net 아이콘" />
             </div>
             <p class="ml34">정보처리기사</p>
           </li>
-          <li class="about-me__list-item">2022.xx.xx</li>
+          <li class="about-me__list-item">2022.06.17</li>
         </ul>
       </div>
     </div>
@@ -199,13 +199,13 @@ export default {
   text-align: right;
 }
 
-.about-me__list-item .list-image{
+.about-me__list-item .list-image {
   height: 24px;
   width: 24px;
   background-color: #fff;
   border-radius: 50%;
-  border:1px solid #FFF;
-  float:left;
+  border: 1px solid #fff;
+  float: left;
   margin-right: 10px;
 }
 </style>
