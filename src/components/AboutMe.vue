@@ -3,7 +3,7 @@
     <div class="about-me__photo">
       <div class="about-me__img-area">
         <img
-          src="../assets/my-ar-img.jpeg"
+          src="../assets/img/myPhoto/my_ar_img.jpeg"
           alt="노수민 AR 이미지"
           class="about-me__image"
         />
@@ -15,6 +15,22 @@
         </div>
         <div class="about-me-intro">
           <p>저는 창의적이고 열정적인 프론트엔드 개발자 노수민입니다.</p>
+        </div>
+        <div class="about-me-education tal">
+          <ul>
+            <li>
+              <i class="material-icons school-icon mr5">school</i>
+              <span>안산대학교 - 글로벌IT비즈니스학과</span>
+            </li>
+            <li>
+              <i class="material-icons school-icon mr5">school</i>
+              <span>건국대학교 - 컴퓨터공학과(편입)</span>
+            </li>
+            <li>
+              <i class="material-icons cast_for_education-icon mr5">cast_for_education</i>
+              <span>코리아정보보안IT아카데미 - 풀스택 개발자 양성과정</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -31,34 +47,31 @@
           <li class="about-me__list-item">유아이랩</li>
           <li class="about-me__list-item">(2021.10 ~ 2024.08)</li>
         </ul>
-        <card-lists :in-view="inView" />
+        <card-lists :in-view="inView" :card-type="'trello'" />
       </div>
       <div class="about-me__info">
         <div class="about-me__sub-title">
           <i class="material-icons construction-icon">construction</i>
           <h3>기술 스택</h3>
         </div>
-        <ul class="about-me__list">
-          <li class="about-me__list-item">[Detail 1]</li>
-          <li class="about-me__list-item">[Detail 2]</li>
-        </ul>
+        <card-lists :in-view="inView"/>
       </div>
       <div class="about-me__info">
         <div class="about-me__sub-title">
-          <i class="material-icons school-icon">school</i>
+          <i class="material-icons workspace_premium-icon">workspace_premium</i>
           <h3>자격증</h3>
         </div>
         <ul class="about-me__list">
           <li class="about-me__list-item">
             <div class="list-image">
-              <img src="../assets/ico_k_data.png" alt="K-data 아이콘" />
+              <img src="../assets/img/icon/ico_k_data.png" alt="K-data 아이콘" />
             </div>
             <p class="ml34">SQL 개발자(SQLD, SQL Developer)</p>
           </li>
           <li class="about-me__list-item">2020.12.20</li>
           <li class="about-me__list-item">
             <div class="list-image">
-              <img src="../assets/ico_q_net.png" alt="Q-net 아이콘" />
+              <img src="../assets/img/icon/ico_q_net.png" alt="Q-net 아이콘" />
             </div>
             <p class="ml34">정보처리기사</p>
           </li>
@@ -135,7 +148,9 @@ export default {
 .about-me-intro {
   padding: 1rem 0;
 }
-
+.about-me-education {
+  
+}
 .about-me__details {
   flex: 3;
   margin-left: 2rem;

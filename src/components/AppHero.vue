@@ -24,7 +24,7 @@
             <div class="icon icon6"></div>
           </div>
           <img
-            src="../assets/developer_img.png"
+            src="../assets/img/hero/developer_img.png"
             alt="개발자 이미지"
             class="hero__portfolio-img"
             ref="portfolioImg"
@@ -129,7 +129,7 @@
           </p>
         </div>
         <img
-          src="../assets/sumin_img.png"
+          src="../assets/img/myPhoto/sumin_img.png"
           alt="노수민 인물사진"
           class="hero__bottom-img"
           ref="portfolioImg"
@@ -286,7 +286,7 @@ export default {
   position: absolute;
   width: 96px;
   height: 96px;
-  background-image: url("../assets/programmer-icon-flat.png");
+  background-image: url("../assets/img/icon/programmer-icon-flat.png");
   background-size: 384px 384px;
 }
 .icon1 {

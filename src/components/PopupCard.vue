@@ -19,9 +19,9 @@
         <div class="popup-image">
           <a href="https://www.ebsoc.co.kr/" target="_blank">
             <img
-              src="../assets/ebsoc_logo.png"
+              src="../assets/img/aboutMe/ebs_oc_logo.png"
               class="img_ebs"
-              alt="EBS 온라인클래스"
+              alt="EBS 온라인클래스 로고"
             />
           </a>
         </div>

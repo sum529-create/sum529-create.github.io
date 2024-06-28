@@ -15,7 +15,7 @@
         </div>
         <div class="nav__section-contact">
           <a href="https://github.com/sum529-create" target="_blank">
-            <img src="../assets/github.png" alt="github" />
+            <img src="../assets/img/icon/github.png" alt="github" />
           </a>
           <a href="mailto:sum529@naver.com" target="_blank">
             <i class="material-icons mail-icon">mail</i>
@@ -24,7 +24,7 @@
             <i class="material-icons phone_iphone-icon">phone_iphone</i>
           </a>
           <a href="https://www.facebook.com/sum529/" target="_blank">
-            <img src="../assets/facebook.png" alt="facebook" />
+            <img src="../assets/img/icon/facebook.png" alt="facebook" />
           </a>
         </div>
       </div>
@@ -38,31 +38,31 @@
           <ul>
             <li class="nav__section-menu-1 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/menu-selected-01.gif" alt="메뉴 선택1" />
+                <img src="../assets/gif/menu-selected-01.gif" alt="메뉴 선택1" />
                 <span>About</span>
               </a>
             </li>
             <li class="nav__section-menu-2 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/menu-selected-02.gif" alt="메뉴 선택2" />
+                <img src="../assets/gif/menu-selected-02.gif" alt="메뉴 선택2" />
                 <span>Careers</span>
               </a>
             </li>
             <li class="nav__section-menu-3 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/menu-selected-03.gif" alt="메뉴 선택3" />
+                <img src="../assets/gif/menu-selected-03.gif" alt="메뉴 선택3" />
                 <span>Skills</span>
               </a>
             </li>
             <li class="nav__section-menu-4 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/menu-selected-04.gif" alt="메뉴 선택4" />
+                <img src="../assets/gif/menu-selected-04.gif" alt="메뉴 선택4" />
                 <span>Projects</span>
               </a>
             </li>
             <li class="nav__section-menu-5 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/menu-selected-05.gif" alt="메뉴 선택5" />
+                <img src="../assets/gif/menu-selected-05.gif" alt="메뉴 선택5" />
                 <span>Contact</span>
               </a>
             </li>
