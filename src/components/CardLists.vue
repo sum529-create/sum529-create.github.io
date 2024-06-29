@@ -17,7 +17,7 @@
 
     <div class="lists-container">
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Front-End</h3>
         </div>
 
@@ -33,12 +33,15 @@
             </div>
             <div class="card-details">
               <div class="card-actions">
-                <div class="card-date">
+                <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/img/myPhoto/card_member.jpeg" alt="카드 멤버 사진" />
+                  <img
+                    src="../assets/img/myPhoto/card_member.jpeg"
+                    alt="카드 멤버 사진"
+                  />
                 </div>
               </div>
             </div>
@@ -54,12 +57,15 @@
             </div>
             <div class="card-details">
               <div class="card-actions">
-                <div class="card-date">
+                <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/img/myPhoto/card_member.jpeg" alt="카드 멤버 사진" />
+                  <img
+                    src="../assets/img/myPhoto/card_member.jpeg"
+                    alt="카드 멤버 사진"
+                  />
                 </div>
               </div>
             </div>
@@ -79,12 +85,15 @@
             </div>
             <div class="card-details">
               <div class="card-actions">
-                <div class="card-date">
+                <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/img/myPhoto/card_member.jpeg" alt="카드 멤버 사진" />
+                  <img
+                    src="../assets/img/myPhoto/card_member.jpeg"
+                    alt="카드 멤버 사진"
+                  />
                 </div>
               </div>
             </div>
@@ -100,12 +109,15 @@
             </div>
             <div class="card-details">
               <div class="card-actions">
-                <div class="card-date">
+                <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fz12 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
-                  <img src="../assets/img/myPhoto/card_member.jpeg" alt="카드 멤버 사진" />
+                  <img
+                    src="../assets/img/myPhoto/card_member.jpeg"
+                    alt="카드 멤버 사진"
+                  />
                 </div>
               </div>
             </div>
@@ -119,79 +131,99 @@
   <div v-else class="board board__default">
     <div class="lists-container">
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Front-End</h3>
         </div>
 
         <div class="cards">
           <div class="card">
-            <img src="../assets/img/icon/ico_html.png" alt="html 로고">
-            <img src="../assets/img/icon/ico_css.png" alt="css 로고">
-            <img src="../assets/img/icon/ico_js.png" alt="javaScript 로고">
-            <img src="../assets/img/icon/ico_ts.png" alt="typeScript 로고">
-            <img src="../assets/img/icon/ico_react.png" alt="react 로고">
-            <img src="../assets/img/icon/ico_vue.png" alt="vue 로고">
-            <img src="../assets/img/icon/ico_nuxt.png" alt="nuxt 로고">
-            <img src="../assets/img/icon/ico_node.png" alt="node 로고">
-            <img src="../assets/img/icon/ico_sass.png" alt="sass 로고">
-            <img src="../assets/img/icon/ico_boot_strap.png" alt="bootstrap 로고">
-            <img src="../assets/img/icon/ico_jquery.png" alt="jqeury 로고">
+            <img src="../assets/img/icon/ico_html.png" alt="html 로고" />
+            <img src="../assets/img/icon/ico_css.png" alt="css 로고" />
+            <img src="../assets/img/icon/ico_js.png" alt="javaScript 로고" />
+            <img src="../assets/img/icon/ico_ts.png" alt="typeScript 로고" />
+            <img src="../assets/img/icon/ico_react.png" alt="react 로고" />
+            <img src="../assets/img/icon/ico_vue.png" alt="vue 로고" />
+            <img src="../assets/img/icon/ico_nuxt.png" alt="nuxt 로고" />
+            <img src="../assets/img/icon/ico_node.png" alt="node 로고" />
+            <img src="../assets/img/icon/ico_sass.png" alt="sass 로고" />
+            <img
+              src="../assets/img/icon/ico_boot_strap.png"
+              alt="bootstrap 로고"
+            />
+            <img src="../assets/img/icon/ico_jquery.png" alt="jqeury 로고" />
           </div>
         </div>
       </div>
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Back-End</h3>
         </div>
-        
+
         <div class="cards">
           <div class="card">
-            <img src="../assets/img/icon/ico_java.png" alt="java 로고">
-            <img src="../assets/img/icon/ico_spring.png" alt="spring 로고">
-            <img src="../assets/img/icon/ico_my_sql.png" alt="mysql 로고">
-            <img src="../assets/img/icon/ico_oracle.png" alt="oracle 로고">
-            <img src="../assets/img/icon/ico_jsp.png" alt="jsp 로고">
-            <img src="../assets/img/icon/ico_eclipse.png" alt="eclipse 로고">
-            <img src="../assets/img/icon/ico_apache_tomcat.png" alt="apache_tomacat 로고">
-            <img src="../assets/img/icon/ico_my_batis.png" alt="mybatis 로고">
+            <img src="../assets/img/icon/ico_java.png" alt="java 로고" />
+            <img src="../assets/img/icon/ico_spring.png" alt="spring 로고" />
+            <img src="../assets/img/icon/ico_my_sql.png" alt="mysql 로고" />
+            <img src="../assets/img/icon/ico_oracle.png" alt="oracle 로고" />
+            <img src="../assets/img/icon/ico_jsp.png" alt="jsp 로고" />
+            <img src="../assets/img/icon/ico_eclipse.png" alt="eclipse 로고" />
+            <img
+              src="../assets/img/icon/ico_apache_tomcat.png"
+              alt="apache_tomacat 로고"
+            />
+            <img src="../assets/img/icon/ico_my_batis.png" alt="mybatis 로고" />
+            <img
+              src="../assets/img/icon/ico_visual_studio_code.png"
+              alt="visual_studio_code 로고"
+            />
+            <img
+              src="../assets/img/icon/ico_post_man.png"
+              alt="post_man 로고"
+            />
           </div>
         </div>
       </div>
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Community</h3>
         </div>
 
         <div class="cards">
           <div class="card">
-            <img src="../assets/img/icon/ico_slack.png" alt="slack 로고">
-            <img src="../assets/img/icon/ico_trello.png" alt="trello 로고">
-            <img src="../assets/img/icon/ico_notion.png" alt="notion 로고">
+            <img src="../assets/img/icon/ico_slack.png" alt="slack 로고" />
+            <img src="../assets/img/icon/ico_trello.png" alt="trello 로고" />
+            <img src="../assets/img/icon/ico_notion.png" alt="notion 로고" />
           </div>
         </div>
       </div>
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Version-Control</h3>
         </div>
 
         <div class="cards">
           <div class="card">
-            <img src="../assets/img/icon/ico_source_tree.png" alt="source_tree 로고">
-            <img src="../assets/img/icon/ico_git.png" alt="git 로고">
-            <img src="../assets/img/icon/ico_git_hub.png" alt="git_hub 로고">
-            <img src="../assets/img/icon/ico_git_lab.png" alt="git_lab 로고">
+            <img
+              src="../assets/img/icon/ico_source_tree.png"
+              alt="source_tree 로고"
+            />
+            <img src="../assets/img/icon/ico_git.png" alt="git 로고" />
+            <img src="../assets/img/icon/ico_git_hub.png" alt="git_hub 로고" />
+            <img src="../assets/img/icon/ico_git_lab.png" alt="git_lab 로고" />
           </div>
         </div>
       </div>
       <div class="list">
-        <div class="list-header">
+        <div class="list-header fs-1">
           <h3>Mobile-App</h3>
         </div>
 
         <div class="cards">
           <div class="card">
-            <img src="../assets/img/icon/ico_react_native.png" alt="react_native lab 로고">
+            <img
+              src="../assets/img/icon/ico_react_native.png"
+              alt="react_native lab 로고"
+            />
           </div>
         </div>
       </div>
@@ -220,7 +252,7 @@ export default {
       type: String,
       required: false,
       default: "",
-    }
+    },
   },
   components: {
     PopupCard,
@@ -283,7 +315,7 @@ export default {
   gap: 10px;
 }
 
-.board__default .lists-container{
+.board__default .lists-container {
   flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 0px;
@@ -328,13 +360,13 @@ export default {
   transition: border-color 0.3s ease;
 }
 
-.board__default .card{
+.board__default .card {
   display: flex;
   flex-wrap: wrap;
-  gap:20px;
+  gap: 20px;
   justify-content: center;
 }
-.board__default .card img{
+.board__default .card img {
   width: calc(50% - 20px);
   border-radius: 10px;
 }
@@ -384,10 +416,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-}
-
-.card-date {
-  line-height: 1.1;
 }
 
 .card-member {
@@ -444,5 +472,12 @@ export default {
 .error-icon {
   font-size: 16px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .board .lists-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

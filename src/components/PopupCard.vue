@@ -3,7 +3,7 @@
   <div :class="['popup-overlay', { show: isOpen }]" @click="closePopup">
     <div :class="['popup-content', { show: isOpen }]" @click="closePopup">
       <div class="popup-header">
-        <div class="popup-title">
+        <div class="popup-title fs-1-5">
           <i class="material-icons">lightbulb</i>
           <h2 v-if="typeFlag === '1'">#1 프론트엔드 개발</h2>
           <h2 v-else-if="typeFlag === '2'">#2 서비스 운영 및 유지보수</h2>
@@ -16,15 +16,15 @@
         >
       </div>
       <div class="popup-body">
-        <div class="popup-image">
-          <a href="https://www.ebsoc.co.kr/" target="_blank">
+        <a href="https://www.ebsoc.co.kr/" target="_blank">
+          <div class="popup-image">
             <img
               src="../assets/img/aboutMe/ebs_oc_logo.png"
               class="img_ebs"
               alt="EBS 온라인클래스 로고"
             />
-          </a>
-        </div>
+          </div>
+        </a>
         <div class="popup-labels">
           <h3>Labels</h3>
           <div v-if="typeFlag === '1'" class="labels-container">
@@ -65,7 +65,7 @@
             <i class="material-icons description-icon">description</i>
             <h3>Description</h3>
           </div>
-          <ul v-if="typeFlag === '1'" class="bull_list ml40 mr40">
+          <ul v-if="typeFlag === '1'" class="bull_list">
             <li>
               Nuxt 기반의 Vue.js 프레임워크를 사용하여 EBS 온라인 클래스의
               전반적인 프론트엔드 업무를 담당하였습니다.
@@ -80,7 +80,7 @@
             </li>
             <li>웹 접근성 향상을 위한 표준 준수 및 최적화 작업 진행</li>
           </ul>
-          <ul v-else-if="typeFlag === '2'" class="bull_list ml40 mr40">
+          <ul v-else-if="typeFlag === '2'" class="bull_list">
             <li>
               서비스 안정성 및 성능 개선을 위한 지속적인 모니터링 및 버그 수정
             </li>
@@ -90,7 +90,7 @@
               제공
             </li>
           </ul>
-          <ul v-else-if="typeFlag === '3'" class="bull_list ml40 mr40">
+          <ul v-else-if="typeFlag === '3'" class="bull_list">
             <li>GitLab를 사용하여 소스 코드 버전 관리 및 협업</li>
             <li>SourceTree를 활용한 효율적인 형상 관리</li>
             <li>
@@ -101,7 +101,7 @@
               다양한 부서와의 협업을 통해 통합적인 서비스 제공 및 문제 해결
             </li>
           </ul>
-          <ul v-else-if="typeFlag === '4'" class="bull_list ml40 mr40">
+          <ul v-else-if="typeFlag === '4'" class="bull_list">
             <li>
               ISMS-P 소스코드 진단 조치 수행<br />(초기 조치 후 진단조치 건수:
               0건)
@@ -115,7 +115,7 @@
             <li>강의 상세 화면 푸리봇 연동(외부업체 협업)</li>
             <li>. . .</li>
           </ul>
-          <ul v-else class="bull_list ml40 mr40">
+          <ul v-else class="bull_list">
             <li>
               전국 초⋅중⋅고 및 기타학교의 교사와 학생이 EBS 학습 콘텐츠를
               활용하여 학교 수업을 대체할 수 있는 원격교육 서비스
@@ -211,7 +211,6 @@ export default {
 }
 
 .popup-title {
-  font-size: 1.5em;
   margin: 0;
   display: flex;
   gap: 3px;
@@ -313,6 +312,10 @@ export default {
   color: #b6c2cf;
 }
 
+.popup-description .bull_list {
+  margin: 0 40px;
+}
+
 .popup-description .bull_list > li {
   position: relative;
   margin-top: 8px;
@@ -348,5 +351,11 @@ export default {
 
 .popup-button:hover {
   background-color: #3857cb;
+}
+
+@media (max-width: 768px) {
+  .popup-description .bull_list {
+    margin: 0 20px;
+  }
 }
 </style>

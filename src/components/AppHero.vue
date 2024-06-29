@@ -451,6 +451,7 @@ export default {
 .hero__bottom {
   width: 100%;
   position: fixed;
+  padding: 60px 55px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -585,6 +586,9 @@ i.material-icons {
   }
 }
 @media (max-width: 768px) {
+  .section {
+    padding: 30px 25px;
+  }
   .hero__headline {
     margin: 0;
   }

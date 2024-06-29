@@ -16,18 +16,20 @@
         <div class="about-me-intro">
           <p>저는 창의적이고 열정적인 프론트엔드 개발자 노수민입니다.</p>
         </div>
-        <div class="about-me-education tal">
+        <div class="about-me-education tal fs-0-75 pl23">
           <ul>
-            <li>
-              <i class="material-icons school-icon mr5">school</i>
+            <li class="dib">
+              <i class="material-icons school-icon mr5 mln23 fz18">school</i>
               <span>안산대학교 - 글로벌IT비즈니스학과</span>
             </li>
-            <li>
-              <i class="material-icons school-icon mr5">school</i>
+            <li class="dib">
+              <i class="material-icons school-icon mr5 mln23 fz18">school</i>
               <span>건국대학교 - 컴퓨터공학과(편입)</span>
             </li>
-            <li>
-              <i class="material-icons cast_for_education-icon mr5">cast_for_education</i>
+            <li class="dib">
+              <i class="material-icons cast_for_education-icon mr5 mln23 fz18"
+                >cast_for_education</i
+              >
               <span>코리아정보보안IT아카데미 - 풀스택 개발자 양성과정</span>
             </li>
           </ul>
@@ -36,46 +38,52 @@
     </div>
     <div class="about-me__details">
       <div class="about-me__header">
-        <h2 class="about-me__title">About Me</h2>
+        <h2 class="about-me__title fs-2-5">About Me</h2>
       </div>
       <div class="about-me__info">
-        <div class="about-me__sub-title">
+        <div class="about-me__sub-title fs-1-125">
           <i class="material-icons work-icon">work</i>
           <h3>경력</h3>
         </div>
         <ul class="about-me__list">
-          <li class="about-me__list-item">유아이랩</li>
-          <li class="about-me__list-item">(2021.10 ~ 2024.08)</li>
+          <li class="about-me__list-item fs-1">
+            <img src="../assets/img/icon/ico_ui_lab.png" alt="UILAB 로고" />
+            유아이랩
+          </li>
+          <li class="about-me__list-item fs-1">(2021.10 ~ 2024.08)</li>
         </ul>
         <card-lists :in-view="inView" :card-type="'trello'" />
       </div>
       <div class="about-me__info">
-        <div class="about-me__sub-title">
+        <div class="about-me__sub-title fs-1-125">
           <i class="material-icons construction-icon">construction</i>
           <h3>기술 스택</h3>
         </div>
-        <card-lists :in-view="inView"/>
+        <card-lists :in-view="inView" />
       </div>
       <div class="about-me__info">
-        <div class="about-me__sub-title">
+        <div class="about-me__sub-title fs-1-125">
           <i class="material-icons workspace_premium-icon">workspace_premium</i>
           <h3>자격증</h3>
         </div>
         <ul class="about-me__list">
-          <li class="about-me__list-item">
+          <li class="about-me__list-item fs-1">
             <div class="list-image">
-              <img src="../assets/img/icon/ico_k_data.png" alt="K-data 아이콘" />
+              <img
+                src="../assets/img/icon/ico_k_data.png"
+                alt="K-data 아이콘"
+              />
             </div>
             <p class="ml34">SQL 개발자(SQLD, SQL Developer)</p>
           </li>
-          <li class="about-me__list-item">2020.12.20</li>
-          <li class="about-me__list-item">
+          <li class="about-me__list-item fs-1">2020.12.20</li>
+          <li class="about-me__list-item fs-1">
             <div class="list-image">
               <img src="../assets/img/icon/ico_q_net.png" alt="Q-net 아이콘" />
             </div>
             <p class="ml34">정보처리기사</p>
           </li>
-          <li class="about-me__list-item">2022.06.17</li>
+          <li class="about-me__list-item fs-1">2022.06.17</li>
         </ul>
       </div>
     </div>
@@ -126,6 +134,8 @@ export default {
 .about-me__photo {
   flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-me__image {
@@ -148,9 +158,12 @@ export default {
 .about-me-intro {
   padding: 1rem 0;
 }
-.about-me-education {
-  
+
+.about-me-education ul {
+  display: flex;
+  flex-direction: column;
 }
+
 .about-me__details {
   flex: 3;
   margin-left: 2rem;
@@ -158,10 +171,6 @@ export default {
 .about-me__header {
   text-align: left;
   margin-bottom: 1.5rem;
-}
-
-.about-me__title {
-  font-size: 2.5rem;
 }
 .about-me__info {
   margin-bottom: 1.5rem;
@@ -173,7 +182,6 @@ export default {
 .about-me__sub-title {
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
   color: #efefef;
   text-align: left;
   margin-bottom: 1.5rem;
@@ -192,17 +200,17 @@ export default {
 }
 
 .about-me__list-item {
-  font-size: 1rem;
   color: #dcdde1;
-  flex: 0 0 50%;
   box-sizing: border-box;
   padding: 10px;
 }
 .about-me__list-item:nth-child(odd) {
   text-align: left;
+  flex: 0 0 70%;
 }
 .about-me__list-item:nth-child(even) {
   text-align: right;
+  flex: 0 0 30%;
 }
 
 .about-me__list-item .list-image {
@@ -213,5 +221,39 @@ export default {
   border: 1px solid #fff;
   float: left;
   margin-right: 10px;
+}
+
+@media (max-width: 1028px) {
+  .about-me {
+    flex-direction: column;
+  }
+  .about-me__photo {
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+  .about-me__img-area {
+    margin-right: 5vw;
+  }
+  .about-me__image {
+    max-width: 25vw;
+  }
+  .about-me__details {
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .about-me__photo {
+    flex-direction: column;
+    margin: 0 auto 30px;
+  }
+  .about-me__img-area {
+    margin-right: 0;
+  }
+  .about-me-education ul {
+    text-align: center;
+  }
+  .about-me__list .about-me__list-item {
+    flex: 0 0 100%;
+  }
 }
 </style>
