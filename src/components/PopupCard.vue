@@ -48,7 +48,10 @@
             <span class="label label-red">코딩 스킬</span>
           </div>
           <div v-else class="labels-container">
-            <span class="label label-green">Vue.js</span>
+            <span class="label label-green">
+              <img src="../assets/img/icon/ico_vue.png" alt="vue 로고" />
+              Vue.js
+            </span>
             <span class="label label-teal">Nuxt</span>
             <span class="label label-red">Npm</span>
             <span class="label label-darkgreen">Node.js</span>
@@ -58,6 +61,7 @@
             <span class="label label-darkblue">CSS</span>
             <span class="label label-darkorange">GitLab</span>
             <span class="label label-lightblue">SourceTree</span>
+            <span class="label label-light-sky">Visual Studio</span>
           </div>
         </div>
         <div class="popup-description mt25">
@@ -287,6 +291,10 @@ export default {
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.popup-labels .label > img {
+  width: 24px;
 }
 
 .popup-description .popup-sub-title {
