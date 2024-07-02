@@ -48,10 +48,7 @@
             <span class="label label-red">코딩 스킬</span>
           </div>
           <div v-else class="labels-container">
-            <span class="label label-green">
-              <img src="../assets/img/icon/ico_vue.png" alt="vue 로고" />
-              Vue.js
-            </span>
+            <span class="label label-green">Vue.js</span>
             <span class="label label-teal">Nuxt</span>
             <span class="label label-red">Npm</span>
             <span class="label label-darkgreen">Node.js</span>
