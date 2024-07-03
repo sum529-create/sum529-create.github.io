@@ -86,11 +86,19 @@
           <li class="about-me__list-item fs-1">2022.06.17</li>
         </ul>
       </div>
+      <div class="about-me__info">
+        <div class="about-me__sub-title fs-1-125">
+          <i class="material-icons terminal-icon">terminal</i>
+          <h3>프로젝트</h3>
+        </div>
+        <a class="about-me__show-more" :class="{'btn-effect' : showEffectBtn}" href="/project">Show more Project ➣</a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import CardLists from "./CardLists";
 export default {
   name: "AboutMe",
@@ -104,19 +112,34 @@ export default {
   data() {
     return {
       timer: null,
+      showEffectBtn: false,
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.checkIfInProjectArea);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.checkIfInProjectArea);
     if (this.timer) {
       clearTimeout(this.timer);
     }
   },
   methods: {
-    handleScroll() {},
+    ...mapActions(['updateShowEffectBtn']),
+    checkIfInProjectArea() {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      if (scrollPosition + windowHeight >= documentHeight - 230) {
+        setTimeout(() => {
+          this.showEffectBtn = true;
+        }, 1500)
+      } else {
+        this.showEffectBtn = false;
+      }
+      this.updateShowEffectBtn(this.showEffectBtn);
+    },
   },
   components: {
     CardLists,
@@ -221,6 +244,36 @@ export default {
   border: 1px solid #fff;
   float: left;
   margin-right: 10px;
+}
+
+.about-me__info .about-me__show-more{
+  color: #FFF;
+  font-weight: 500;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 20px;
+  display: block;
+  background-color: #000; /* 다크 배경 색상 */
+  transition: opacity 0.5s, transform 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.about-me__info .about-me__show-more.btn-effect{
+  transform: translateY(0);
+  animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #95afc0, 0 0 20px #95afc0, 0 0 25px #95afc0;
+  }
+  100% {
+    box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #95afc0, 0 0 25px #95afc0, 0 0 30px #95afc0;
+  }
 }
 
 @media (max-width: 1028px) {

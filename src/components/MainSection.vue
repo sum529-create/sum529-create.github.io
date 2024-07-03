@@ -33,7 +33,7 @@ export default {
       const options = {
         root: null, // viewport를 기준으로 함
         rootMargin: "0px",
-        threshold: 0.6,
+        threshold: 0.2,
       };
 
       this.observer = new IntersectionObserver(this.handleIntersect, options);

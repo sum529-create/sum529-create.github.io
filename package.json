@@ -13,7 +13,8 @@
     "material-design-icons-iconfont": "^6.7.0",
     "vue": "^2.6.12",
     "vue-meta": "^2.4.0",
-    "vue-router": "^3.6.5"
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

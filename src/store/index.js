@@ -6,14 +6,35 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    // 상태 정의
+  state() {
+    return{
+      showEffectBtn: '',
+      showMenuFlag: false,
+    }
   },
   mutations: {
-    // 뮤테이션 정의
+    setShowEffectBtn(state, data) {
+      state.showEffectBtn = data
+    },
+    setShowMenuFlag(state, data) {
+      state.showMenuFlag = data
+    }
   },
   actions: {
-    // 액션 정의
+    updateShowEffectBtn({ commit }, data) {
+      commit('setShowEffectBtn', data)
+    },
+    updateShowMenuFlag({ commit }, data) {
+      commit('setShowMenuFlag', data);
+    }
+  },
+  getters: {
+    getShowEffectBtn(state) {
+      return state.showEffectBtn;
+    },
+    getShowMenuFlag(state) {
+      return state.showMenuFlag;
+    }
   },
   modules: {
     // 모듈 정의

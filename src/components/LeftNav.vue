@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: "LeftNav",
   props: {
@@ -96,8 +97,10 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['updateShowMenuFlag']),
     showMenuList() {
       this.showMenuFlag = !this.showMenuFlag;
+      this.updateShowMenuFlag(this.showMenuFlag);
     },
   },
 };

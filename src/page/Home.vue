@@ -1,8 +1,8 @@
 <template>
   <div class="main">
-    <hero />
+    <app-hero />
     <main-section/>
-    <div :class="{'show':showIcon}" class="arrow-container">
+    <div :class="{'show':showIcon && !showEffectBtn && !showMenuFlag}" class="arrow-container">
       <span class="arrow-text">Scroll down</span>
       <i class="material-icons double-arrow-icon">keyboard_double_arrow_down</i>
     </div>
@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import Hero from "./AppHero.vue";
-import MainSection from "./MainSection.vue"
+import { mapGetters } from 'vuex';
+import AppHero from "../components/AppHero";
+import MainSection from "../components/MainSection"
 export default {
-  components: { Hero, MainSection },
+  components: { AppHero, MainSection },
   name: "HOME",
   data() {
     return {
@@ -24,9 +25,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.startScrollTimeout();
-    // setTimeout(() => {
-    //   this.showIcon = true;
-    // }, 2000);
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -34,6 +32,15 @@ export default {
       clearTimeout(this.scrollTimeout);
     }
   },
+  computed: {
+    ...mapGetters(['getShowEffectBtn', 'getShowMenuFlag']),
+    showEffectBtn() {
+      return this.getShowEffectBtn;
+    },
+    showMenuFlag() {
+      return this.getShowMenuFlag;
+    }
+  }, 
   methods: {
     handleScroll() {
       if (this.scrollTimeout) {
@@ -41,11 +48,23 @@ export default {
       }
       this.showIcon = false;
       this.startScrollTimeout();
+
+      this.checkIfAtBottom();
     },
     startScrollTimeout() {
       this.scrollTimeout = setTimeout(() => {
         this.showIcon = true;
+        this.checkIfAtBottom();
       }, 2000);
+    },
+    checkIfAtBottom() {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      if (scrollPosition + windowHeight >= documentHeight) {
+        this.showIcon = false;
+      }
     },
   },
 };
