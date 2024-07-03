@@ -1,5 +1,8 @@
 <template>
-  <div class="parent">
+  <div class="section work__section">
+    <div class="curtain" :class="{ open: isCurtainOpen }">
+      <div class="curtain-inner"></div>
+    </div>
     <div class="container" ref="container">
       <div class="box" ref="box1">Box 1</div>
       <div class="box" ref="box2">Box 2</div>
@@ -11,10 +14,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
+    };
+  },
   mounted() {
     this.setupIntersectionObserver();
     this.addScrollListener();
     this.setInitialView();
+    this.openCurtain();  // 커튼 애니메이션 시작
   },
   methods: {
     setupIntersectionObserver() {
@@ -84,20 +93,49 @@ export default {
         initialBox.scrollIntoView({ behavior: 'auto', block: 'center' });
         initialBox.classList.add('in-view');
       }
+    },
+    openCurtain() {
+      // 커튼이 열리는 애니메이션 시작
+      this.isCurtainOpen = true;
     }
   },
 };
 </script>
 
 <style scoped>
-.parent {
+.work__section {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200vh;  /* 충분한 높이로 스크롤이 가능하도록 설정 */
-  margin: 0;
-  overflow: hidden;  /* 기본 스크롤바를 숨깁니다 */
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 1s ease-out;
+}
+
+.curtain.open {
+  transform: scaleX(0);
+}
+
+.curtain-inner {
+  width: 200%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
@@ -105,7 +143,7 @@ export default {
   flex-direction: column;
   gap: 0;  /* 박스들 사이의 간격을 0으로 설정 */
   scroll-snap-type: y mandatory;  /* 스크롤 스냅 설정 */
-  overflow-y: hi;  /* 세로 스크롤을 허용 */
+  overflow-y: hidden;  /* 세로 스크롤을 허용 */
   height: 100vh;  /* 컨테이너의 높이를 화면의 높이로 설정 */
   scroll-behavior: smooth;  /* 부드러운 스크롤 동작 */
 }
