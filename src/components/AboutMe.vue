@@ -91,7 +91,7 @@
           <i class="material-icons terminal-icon">terminal</i>
           <h3>프로젝트</h3>
         </div>
-        <a class="about-me__show-more" :class="{'btn-effect' : showEffectBtn}" href="/project">Show more Project ➣</a>
+        <a class="about-me__show-more" :class="{'btn-effect' : showEffectBtn}" href="/projects">Show more Project ➣</a>
       </div>
     </div>
   </div>

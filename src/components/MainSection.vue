@@ -4,6 +4,7 @@
       <div class="section">
         <about-me :in-view="inView" />
       </div>
+      <app-footer/>
     </div>
     <left-nav :in-view="inView" />
   </div>
@@ -12,9 +13,10 @@
 <script>
 import LeftNav from "./LeftNav";
 import AboutMe from "./AboutMe";
+import AppFooter from "./AppFooter";
 export default {
   name: "MainSection",
-  components: { LeftNav, AboutMe },
+  components: { LeftNav, AboutMe,AppFooter },
   data() {
     return {
       inView: false,
@@ -59,6 +61,7 @@ export default {
   z-index: 10; /* 다른 요소들 위에 표시 */
   display: flex;
   padding-left: 55px;
+  flex-direction: column;
 }
 .main__content > * {
   width: 100%;

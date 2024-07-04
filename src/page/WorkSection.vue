@@ -1,19 +1,43 @@
 <template>
-  <div class="section work__section">
+  <div class="content work__content">
     <div class="curtain" :class="{ open: isCurtainOpen }">
       <div class="curtain-inner"></div>
     </div>
-    <div class="container" ref="container">
-      <div class="box" ref="box1">Box 1</div>
-      <div class="box" ref="box2">Box 2</div>
-      <div class="box" ref="box3">Box 3</div>
-      <div class="box" ref="box4">Box 4</div>
+    <div class="section">
+      <div class="work__intro-wrapper fc_white lh2">
+        <h1 class="fs-2 fw450">제가 작업한 프로젝트들을 보여드릴게요!</h1>
+        <p class="fs-1-5 fw450">여기서는 제 손길이 닿은 프로젝트들을 한눈에 볼 수 있습니다.</p>
+        <p class="fs-1-5 fw450">각 프로젝트는 새로운 도전을 시도하고, 문제를 해결하기 위해 고민한 결과물입니다.</p>
+        <p class="fs-1-5 fw450">저의 아이디어가 현실로 구현된 결과물로, 다양한 기술과 도전을 담고 있습니다.</p>
+      </div>
+      <div class="container" ref="container">
+        <div class="box" ref="box1">
+          <work-box/>
+        </div>
+        <div class="box" ref="box2">
+          <work-box/>
+        </div>
+        <div class="box" ref="box3">
+          <work-box/>
+        </div>
+        <div class="box" ref="box4">
+          <work-box/>
+        </div>
+        <div class="box" ref="box5">
+          <work-box/>
+        </div>
+      </div>
     </div>
+    <left-nav :in-view="true" />
   </div>
 </template>
 
 <script>
+import LeftNav from "../components/LeftNav";
+import WorkBox from '../components/WorkBox';
 export default {
+  name: "WorkSection",
+  components: { LeftNav, WorkBox },
   data() {
     return {
       isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
@@ -29,7 +53,7 @@ export default {
     setupIntersectionObserver() {
       const options = {
         root: null,
-        rootMargin: '0px 0px -50% 0px',  // 박스의 중앙이 뷰포트의 중앙에 위치할 때를 감지
+        rootMargin: '0px 0px -25% 0px',  // 박스의 중앙이 뷰포트의 중앙에 위치할 때를 감지
         threshold: 0.5,  // 요소의 50%가 교차할 때 콜백 호출
       };
 
@@ -39,6 +63,7 @@ export default {
       this.$refs.box2 && observer.observe(this.$refs.box2);
       this.$refs.box3 && observer.observe(this.$refs.box3);
       this.$refs.box4 && observer.observe(this.$refs.box4);
+      this.$refs.box5 && observer.observe(this.$refs.box5);
     },
     handleIntersection(entries) {
       entries.forEach((entry) => {
@@ -103,12 +128,12 @@ export default {
 </script>
 
 <style scoped>
-.work__section {
-  font-family: Arial, sans-serif;
+.work__content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 200vh;  /* 충분한 높이로 스크롤이 가능하도록 설정 */
+  /* height: 300vh;  충분한 높이로 스크롤이 가능하도록 설정 */
+  background: #2e2e2e;
+  padding-left: 55px;
 }
 
 .curtain {
@@ -118,7 +143,7 @@ export default {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
+  z-index: 96;
   transform: scaleX(1);
   transform-origin: left;
   transition: transform 1s ease-out;
@@ -135,32 +160,32 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 96;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0;  /* 박스들 사이의 간격을 0으로 설정 */
-  scroll-snap-type: y mandatory;  /* 스크롤 스냅 설정 */
-  overflow-y: hidden;  /* 세로 스크롤을 허용 */
-  height: 100vh;  /* 컨테이너의 높이를 화면의 높이로 설정 */
-  scroll-behavior: smooth;  /* 부드러운 스크롤 동작 */
+  gap: 30px;
+  scroll-snap-type: y mandatory;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  align-items: center;
 }
 
 .box {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-  background-color: #4caf50;
+  width: 100%;
   color: white;
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   transform: translateY(20px);
-  scroll-snap-align: center;  /* 스크롤 스냅의 정렬을 가운데로 설정 */
+  scroll-snap-align: center;
   position: relative;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
 .in-view {

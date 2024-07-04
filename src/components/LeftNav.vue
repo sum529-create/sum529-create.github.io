@@ -6,7 +6,7 @@
     <nav>
       <div v-if="!showMenuFlag" class="nav__section-info">
         <div class="nav__section-title">
-          <a href="#"> Sumin's portfolio </a>
+          <a href="/"> Sumin's portfolio </a>
         </div>
         <div class="nav__section-icon">
           <a href="javascript:;" @click="showMenuList()">
@@ -110,7 +110,7 @@ export default {
 .nav__section {
   position: fixed;
   color: #fff;
-  z-index: 97;
+  z-index: 100;
   left: -100%;
   top: 0;
   height: 100vh;

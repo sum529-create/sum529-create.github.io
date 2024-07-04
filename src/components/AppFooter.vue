@@ -1,9 +1,9 @@
 <template>
-  <footer class="footer">
+  <div class="footer">
     <div class="container">
       <p class="text-muted">@ 2024 sumin.noh. All rights reserved.</p>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
