@@ -66,6 +66,7 @@ export default {
     this.addScrollListener();
     this.setInitialView();
     this.typeWriter();
+    this.blockScroll();
     setTimeout(() => {
       this.openCurtain();  // 커튼 애니메이션 시작
     }, 100);
@@ -176,7 +177,15 @@ export default {
       for (let i = 0; i < this.displayedText.length; i++) {
         document.getElementById(`line${i + 1}`).innerHTML = this.displayedText[i];
       }
-    }
+    },
+    blockScroll() {
+      // 스크롤 방지 클래스 추가
+      document.body.classList.add('no-scroll');
+      // 3초 후에 스크롤 허용
+      setTimeout(() => {
+        document.body.classList.remove('no-scroll');
+      }, 3800);
+    },
   },
 };
 </script>
@@ -239,6 +248,7 @@ export default {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
   font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .work__main_cont img{
   width: 30%;

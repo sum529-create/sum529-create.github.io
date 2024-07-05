@@ -203,10 +203,6 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .slide-right { animation: slide-right 1s ease-out; }
 @keyframes slide-right { 0% { transform: translateX(100%); } 100% { transform: translateX(0); } }
 
-/* Fade In */
-.fade-in { animation: fade-in 1s ease-in; }
-@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-
 /* Zoom In */
 .zoom-in { animation: zoom-in 1s ease-in-out; }
 @keyframes zoom-in { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
@@ -224,7 +220,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 @keyframes flip-vertical { 0% { transform: rotateX(0); } 100% { transform: rotateX(180deg); } }
 
 /* Pulse */
-.pulse { animation: pulse 1s infinite; }
+.pulse { animation: pulse 1s ease-in-out; }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
 /* Text Blinking */
@@ -252,3 +248,6 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
   50% {opacity: 0.5;transform: scale(1.5) translateY(-50px);}
   100% {opacity: 0;transform: scale(2) translateY(-100px);}
 }
+
+/*** 스크롤 금지 ***/
+.no-scroll {overflow: hidden;position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
