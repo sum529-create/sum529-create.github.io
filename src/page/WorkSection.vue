@@ -9,14 +9,15 @@
           <h1 class="fs-6 fc_white fade-in-pulse fc_keycolor">
             MY<br/>PROJECTS
           </h1>
-          <img class="fade-in-zoom" src="../assets/img/projects/work_main_img.png" alt="Projects 페이지 인트로 이미지">
+          <img class="fade-in-slide-up" src="../assets/img/projects/work_main_img.png" alt="Projects 페이지 인트로 이미지">
         </div>
       </div>
       <div class="work__intro-wrapper fc_white lh2 mb60">
-        <h1 class="fs-2 fw450" id="line1"></h1>
+        <!-- <h1 class="fs-2 fw450" id="line1"></h1> -->
+        <wave-text text="제가_작업한_프로젝트들을_보여드릴게요!"/>
+        <p class="fs-1-5 fw450" id="line1"></p>
         <p class="fs-1-5 fw450" id="line2"></p>
         <p class="fs-1-5 fw450" id="line3"></p>
-        <p class="fs-1-5 fw450" id="line4"></p>
       </div>
       <div class="container" ref="container">
         <div class="box" ref="box1">
@@ -42,22 +43,22 @@
 
 <script>
 import LeftNav from "../components/LeftNav";
+import WaveText from '../components/WaveText.vue';
 import WorkBox from '../components/WorkBox';
 export default {
   name: "WorkSection",
-  components: { LeftNav, WorkBox },
+  components: { LeftNav, WorkBox, WaveText },
   data() {
     return {
       isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
       texts: [
-        '제가 작업한 프로젝트들을 보여드릴게요!',
         '여기서는 제 손길이 닿은 프로젝트들을 한눈에 볼 수 있습니다.',
         '각 프로젝트는 새로운 도전을 시도하고, 문제를 해결하기 위해 고민한 결과물입니다.',
         '저의 아이디어가 현실로 구현된 결과물로, 다양한 기술과 도전을 담고 있습니다.'
       ],
       typingSpeed: 30, // 타이핑 속도 (밀리초 단위)
       currentTextIndex: 0, // 현재 텍스트 인덱스
-      displayedText: ['', '', '', ''],
+      displayedText: ['', '', ''],
     };
   },
   mounted() {
