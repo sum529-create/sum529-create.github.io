@@ -10,6 +10,8 @@ export default new Vuex.Store({
     return{
       showEffectBtn: '',
       showMenuFlag: false,
+      isPopupOpen: false,
+      typeFlag: '',
     }
   },
   mutations: {
@@ -18,7 +20,15 @@ export default new Vuex.Store({
     },
     setShowMenuFlag(state, data) {
       state.showMenuFlag = data
-    }
+    },
+    TOGGLE_POPUP(state, type) {
+      state.isPopupOpen = !state.isPopupOpen;
+      state.typeFlag = type || '';
+    },
+    CLOSE_POPUP(state) {
+      state.isPopupOpen = false;
+      state.typeFlag = '';
+    },
   },
   actions: {
     updateShowEffectBtn({ commit }, data) {
@@ -26,7 +36,13 @@ export default new Vuex.Store({
     },
     updateShowMenuFlag({ commit }, data) {
       commit('setShowMenuFlag', data);
-    }
+    },
+    togglePopup({ commit }, type) {
+      commit('TOGGLE_POPUP', type);
+    },
+    closePopup({ commit }) {
+      commit('CLOSE_POPUP');
+    },
   },
   getters: {
     getShowEffectBtn(state) {
@@ -34,7 +50,13 @@ export default new Vuex.Store({
     },
     getShowMenuFlag(state) {
       return state.showMenuFlag;
-    }
+    },
+    isPopupOpen(state) {
+      return state.isPopupOpen
+    },
+    typeFlag(state) {
+      return state.typeFlag
+    },
   },
   modules: {
     // 모듈 정의

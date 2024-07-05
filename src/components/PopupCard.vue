@@ -142,19 +142,17 @@ export default {
   // typeFlag
   // default : info Popup
   // _numbering
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
+  computed: {
+    isOpen() {
+      return this.$store.getters.isPopupOpen;
     },
-    typeFlag: {
-      type: String,
-      required: false,
+    typeFlag() {
+      return this.$store.getters.typeFlag;
     },
   },
   methods: {
     closePopup() {
-      this.$emit("close");
+      this.$store.dispatch('closePopup');
     },
   },
 };

@@ -125,8 +125,6 @@
         </div>
       </div>
     </div>
-    <!-- Popup Layer -->
-    <popup-card :isOpen="showPopup" @close="closePopup" :typeFlag="typeFlag" />
   </div>
   <div v-else class="board board__default">
     <div class="lists-container">
@@ -232,14 +230,11 @@
 </template>
 
 <script>
-import PopupCard from "./PopupCard";
 export default {
   name: "CardLists",
   data() {
     return {
       formattedDate: "",
-      showPopup: false,
-      typeFlag: "",
     };
   },
   props: {
@@ -254,9 +249,6 @@ export default {
       default: "",
     },
   },
-  components: {
-    PopupCard,
-  },
   mounted() {
     this.getFormattedDate();
   },
@@ -264,21 +256,13 @@ export default {
     // eslint-disable-next-line
     inView(newVal, _oldVal) {
       if (!newVal) {
-        this.showPopup = false;
+        this.$store.dispatch('closePopup');
       }
     },
   },
   methods: {
     togglePopup(type) {
-      if (type) {
-        this.typeFlag = type;
-      } else {
-        this.typeFlag = "";
-      }
-      this.showPopup = !this.showPopup;
-    },
-    closePopup() {
-      this.showPopup = false;
+      this.$store.dispatch('togglePopup', type);
     },
     getFormattedDate() {
       const today = new Date();

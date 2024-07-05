@@ -47,6 +47,7 @@ export default {
   display: -ms-flexbox;
   flex-wrap: wrap;
   flex-flow: row wrap;
+  flex-direction: column;
   justify-content: space-between;
   -webkit-box-pack: space-between;
   -ms-flex-pack: space-between;
@@ -55,8 +56,8 @@ export default {
 .project_info .project_info__img-wrapper{
   overflow: hidden;
   position: relative;
-  width: 50%;
-  margin-right: 3rem;
+  width: 100%;
+  padding-top: 56.25%;
 }
 
 .project_info .project_info__description-wrapper{
@@ -65,8 +66,11 @@ export default {
 
 .project_info .project_info__img-wrapper img {
   display: block;
-  width: 100%;
-  min-width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
 }
 

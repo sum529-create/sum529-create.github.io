@@ -6,6 +6,7 @@
       </div>
       <app-footer/>
     </div>
+    <popup-card/>
     <left-nav :in-view="inView" />
   </div>
 </template>
@@ -14,9 +15,10 @@
 import LeftNav from "./LeftNav";
 import AboutMe from "./AboutMe";
 import AppFooter from "./AppFooter";
+import PopupCard from './PopupCard';
 export default {
   name: "MainSection",
-  components: { LeftNav, AboutMe,AppFooter },
+  components: { LeftNav, AboutMe,AppFooter,PopupCard },
   data() {
     return {
       inView: false,

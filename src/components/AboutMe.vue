@@ -194,6 +194,9 @@ export default {
 .about-me__header {
   text-align: left;
   margin-bottom: 1.5rem;
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 .about-me__info {
   margin-bottom: 1.5rem;

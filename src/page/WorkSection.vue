@@ -4,11 +4,19 @@
       <div class="curtain-inner"></div>
     </div>
     <div class="section">
-      <div class="work__intro-wrapper fc_white lh2">
-        <h1 class="fs-2 fw450">제가 작업한 프로젝트들을 보여드릴게요!</h1>
-        <p class="fs-1-5 fw450">여기서는 제 손길이 닿은 프로젝트들을 한눈에 볼 수 있습니다.</p>
-        <p class="fs-1-5 fw450">각 프로젝트는 새로운 도전을 시도하고, 문제를 해결하기 위해 고민한 결과물입니다.</p>
-        <p class="fs-1-5 fw450">저의 아이디어가 현실로 구현된 결과물로, 다양한 기술과 도전을 담고 있습니다.</p>
+      <div class="work__main_cont">
+        <div class="work__main_cont-wrapper">
+          <h1 class="fs-6 fc_white fade-in-pulse fc_keycolor">
+            MY<br/>PROJECTS
+          </h1>
+          <img class="fade-in-zoom" src="../assets/img/projects/work_main_img.png" alt="Projects 페이지 인트로 이미지">
+        </div>
+      </div>
+      <div class="work__intro-wrapper fc_white lh2 mb60">
+        <h1 class="fs-2 fw450" id="line1"></h1>
+        <p class="fs-1-5 fw450" id="line2"></p>
+        <p class="fs-1-5 fw450" id="line3"></p>
+        <p class="fs-1-5 fw450" id="line4"></p>
       </div>
       <div class="container" ref="container">
         <div class="box" ref="box1">
@@ -41,13 +49,25 @@ export default {
   data() {
     return {
       isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
+      texts: [
+        '제가 작업한 프로젝트들을 보여드릴게요!',
+        '여기서는 제 손길이 닿은 프로젝트들을 한눈에 볼 수 있습니다.',
+        '각 프로젝트는 새로운 도전을 시도하고, 문제를 해결하기 위해 고민한 결과물입니다.',
+        '저의 아이디어가 현실로 구현된 결과물로, 다양한 기술과 도전을 담고 있습니다.'
+      ],
+      typingSpeed: 30, // 타이핑 속도 (밀리초 단위)
+      currentTextIndex: 0, // 현재 텍스트 인덱스
+      displayedText: ['', '', '', ''],
     };
   },
   mounted() {
     this.setupIntersectionObserver();
     this.addScrollListener();
     this.setInitialView();
-    this.openCurtain();  // 커튼 애니메이션 시작
+    this.typeWriter();
+    setTimeout(() => {
+      this.openCurtain();  // 커튼 애니메이션 시작
+    }, 100);
   },
   methods: {
     setupIntersectionObserver() {
@@ -115,13 +135,46 @@ export default {
     setInitialView() {
       const initialBox = this.$refs.box1;
       if (initialBox) {
-        initialBox.scrollIntoView({ behavior: 'auto', block: 'center' });
+        // initialBox.scrollIntoView({ behavior: 'auto', block: 'center' });
         initialBox.classList.add('in-view');
       }
     },
     openCurtain() {
-      // 커튼이 열리는 애니메이션 시작
       this.isCurtainOpen = true;
+    },
+    typeWriter() {
+      if (this.currentTextIndex < this.texts.length) {
+        this.typingEffect(this.texts[this.currentTextIndex], 0).then(() => {
+          this.currentTextIndex++;
+          this.typeWriter(); // 다음 문장 타이핑
+        });
+      } else {
+        // 모든 텍스트가 타이핑 완료되면 커서 제거
+        this.removeCursor();
+      }
+    },
+    typingEffect(text, index) {
+      return new Promise((resolve) => {
+        if (index < text.length) {
+          this.displayedText[this.currentTextIndex] += text.charAt(index);
+          this.updateText();
+          setTimeout(() => {
+            this.typingEffect(text, index + 1).then(resolve);
+          }, this.typingSpeed);
+        } else {
+          resolve();
+        }
+      });
+    },
+    updateText() {
+      for (let i = 0; i < this.displayedText.length; i++) {
+        document.getElementById(`line${i + 1}`).innerHTML = this.displayedText[i] + (i === this.currentTextIndex ? '<span class="cursor"></span>' : '');
+      }
+    },
+    removeCursor() {
+      for (let i = 0; i < this.displayedText.length; i++) {
+        document.getElementById(`line${i + 1}`).innerHTML = this.displayedText[i];
+      }
     }
   },
 };
@@ -163,6 +216,42 @@ export default {
   z-index: 96;
 }
 
+.work__main_cont{
+  position: relative;
+  height: 50vh;
+}
+
+.work__main_cont .work__main_cont-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  align-items: center;
+}
+
+.work__main_cont .work__main_cont-wrapper h1{
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.work__main_cont img{
+  width: 30%;
+}
+
+.work__main_cont h1{
+  flex:1;
+}
+.work__intro-wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  text-align: left
+}
 .container {
   display: flex;
   flex-direction: column;

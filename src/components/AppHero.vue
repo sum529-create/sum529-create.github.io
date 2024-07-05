@@ -351,6 +351,7 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   max-width: 1280px;
+  width:100%;
   padding: 60px 55px;
 }
 .hero__section {
@@ -423,6 +424,9 @@ export default {
   margin: 0;
   white-space: pre;
   opacity: 0;
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 .hero__portfolio-txt.in-view {
   opacity: 1;
@@ -431,7 +435,7 @@ export default {
   transition-duration: 0.1s;
   opacity: 0;
 }
-.cursor {
+.hero__portfolio-txt .cursor {
   font-weight: 100;
   color: white;
   animation: blink 0.7s steps(1) infinite;
