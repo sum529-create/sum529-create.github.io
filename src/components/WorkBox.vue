@@ -3,7 +3,7 @@
     <h2>Project Title 3</h2>
     <div class="project_info">
       <div class="project_info__img-wrapper">
-        <img src="../assets/img/hero/developer_img.png" alt="Project 3 Image">
+        <img src="../assets/img/projects/project_01.png" alt="Project 3 Image">
       </div>
       <div class="project_info__description-wrapper">
         <p>This is a brief description of Project 3. It explains the main features and objectives of the project.</p>
