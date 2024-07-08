@@ -37,9 +37,7 @@
       </div>
     </div>
     <div class="about-me__details">
-      <div class="about-me__header">
-        <h2 class="about-me__title fs-2-5">About Me</h2>
-      </div>
+      <h2 class="about-me__header header-title fs-2-5">About Me</h2>
       <div class="about-me__info">
         <div class="about-me__sub-title fs-1-125">
           <i class="material-icons work-icon">work</i>
@@ -190,13 +188,6 @@ export default {
 .about-me__details {
   flex: 3;
   margin-left: 2rem;
-}
-.about-me__header {
-  text-align: left;
-  margin-bottom: 1.5rem;
-  font-family: "Black Ops One", system-ui;
-  font-weight: 400;
-  font-style: normal;
 }
 .about-me__info {
   margin-bottom: 1.5rem;

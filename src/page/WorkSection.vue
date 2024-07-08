@@ -3,7 +3,7 @@
     <div class="curtain" :class="{ open: isCurtainOpen }">
       <div class="curtain-inner"></div>
     </div>
-    <div class="section">
+    <div class="section" ref="sectionRef">
       <div class="work__main_cont">
         <div class="work__main_cont-wrapper">
           <h1 class="fs-6 fc_white fade-in-pulse fc_keycolor">
@@ -37,6 +37,48 @@
         </div>
       </div>
     </div>
+    <text-effect :secHeight="secHeight"/>
+    <div class="section">
+      <div class="contact-header header-title">
+        <h2 class="fs-2-5">Contact Me</h2>
+        <p class="fs-1-125">Feel free to reach out through any of the following channels.</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-card">
+          <a href="tel:+01049221955" target="_blank" class="contact-link">
+            <div class="contact-image">
+              <img src="https://via.placeholder.com/400x400?text=Message+Me" alt="Message Me">
+            </div>
+            <div class="contact-info">
+              <h3>Message Me</h3>
+              <p>Drop me a message on any platform.</p>
+            </div>
+          </a>
+        </div>
+        <div class="contact-card">
+          <a href="https://github.com/sum529-create" target="_blank" class="contact-link">
+            <div class="contact-image">
+              <img src="https://via.placeholder.com/400x400?text=Check+My+GitHub" alt="Check My GitHub">
+            </div>
+            <div class="contact-info">
+              <h3>Check My GitHub</h3>
+              <p>Explore my GitHub repositories and projects.</p>
+            </div>
+          </a>
+        </div>
+        <div class="contact-card">
+          <a href="mailto:nosumin29@gmail.com" class="contact-link">
+            <div class="contact-image">
+              <img src="https://via.placeholder.com/400x400?text=Send+an+Email" alt="Send an Email">
+            </div>
+            <div class="contact-info">
+              <h3>Send an Email</h3>
+              <p>Send me an email for inquiries and collaborations.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
     <app-footer/>
     <left-nav :in-view="true" />
   </div>
@@ -44,13 +86,14 @@
 
 <script>
 import LeftNav from "../components/LeftNav";
-import WaveText from '../components/WaveText.vue';
+import WaveText from '../components/WaveText';
 import WorkBox from '../components/WorkBox';
 import AppFooter from "../components/AppFooter";
 import { mapActions } from "vuex";
+import TextEffect from '../components/TextEffect';
 export default {
   name: "WorkSection",
-  components: { LeftNav, AppFooter, WorkBox, WaveText },
+  components: { LeftNav, AppFooter, WorkBox, WaveText, TextEffect },
   data() {
     return {
       isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
@@ -62,6 +105,7 @@ export default {
       typingSpeed: 30, // 타이핑 속도 (밀리초 단위)
       currentTextIndex: 0, // 현재 텍스트 인덱스
       displayedText: ['', '', ''],
+      secHeight: 0,
     };
   },
   mounted() {
@@ -73,6 +117,15 @@ export default {
       this.openCurtain();  // 커튼 애니메이션 시작
     }, 100);
     this.updateShowEffectBtn(false);
+    const section = this.$refs.sectionRef;
+    if (section) {
+      this.secHeight = section.offsetHeight;
+    }
+  },
+  watch: {
+    secHeight(newData) {
+      this.secHeight = newData
+    }
   },
   methods: {
     ...mapActions(['updateShowEffectBtn']),
@@ -282,4 +335,61 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+.contact-header h2 {
+      font-size: 2.5rem; /* Larger text for the main header */
+      color: #fdd835; /* Instagram-like yellow color */
+      margin-bottom: 10px; /* Space below the header */
+    }
+
+    .contact-header p {
+      font-size: 1.125rem; /* Slightly larger text for the description */
+      color: #e0e0e0; /* Light grey text for better readability */
+      margin-bottom: 40px; /* Space below the description */
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+      gap: 20px; /* Space between grid items */
+    }
+
+    .contact-card {
+      background: #2c2c2c; /* Dark background for the card */
+      border-radius: 10px; /* Rounded corners for the card */
+      overflow: hidden; /* Hide overflow for rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+
+    .contact-card:hover {
+      transform: scale(1.05); /* Slightly enlarge on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* More prominent shadow on hover */
+    }
+
+    .contact-link {
+      text-decoration: none; /* Remove underline from links */
+      color: inherit; /* Inherit color from parent */
+    }
+
+    .contact-image img {
+      width: 100%; /* Make image responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .contact-info {
+      padding: 20px; /* Padding inside the card */
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem; /* Slightly larger font size for the title */
+      color: #ffffff; /* White text color */
+      margin-bottom: 10px; /* Space between title and description */
+    }
+
+    .contact-info p {
+      font-size: 1rem; /* Normal text size for description */
+      color: #b0b0b0; /* Light grey text for description */
+    }
 </style>

@@ -251,3 +251,12 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 
 /*** 스크롤 금지 ***/
 .no-scroll {overflow: hidden;position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
+
+/*** 추후 정리 예정 디폴트 코드 ***/
+.header-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
