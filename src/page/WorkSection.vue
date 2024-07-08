@@ -1,5 +1,5 @@
 <template>
-  <div class="content work__content">
+  <div class="content main__content">
     <div class="curtain" :class="{ open: isCurtainOpen }">
       <div class="curtain-inner"></div>
     </div>
@@ -37,6 +37,7 @@
         </div>
       </div>
     </div>
+    <app-footer/>
     <left-nav :in-view="true" />
   </div>
 </template>
@@ -45,9 +46,11 @@
 import LeftNav from "../components/LeftNav";
 import WaveText from '../components/WaveText.vue';
 import WorkBox from '../components/WorkBox';
+import AppFooter from "../components/AppFooter";
+import { mapActions } from "vuex";
 export default {
   name: "WorkSection",
-  components: { LeftNav, WorkBox, WaveText },
+  components: { LeftNav, AppFooter, WorkBox, WaveText },
   data() {
     return {
       isCurtainOpen: false,  // 커튼 열림 상태를 제어하는 데이터
@@ -66,12 +69,13 @@ export default {
     this.addScrollListener();
     this.setInitialView();
     this.typeWriter();
-    this.blockScroll();
     setTimeout(() => {
       this.openCurtain();  // 커튼 애니메이션 시작
     }, 100);
+    this.updateShowEffectBtn(false);
   },
   methods: {
+    ...mapActions(['updateShowEffectBtn']),
     setupIntersectionObserver() {
       const options = {
         root: null,
@@ -178,26 +182,11 @@ export default {
         document.getElementById(`line${i + 1}`).innerHTML = this.displayedText[i];
       }
     },
-    blockScroll() {
-      // 스크롤 방지 클래스 추가
-      document.body.classList.add('no-scroll');
-      // 3초 후에 스크롤 허용
-      setTimeout(() => {
-        document.body.classList.remove('no-scroll');
-      }, 3800);
-    },
   },
 };
 </script>
 
 <style scoped>
-.work__content {
-  display: flex;
-  justify-content: center;
-  /* height: 300vh;  충분한 높이로 스크롤이 가능하도록 설정 */
-  background: #2e2e2e;
-  padding-left: 55px;
-}
 
 .curtain {
   position: fixed;
@@ -205,7 +194,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(233,236,241, 0.8);
   z-index: 96;
   transform: scaleX(1);
   transform-origin: left;
@@ -219,7 +208,7 @@ export default {
 .curtain-inner {
   width: 200%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(233,236,241, 0.8);
   position: absolute;
   left: 0;
   top: 0;
@@ -248,7 +237,7 @@ export default {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
   font-style: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(233,236,241, 0.5);
 }
 .work__main_cont img{
   width: 30%;
@@ -272,6 +261,7 @@ export default {
   scroll-behavior: smooth;
   width: 100%;
   align-items: center;
+  margin: 10vh 0;
 }
 
 .box {

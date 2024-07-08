@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state() {
     return{
-      showEffectBtn: '',
+      showEffectBtn: false,
       showMenuFlag: false,
       isPopupOpen: false,
       typeFlag: '',

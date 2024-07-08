@@ -59,11 +59,11 @@ export default {
   background: #000;
   color: #fff;
   text-align: center;
-  transition: bottom 1s ease-out;
   z-index: 10; /* 다른 요소들 위에 표시 */
   display: flex;
   padding-left: 55px;
   flex-direction: column;
+  justify-content: center;
 }
 .main__content > * {
   width: 100%;
