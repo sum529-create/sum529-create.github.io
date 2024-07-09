@@ -15,7 +15,7 @@
         </div>
         <div class="nav__section-contact">
           <a href="https://github.com/sum529-create" target="_blank">
-            <img src="../assets/img/icon/github.png" alt="github" />
+            <i class="fab fa-github fz24"></i>
           </a>
           <a href="mailto:sum529@naver.com" target="_blank">
             <i class="material-icons mail-icon">mail</i>
@@ -24,7 +24,7 @@
             <i class="material-icons phone_iphone-icon">phone_iphone</i>
           </a>
           <a href="https://www.facebook.com/sum529/" target="_blank">
-            <img src="../assets/img/icon/facebook.png" alt="facebook" />
+            <i class="fab fa-facebook fz24"></i>
           </a>
         </div>
       </div>
@@ -150,12 +150,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.nav__section-contact img {
-  max-width: 24px;
-  height: auto;
-  filter: invert(10%) sepia(58%) saturate(0%) hue-rotate(150deg)
-    brightness(100%) contrast(76%);
 }
 .nav__section.show-menu-flag {
   left: 0;

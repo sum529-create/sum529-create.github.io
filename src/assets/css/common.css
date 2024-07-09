@@ -95,9 +95,10 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 /* Trello */ .label-sky {background-color: #0079bf; color:#d9f1ff;}
 /* Visual Studio */ .label-light-sky{background-color:#007ACC; color: #d9f1ff;}
 /*** font color ***/
-.fc_keycolor{color:#007dfe !important;}
-.fc_subcolor{color:#51a6fe !important;}
+.fc_keycolor{color:#007dfe  !important;}
+.fc_subcolor{color:#fdd835 !important;}
 .fc_grey{color:#aaa}
+.fc_999{color: #999;}
 .fc_666{color:#666}
 .fc_black{color:#333}
 .fc_white{color:#fff}
@@ -112,12 +113,18 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .fc_lightblue {color: #0052cc;}
 .fc_red {color: #cb3837;}
 .fc_darkgreen {color: #339933;}
+.fc_cimson {color: #DC143C;}
+.fc_wildwatermelon{color: #55efc4;}
+.fc_slateblue {color: #6A5ACD;}
+.fc_springgreen {color: #00FF7F;}
+.fc_deepskyblue {color: #00BFFF;}
+
 /*** font size ***/
 .fz10{font-size:10px !important}.fz11{font-size:11px !important}.fz12{font-size:12px !important}.fz13{font-size:13px !important}.fz14{font-size:14px !important}.fz15{font-size:15px !important}
 .fz16{font-size:16px !important}.fz17{font-size:17px !important}.fz18{font-size:18px !important}.fz19{font-size:19px !important}.fz20{font-size:20px !important}.fz21{font-size:21px !important}
 .fz22{font-size:22px !important}.fz23{font-size:23px !important}.fz24{font-size:24px !important}.fz25{font-size:25px !important}.fz26{font-size:26px !important}.fz27{font-size:27px !important}.fz28{font-size:28px !important}.fz29{font-size:29px !important}.fz30{font-size:30px !important}
-.fs-0-75 {font-size: 0.75em;}.fs-1 {font-size: 1em;}.fs-1-125 {font-size: 1.125em;}.fs-1-25 {font-size: 1.25em;}.fs-1-5 {font-size: 1.5em;}.fs-2 {font-size: 2em;}.fs-2-5 {font-size: 2.5em;}.fs-3 {font-size: 3em;}.fs-4 {font-size: 4em;}.fs-5 {font-size: 5em;}.fs-6 {font-size: 6em;}
-@media(max-width:1024px){.fs-1 {font-size: 0.9em;}.fs-1-125 {font-size: 1em;}.fs-1-5 {font-size: 1.25em;}.fs-2 {font-size: 1.5em;}.fs-2-5{font-size:1.75em;}.fs-3 {font-size: 2em;}.fs-4 {font-size: 3em;}.fs-5 {font-size: 4em;}.fs-6 {font-size: 5em;}}
+.fs-0-75 {font-size: 0.75em  !important;}.fs-1 {font-size: 1em  !important;}.fs-1-125 {font-size: 1.125em  !important;}.fs-1-25 {font-size: 1.25em  !important;}.fs-1-5 {font-size: 1.5em  !important;}.fs-2 {font-size: 2em  !important;}.fs-2-5 {font-size: 2.5em  !important;}.fs-3 {font-size: 3em  !important;}.fs-4 {font-size: 4em  !important;}.fs-5 {font-size: 5em  !important;}.fs-6 {font-size: 6em  !important;}
+@media(max-width:1024px){.fs-1 {font-size: 0.9em  !important;}.fs-1-125 {font-size: 1em  !important;}.fs-1-5 {font-size: 1.25em  !important;}.fs-2 {font-size: 1.5em  !important;}.fs-2-5{font-size:1.75em  !important;}.fs-3 {font-size: 2em  !important;}.fs-4 {font-size: 3em  !important;}.fs-5 {font-size: 4em  !important;}.fs-6 {font-size: 5em  !important;}}
 
 /*** font weight ***/
 .fw300{font-weight:300 !important}.fw400{font-weight:400 !important}.fw500{font-weight:500 !important}.fw700{font-weight:700 !important}.fw900{font-weight:900 !important}
@@ -139,6 +146,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .bdl0{border-left:0 !important}
 /*** line-height ***/
 .lh1{line-height: 1 !important;}
+.lh1-25{line-height: 1.25 !important;}
 .lh1-5{line-height: 1.5 !important;}
 .lh2{line-height: 2 !important;}
 .lh2-5{line-height: 2.5 !important;}

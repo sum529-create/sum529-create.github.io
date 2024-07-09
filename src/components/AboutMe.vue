@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="about-me__details">
-      <h2 class="about-me__header header-title fs-2-5">About Me</h2>
+      <h2 class="about-me__header header-title fc_subcolor fs-2-5">About Me</h2>
       <div class="about-me__info">
         <div class="about-me__sub-title fs-1-125">
           <i class="material-icons work-icon">work</i>

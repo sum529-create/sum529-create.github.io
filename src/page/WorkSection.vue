@@ -38,42 +38,61 @@
       </div>
     </div>
     <text-effect :secHeight="secHeight"/>
-    <div class="section">
+    <div class="section about_me__section">
       <div class="contact-header header-title">
-        <h2 class="fs-2-5">Contact Me</h2>
-        <p class="fs-1-125">Feel free to reach out through any of the following channels.</p>
+        <h2 class="fs-2-5 fc_keycolor mb10">
+          <i class="material-icons link-icon mr5 fs-1">link</i>
+          Contact Me
+        </h2>
+        <p class="fs-1-5">
+          성능 최적화와 접근성을 고려한 코딩을 실천하며, 꾸준히 발전하는 <span class="fc_subcolor">프론트엔드 개발자</span>가 되겠습니다.<br/>
+          <span class="fc_subcolor">아래 영역 ⬇︎</span> 혹은 <span class="fc_subcolor">왼쪽 하단 메뉴 아이콘 ⬅︎</span> 을 클릭하시면 저와 연락하실 수 있습니다.<br/>
+          언제든지 연락주세요! 빠른 시일 내에 답해드리겠습니다.🤩
+        </p>
       </div>
       <div class="contact-content">
         <div class="contact-card">
           <a href="tel:+01049221955" target="_blank" class="contact-link">
             <div class="contact-image">
-              <img src="https://via.placeholder.com/400x400?text=Message+Me" alt="Message Me">
+              <img src="../assets/img/myPhoto/contact_me_01.jpeg" alt="Message Me">
+              <!-- <img src="https://via.placeholder.com/400x400?text=Message+Me" alt="Message Me"> -->
             </div>
             <div class="contact-info">
-              <h3>Message Me</h3>
-              <p>Drop me a message on any platform.</p>
+              <h3>
+                <i class="material-icons phone_iphone-icon mr5">phone_iphone</i>
+                Message Me
+              </h3>
+              <p class="fs-1-125 lh1-25">Drop me a message on any platform.<br/>문자를 남겨주세요! 2시간안으로 연락드리겠습니다.</p>
             </div>
           </a>
         </div>
         <div class="contact-card">
           <a href="https://github.com/sum529-create" target="_blank" class="contact-link">
             <div class="contact-image">
-              <img src="https://via.placeholder.com/400x400?text=Check+My+GitHub" alt="Check My GitHub">
+              <img src="../assets/img/myPhoto/contact_me_02.jpeg" alt="Check My GitHub">
+              <!-- <img src="https://via.placeholder.com/400x400?text=Check+My+GitHub" alt="Check My GitHub"> -->
             </div>
             <div class="contact-info">
-              <h3>Check My GitHub</h3>
-              <p>Explore my GitHub repositories and projects.</p>
+              <h3>
+                <i class="fab fa-github"></i>
+                Check My GitHub
+              </h3>
+              <p class="fs-1-125 lh1-25">Explore my GitHub repositories and projects.</p>
             </div>
           </a>
         </div>
         <div class="contact-card">
           <a href="mailto:nosumin29@gmail.com" class="contact-link">
             <div class="contact-image">
-              <img src="https://via.placeholder.com/400x400?text=Send+an+Email" alt="Send an Email">
+              <img src="../assets/img/myPhoto/contact_me_05.jpeg" alt="Send an Email">
+              <!-- <img src="https://via.placeholder.com/400x400?text=Send+an+Email" alt="Send an Email"> -->
             </div>
             <div class="contact-info">
-              <h3>Send an Email</h3>
-              <p>Send me an email for inquiries and collaborations.</p>
+              <h3>
+                <i class="material-icons mail-icon mr5">mail</i>
+                Send an Email
+              </h3>
+              <p class="fs-1-125 lh1-25">Send me an email for inquiries and collaborations.</p>
             </div>
           </a>
         </div>
@@ -241,6 +260,11 @@ export default {
 
 <style scoped>
 
+.about_me__section{
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+}
+
 .curtain {
   position: fixed;
   top: 0;
@@ -290,7 +314,7 @@ export default {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
   font-style: normal;
-  text-shadow: 2px 2px 4px rgba(233,236,241, 0.5);
+  text-shadow: 2px 2px 4px rgba(233,236,241, 0.8);
 }
 .work__main_cont img{
   width: 30%;
@@ -308,13 +332,13 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20vh;
   scroll-snap-type: y mandatory;
   overflow-y: hidden;
   scroll-behavior: smooth;
   width: 100%;
   align-items: center;
-  margin: 10vh 0;
+  margin: 30vh 0;
 }
 
 .box {
@@ -336,23 +360,17 @@ export default {
   transform: translateY(0);
 }
 
-
-.contact-header h2 {
-      font-size: 2.5rem; /* Larger text for the main header */
-      color: #fdd835; /* Instagram-like yellow color */
-      margin-bottom: 10px; /* Space below the header */
-    }
-
-    .contact-header p {
-      font-size: 1.125rem; /* Slightly larger text for the description */
-      color: #e0e0e0; /* Light grey text for better readability */
-      margin-bottom: 40px; /* Space below the description */
-    }
+.contact-header p {
+  color: #e0e0e0;
+  line-height: 2; 
+  padding-left: 3em;
+}
 
     .contact-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
-      gap: 20px; /* Space between grid items */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 8vh;
+      margin: 10vh 3em;
     }
 
     .contact-card {
@@ -361,11 +379,23 @@ export default {
       overflow: hidden; /* Hide overflow for rounded corners */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
       transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+      height: 50vh;
     }
-
+    
     .contact-card:hover {
       transform: scale(1.05); /* Slightly enlarge on hover */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* More prominent shadow on hover */
+    }
+    
+    .contact-card .contact-image{
+      overflow: hidden;
+      height: 70%;
+    }
+
+    .contact-card .contact-image img{
+      transform: translateY(-65%);
+      top:50%;
+      position: relative;
     }
 
     .contact-link {
