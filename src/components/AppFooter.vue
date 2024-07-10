@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="container">
-      <img src="../assets/img/icon/favicon_pf_sumin.png" alt="">
+      <img src="../assets/img/icon/favicon_pf_sumin.png" alt="노수민 포트폴리오 웹사이트 로고">
       <p class="text-muted">@ 2024 sumin.noh. All rights reserved.</p>
     </div>
   </div>

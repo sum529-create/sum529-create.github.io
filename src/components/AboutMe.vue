@@ -293,6 +293,9 @@ export default {
     flex-direction: column;
     margin: 0 auto 30px;
   }
+  .about-me__info {
+    padding: 1rem;
+  }
   .about-me__img-area {
     margin-right: 0;
   }

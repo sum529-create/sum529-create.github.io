@@ -62,7 +62,7 @@
                 <i class="material-icons phone_iphone-icon mr5">phone_iphone</i>
                 Message Me
               </h3>
-              <p class="fs-1-125 lh1-25">Drop me a message on any platform.<br/>문자를 남겨주세요! 2시간안으로 연락드리겠습니다.</p>
+              <p class="fs-1-125 lh1-25">Drop me a message on any platform.</p>
             </div>
           </a>
         </div>

@@ -457,8 +457,25 @@ export default {
   font-size: 16px;
   cursor: pointer;
 }
-
+@media (max-width: 768px) and (min-width: 450px){
+  .about-me__details .board .lists-container{
+    flex-direction: row;
+  }
+  .board.board__trello .lists-container{
+    align-items: flex-end;
+  }
+  .board.board__default .lists-container{
+    align-items: flex-start;
+  }
+  .lists-container .list{
+    width: 45%;
+  }
+}
 @media (max-width: 768px) {
+  .list{
+    width: 100%;
+    min-width: 180px;
+  }
   .board .lists-container {
     flex-direction: column;
     align-items: center;

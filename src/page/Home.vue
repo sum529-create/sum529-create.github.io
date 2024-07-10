@@ -1,15 +1,17 @@
 <template>
   <div class="main">
+    <app-header/>
     <app-hero />
     <main-section/>
   </div>
 </template>
 
 <script>
+import AppHeader from "../components/AppHeader.vue";
 import AppHero from "../components/AppHero";
 import MainSection from "../components/MainSection"
 export default {
-  components: { AppHero, MainSection },
+  components: {AppHeader, AppHero, MainSection },
   name: "HOME",
   data() {
     return {
