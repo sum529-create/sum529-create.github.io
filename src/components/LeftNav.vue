@@ -9,7 +9,10 @@
           <a href="/"> Sumin's portfolio </a>
         </div>
         <div class="nav__section-logo">
-          <img src="../assets/img/icon/favicon_pf_sumin.png" alt="노수민 포트폴리오 웹사이트 로고">
+          <img
+            src="../assets/img/icon/favicon_pf_sumin.png"
+            alt="노수민 포트폴리오 웹사이트 로고"
+          />
         </div>
         <div class="nav__section-icon">
           <a href="javascript:;" @click="showMenuList()">
@@ -41,31 +44,46 @@
           <ul>
             <li class="nav__section-menu-1 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/gif/menu-selected-01.gif" alt="메뉴 선택1" />
+                <img
+                  src="../assets/gif/menu-selected-01.gif"
+                  alt="메뉴 선택1"
+                />
                 <span>About</span>
               </a>
             </li>
             <li class="nav__section-menu-2 highlight-text">
               <a href="javascript:;" @click="scrollToSection('careers')">
-                <img src="../assets/gif/menu-selected-02.gif" alt="메뉴 선택2" />
+                <img
+                  src="../assets/gif/menu-selected-02.gif"
+                  alt="메뉴 선택2"
+                />
                 <span>Careers</span>
               </a>
             </li>
             <li class="nav__section-menu-3 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/gif/menu-selected-03.gif" alt="메뉴 선택3" />
+                <img
+                  src="../assets/gif/menu-selected-03.gif"
+                  alt="메뉴 선택3"
+                />
                 <span>Skills</span>
               </a>
             </li>
             <li class="nav__section-menu-4 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/gif/menu-selected-04.gif" alt="메뉴 선택4" />
+                <img
+                  src="../assets/gif/menu-selected-04.gif"
+                  alt="메뉴 선택4"
+                />
                 <span>Projects</span>
               </a>
             </li>
             <li class="nav__section-menu-5 highlight-text">
               <a href="javascript:;">
-                <img src="../assets/gif/menu-selected-05.gif" alt="메뉴 선택5" />
+                <img
+                  src="../assets/gif/menu-selected-05.gif"
+                  alt="메뉴 선택5"
+                />
                 <span>Contact</span>
               </a>
             </li>
@@ -77,7 +95,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
   name: "LeftNav",
   props: {
@@ -100,7 +118,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['updateShowMenuFlag']),
+    ...mapActions(["updateShowMenuFlag"]),
     showMenuList() {
       this.showMenuFlag = !this.showMenuFlag;
       this.updateShowMenuFlag(this.showMenuFlag);
@@ -109,10 +127,10 @@ export default {
       // 각 섹션의 ref를 통해 엘리먼트를 가져옴
       const section = this.$refs[`${sectionId}`];
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: "smooth" });
       }
       this.showMenuFlag = false;
-    }
+    },
   },
 };
 </script>
@@ -145,7 +163,7 @@ export default {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.nav__section-logo{
+.nav__section-logo {
   display: none;
 }
 .nav__section-icon {
@@ -252,19 +270,19 @@ export default {
 .nav__section.show-menu-flag .nav__section-menu li:hover img {
   opacity: 1;
 }
-@media (max-width: 768px){
-  .nav__section{
-    height: 6vh;
+@media (max-width: 768px) {
+  .nav__section {
+    height: 50px;
     padding: 0 1.5rem;
     width: 100%;
     top: -100%;
-    left:0;
+    left: 0;
     transition: top 1.2s ease, width 0.5s ease-out;
   }
-  .nav__section.in-view{
-    top:0;
+  .nav__section.in-view {
+    top: 0;
   }
-  .nav__section-logo{
+  .nav__section-logo {
     position: absolute;
     transform: translate(0, 50%);
     width: 24px;
@@ -272,10 +290,11 @@ export default {
     border-radius: 7px;
     display: block;
   }
-  .nav__section-title, .nav__section-contact{
+  .nav__section-title,
+  .nav__section-contact {
     display: none;
   }
-  .nav__section-icon{
+  .nav__section-icon {
     top: 0;
     width: auto;
     right: 0;

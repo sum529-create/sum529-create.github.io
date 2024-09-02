@@ -362,7 +362,7 @@ export default {
     width: 100%;
     transform: translateX(0px);
   }
-  .popup-description .bull_list {
+  .bull_list {
     margin: 0 20px;
   }
 }
