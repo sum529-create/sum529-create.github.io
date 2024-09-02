@@ -1,34 +1,64 @@
 <template>
-  <div class="box-area">
-    <h2>{{ project.title }}</h2>
-    <div class="project_info">
-      <div class="project_info__img-wrapper">
+  <div class="project-card">
+    <div class="project-card-title">
+      <svg
+        data-slot="icon"
+        fill="none"
+        stroke-width="1.5"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
+        ></path>
+      </svg>
+      <h2>{{ project.title }}</h2>
+    </div>
+    <div class="project-info">
+      <div class="img-wrapper">
         <img
           :src="require(`@/assets/img/projects/${project.prjImg}`)"
           :alt="project.title"
         />
       </div>
-      <div class="project_info__description-wrapper">
-        <p>{{ project.desTxt }}</p>
-        <ul class="project_info__label-wrapper mb10 mt10">
-          <li
-            v-for="(lang, index) in project.prdLan"
-            :key="index"
-            :class="{
-              label: true,
-              'label-green': lang === 'vue',
-              'label-vue-router': lang === 'vue-router',
-              'label-vuex': lang === 'vuex',
-              'label-yellow': lang === 'javascript',
-              'label-babel': lang === 'Babel',
-              'label-darkgreen': lang === 'Node.js',
-              'label-darkblue': lang === 'css',
-            }"
-          >
-            {{ lang }}
-          </li>
-        </ul>
-        <div class="project_info__link-wrapper">
+      <div class="description-wrapper">
+        <div class="labels-wrapper">
+          <span>Skills</span>
+          <ul class="label-wrapper">
+            <li
+              v-for="(lang, index) in project.prdLan"
+              :key="index"
+              :class="{
+                label: true,
+                'label-green': lang === 'vue',
+                'label-vue-router': lang === 'vue-router',
+                'label-vuex': lang === 'vuex',
+                'label-yellow': lang === 'javascript',
+                'label-babel': lang === 'Babel',
+                'label-darkgreen': lang === 'Node.js',
+                'label-darkblue': lang === 'css',
+              }"
+            >
+              {{ lang }}
+            </li>
+          </ul>
+        </div>
+        <div class="project-description">
+          <div class="project-sub">
+            <i class="material-icons"> menu_book </i>
+            <h3>Description</h3>
+          </div>
+          <ul class="bull_list">
+            <li v-for="(des, i) in project.desTxt" :key="i">
+              {{ des }}
+            </li>
+          </ul>
+        </div>
+        <div class="link-wrapper">
           <a :href="project.gitHubUrl" target="_blank" class="label-white">
             <svg
               height="32"
@@ -36,8 +66,7 @@
               aria-hidden="true"
               viewBox="0 0 16 16"
               version="1.1"
-              data-view-component="true"
-              class="octicon octicon-mark-github v-align-middle"
+              class="octicon octicon-mark-github"
             >
               <path
                 fill-rule="evenodd"
@@ -45,11 +74,10 @@
               ></path>
             </svg>
           </a>
-          <a :href="project.webLink" target="_blank"
-            ><svg
+          <a :href="project.webLink" target="_blank">
+            <svg
               height="32"
               width="32"
-              data-slot="icon"
               fill="none"
               stroke-width="2"
               stroke="currentColor"
@@ -61,8 +89,9 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-              ></path></svg
-          ></a>
+              ></path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -83,85 +112,150 @@ export default {
 </script>
 
 <style>
-.box-area {
-  padding: 3rem;
+.project-card {
+  padding: 2rem;
   border-radius: 1rem;
   background-color: #3a3a3a;
-  box-shadow: 1rem 1rem 1rem 0 #0000004e;
-  -webkit-box-shadow: 1rem 1rem 1rem 0 #0000004e;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
-.box-area h2 {
-  padding-bottom: 0.5rem;
-  font-weight: 400;
-  font-size: 2.5rem;
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.project-card .project-card-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-card .project-card-title h2 {
+  font-weight: 600;
+  font-size: 2rem;
   color: #fff;
   text-align: center;
 }
 
-.project_info {
+.project-card .project-card-title svg {
+  height: 42px;
+}
+
+.project-info {
   display: flex;
-  display: -ms-flexbox;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
   flex-direction: column;
-  justify-content: space-between;
-  -webkit-box-pack: space-between;
-  -ms-flex-pack: space-between;
+  gap: 1rem;
 }
 
-.project_info .project_info__img-wrapper {
+.img-wrapper {
   overflow: hidden;
+  border-radius: 0.5rem;
   position: relative;
-  width: 100%;
-  padding-top: 56.25%;
+  background: #2c2c2c;
 }
 
-.project_info .project_info__description-wrapper {
+.img-wrapper img {
   width: 100%;
-}
-
-.project_info .project_info__img-wrapper img {
-  display: block;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s;
   cursor: pointer;
 }
 
-.box-area p {
-  margin: 0.5rem 0;
+.img-wrapper:hover img {
+  transform: scale(1.05);
 }
 
-.project_info__label-wrapper {
+.description-wrapper {
+  color: #d1d1d1;
+}
+
+.labels-wrapper {
+  text-align: left;
+}
+
+.labels-wrapper span {
+  color: #9fadbc;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 4px;
+  line-height: 20px;
+}
+
+.label-wrapper {
   display: flex;
-  justify-content: center;
-  gap: 5px;
-  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
-.project_info__link-wrapper {
+.project-description {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.project-sub {
   display: flex;
-  gap: 5px;
-  justify-content: center;
+  position: relative;
   align-items: center;
+  min-height: 32px;
+  margin: 0 0 4px 40px;
+  padding: 8px 0;
 }
 
-.project_info__link-wrapper a {
+.project-sub i {
+  position: absolute;
+  left: -36px;
   display: inline-block;
-  border-radius: 5px;
-  padding: 5px;
+  line-height: 1;
 }
-.project_info__link-wrapper .label-white svg {
-  filter: invert(18%) sepia(61%) saturate(0%) hue-rotate(176deg) brightness(91%)
-    contrast(96%);
+
+.project-sub h3 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #b6c2cf;
 }
-.project_info__link-wrapper svg {
-  filter: invert(96%) sepia(2%) saturate(804%) hue-rotate(189deg)
-    brightness(101%) contrast(89%);
+
+.link-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.link-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.link-wrapper a:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+.link-wrapper svg {
+  width: 24px;
+  height: 24px;
+  filter: invert(20%) sepia(10%) saturate(400%) hue-rotate(200deg)
+    brightness(90%) contrast(90%);
 }
 </style>

@@ -316,18 +316,18 @@ export default {
   color: #b6c2cf;
 }
 
-.popup-description .bull_list {
+.bull_list {
   margin: 0 40px;
 }
 
-.popup-description .bull_list > li {
+.bull_list > li {
   position: relative;
   margin-top: 8px;
   padding-left: 8px;
   font-size: 15px;
   line-height: 22px;
 }
-.popup-description .bull_list > li::before {
+.bull_list > li::before {
   content: "";
   position: absolute;
   top: 10px;

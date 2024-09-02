@@ -163,7 +163,12 @@ export default {
           ],
           gitHubUrl: "https://github.com/sum529-create",
           webLink: "https://sum529-create.github.io/",
-          desTxt: "저의 프로젝트1입니다.",
+          desTxt: [
+            "프론트엔드 3년차 개발자 노수민의 포트폴리오입니다.",
+            "웹 개발 능력과 기술을 보여주기 위한 용도로 제작되었습니다",
+            "주요 목표는 동적이고 사용자 친화적인 인터페이스를 만들어 제 작업과 기술력을 효과적으로 보여주는 것입니다.",
+            "3년차 프론트엔드 개발자로서 다루었던 Vue.js를 활용하여 제작하였습니다.",
+          ],
         },
         {
           title: "title2",
@@ -171,7 +176,7 @@ export default {
           prdLan: ["vue", "react"],
           gitHubUrl: "https://github.com/sum529-create",
           webLink: "https://sum529-create.github.io/",
-          desTxt: "저의 프로젝트2입니다.",
+          desTxt: ["저의 프로젝트2입니다.", "리스트 테스트용 텍스트입니다."],
         },
         {
           title: "title3",
@@ -179,7 +184,7 @@ export default {
           prdLan: ["vue", "Ts"],
           gitHubUrl: "https://github.com/sum529-create",
           webLink: "https://sum529-create.github.io/",
-          desTxt: "저의 프로젝트3입니다.",
+          desTxt: ["저의 프로젝트3입니다.", "리스트 테스트용 텍스트입니다."],
         },
         {
           title: "title4",
@@ -187,7 +192,7 @@ export default {
           prdLan: ["react", "Ts"],
           gitHubUrl: "https://github.com/sum529-create",
           webLink: "https://sum529-create.github.io/",
-          desTxt: "저의 프로젝트4입니다.",
+          desTxt: ["저의 프로젝트4입니다.", "리스트 테스트용 텍스트입니다."],
         },
         {
           title: "title5",
@@ -195,7 +200,7 @@ export default {
           prdLan: ["vue", "nuxt", "js"],
           gitHubUrl: "https://github.com/sum529-create",
           webLink: "https://sum529-create.github.io/",
-          desTxt: "저의 프로젝트5입니다.",
+          desTxt: ["저의 프로젝트5입니다.", "리스트 테스트용 텍스트입니다."],
         },
       ],
     };
@@ -341,8 +346,7 @@ export default {
 }
 
 .about_me__section {
-  width: auto !important;
-  margin: 5rem;
+  margin: 3rem auto;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 30px;
 }
@@ -376,7 +380,7 @@ export default {
 
 .work__main_cont {
   position: relative;
-  height: 50vh;
+  height: 43vh;
 }
 
 .work__main_cont .work__main_cont-wrapper {
@@ -503,5 +507,13 @@ export default {
 .contact-info p {
   font-size: 1rem; /* Normal text size for description */
   color: #b0b0b0; /* Light grey text for description */
+}
+
+@media (max-width: 1280px) {
+  .about_me__section {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 </style>
