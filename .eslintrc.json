@@ -1,12 +1,14 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:vue/essential"
+    // "prettier"  // 이 줄을 제거합니다.
   ],
-  "plugins": ["prettier"],
+  "plugins": [
+    "vue"
+    // "prettier"  // 이 줄을 제거합니다.
+  ],
   "rules": {
-    "prettier/prettier": "error",
-    "no-unused-vars": "off" // 사용되지 않은 변수에 대해 경고를 비활성화
+    // "prettier/prettier": "error"  // 이 줄을 제거합니다.
   }
 }

@@ -152,7 +152,7 @@ export default {
   },
   methods: {
     closePopup() {
-      this.$store.dispatch('closePopup');
+      this.$store.dispatch("closePopup");
     },
   },
 };
@@ -269,7 +269,8 @@ export default {
   line-height: 20px;
 }
 
-.popup-labels .label {
+.popup-labels .label,
+.label {
   display: inline-block;
   position: relative;
   box-sizing: border-box;
@@ -357,7 +358,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .popup-overlay{
+  .popup-overlay {
     width: 100%;
     transform: translateX(0px);
   }

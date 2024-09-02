@@ -80,7 +80,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .pb0{padding-bottom:0 !important}.pb5{padding-bottom:5px !important}.pb10{padding-bottom:10px !important}.pb15{padding-bottom:15px !important}.pb20{padding-bottom:20px !important}.pb25{padding-bottom:25px !important}.pb30{padding-bottom:30px !important}.pb35{padding-bottom:35px !important}.pb40{padding-bottom:40px !important}.pb45{padding-bottom:45px !important}.pb50{padding-bottom:50px !important}.pb55{padding-bottom:55px !important}.pb60{padding-bottom:60px !important}
 .pl0{padding-left:0 !important}.pl5{padding-left:5px !important}.pl8{padding-left:8px !important;}.pl10{padding-left:10px !important}.pl15{padding-left:15px !important}.pl20{padding-left:20px !important}.pl23{padding-left:23px !important}.pl24{padding-left:24px !important}.pl25{padding-left:25px !important}.pl29{padding-left:29px !important}.pl30{padding-left:30px !important}.pl35{padding-left:35px !important}.pl40{padding-left:40px !important}.pl45{padding-left:45px !important}.pl50{padding-left:50px !important}.pl55{padding-left:55px !important}.pl60{padding-left:60px !important}
 /*** 팝업 label color ***/
-.label-purple{background-color: #5E4DB2;}
+.label-white{background-color: #FFF;}
 /* Vue.js */ .label-green {background-color: #2b7a57;color: #e0ffe0;}
 /* Nuxt.js */ .label-teal {background-color: #007d67;color: #e0fffa;}
 /* TypeScript */ .label-blue {background-color: #005ea6;color: #d9f1ff;}
@@ -94,6 +94,13 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 /* Node.js */ .label-darkgreen {background-color: #2a5e2a;color: #e0ffe0;}
 /* Trello */ .label-sky {background-color: #0079bf; color:#d9f1ff;}
 /* Visual Studio */ .label-light-sky{background-color:#007ACC; color: #d9f1ff;}
+/* Vue Router */.label-vue-router {background-color: #42b983;color: #ffffff;}
+/* Vuex */.label-vuex {background-color: #3eaf7c;color: #ffffff;}
+/* Babel */.label-babel {background-color: #f9c72b;color: #000000;
+}
+
+
+
 /*** font color ***/
 .fc_keycolor{color:#007dfe  !important;}
 .fc_subcolor{color:#fdd835 !important;}

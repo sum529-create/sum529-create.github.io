@@ -351,7 +351,7 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   max-width: 1280px;
-  width:100%;
+  width: 100%;
   padding: 60px 55px;
 }
 .hero__section {
