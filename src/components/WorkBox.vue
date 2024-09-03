@@ -41,6 +41,14 @@
                 'label-babel': lang === 'Babel',
                 'label-darkgreen': lang === 'Node.js',
                 'label-darkblue': lang === 'css',
+                'label-vite': lang === 'vite',
+                'label-firebase': lang === 'firebase',
+                'label-blue': lang === 'typescript',
+                'label-pink': lang === 'scss',
+                'label-orange': lang === 'html',
+                'label-react': lang === 'react',
+                'label-react-router': lang === 'react-router',
+                'label-react-dom': lang === 'react-dom',
               }"
             >
               {{ lang }}

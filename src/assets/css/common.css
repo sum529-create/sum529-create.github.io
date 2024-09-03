@@ -96,8 +96,12 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 /* Visual Studio */ .label-light-sky{background-color:#007ACC; color: #d9f1ff;}
 /* Vue Router */.label-vue-router {background-color: #42b983;color: #ffffff;}
 /* Vuex */.label-vuex {background-color: #3eaf7c;color: #ffffff;}
-/* Babel */.label-babel {background-color: #f9c72b;color: #000000;
-}
+/* Babel */.label-babel {background-color: #f9c72b;color: #000000;}
+/* Vite */.label-vite {background-color: #646cff; color: #ffffff;}
+/* Firebase */.label-firebase {background-color: #ffca28;color: #000000;}
+/* React */.label-react {background-color: #61dafb;color: #20232a;}
+/* React Router */.label-react-router {background-color: #ff5d57; color: #ffffff;}
+/* React DOM */.label-react-dom {background-color: #61dafb;color: #20232a;}
 
 
 
