@@ -40,15 +40,17 @@
                 'label-yellow': lang === 'javascript',
                 'label-babel': lang === 'Babel',
                 'label-darkgreen': lang === 'Node.js',
-                'label-darkblue': lang === 'css',
+                'label-darkblue': lang === 'css' || lang === 'CSS-in-JS',
                 'label-vite': lang === 'vite',
                 'label-firebase': lang === 'firebase',
                 'label-blue': lang === 'typescript',
                 'label-pink': lang === 'scss',
+                'label-pink': lang === 'sass',
                 'label-orange': lang === 'html',
                 'label-react': lang === 'react',
                 'label-react-router': lang === 'react-router',
                 'label-react-dom': lang === 'react-dom',
+                'label-glitch': lang === 'Glitch',
               }"
             >
               {{ lang }}
@@ -124,7 +126,7 @@ export default {
   padding: 2rem;
   border-radius: 1rem;
   background-color: #3a3a3a;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
   max-width: 800px;
@@ -133,10 +135,10 @@ export default {
   box-sizing: border-box;
 }
 
-.project-card:hover {
+/* .project-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-10px);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
-}
+} */
 
 .project-card .project-card-title {
   display: flex;

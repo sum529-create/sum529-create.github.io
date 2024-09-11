@@ -102,7 +102,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 /* React */.label-react {background-color: #61dafb;color: #20232a;}
 /* React Router */.label-react-router {background-color: #ff5d57; color: #ffffff;}
 /* React DOM */.label-react-dom {background-color: #61dafb;color: #20232a;}
-
+/* Glitch */.label-glitch {background-color: #F5F7FA; color: #333;}
 
 
 /*** font color ***/
