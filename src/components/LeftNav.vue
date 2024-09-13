@@ -9,10 +9,12 @@
           <a href="/"> Sumin's portfolio </a>
         </div>
         <div class="nav__section-logo">
-          <img
-            src="../assets/img/icon/favicon_pf_sumin.png"
-            alt="노수민 포트폴리오 웹사이트 로고"
-          />
+          <a href="/">
+            <img
+              src="../assets/img/icon/favicon_pf_sumin.png"
+              alt="노수민 포트폴리오 웹사이트 로고"
+            />
+          </a>
         </div>
         <div class="nav__section-icon">
           <a href="javascript:;" @click="showMenuList()">
@@ -48,7 +50,7 @@
                   src="../assets/gif/menu-selected-01.gif"
                   alt="메뉴 선택1"
                 />
-                <span>About</span>
+                <span>Home</span>
               </a>
             </li>
             <li class="nav__section-menu-2 highlight-text">
@@ -57,7 +59,7 @@
                   src="../assets/gif/menu-selected-02.gif"
                   alt="메뉴 선택2"
                 />
-                <span>Careers</span>
+                <span>About</span>
               </a>
             </li>
             <li class="nav__section-menu-3 highlight-text">
@@ -66,7 +68,7 @@
                   src="../assets/gif/menu-selected-03.gif"
                   alt="메뉴 선택3"
                 />
-                <span>Skills</span>
+                <span>Projects</span>
               </a>
             </li>
             <li class="nav__section-menu-4 highlight-text">
@@ -75,10 +77,10 @@
                   src="../assets/gif/menu-selected-04.gif"
                   alt="메뉴 선택4"
                 />
-                <span>Projects</span>
+                <span>Contact</span>
               </a>
             </li>
-            <li class="nav__section-menu-5 highlight-text">
+            <!-- <li class="nav__section-menu-5 highlight-text">
               <a href="javascript:;">
                 <img
                   src="../assets/gif/menu-selected-05.gif"
@@ -86,7 +88,7 @@
                 />
                 <span>Contact</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -296,9 +298,23 @@ export default {
   }
   .nav__section-icon {
     top: 0;
-    width: auto;
+    width: auto !important;
     right: 0;
     transform: translate(-1.5rem, 50%);
+  }
+  .nav__section.show-menu-flag .nav__section-menu {
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    transform: none;
+    background-color: #e9ecf1;
+  }
+  .nav__section.show-menu-flag .nav__section-menu ul {
+    top: calc(50% - 50px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
   }
 }
 </style>

@@ -601,5 +601,8 @@ i.material-icons {
     top: 10%;
     text-align: center;
   }
+  .hero__bottom-img {
+    height: auto;
+  }
 }
 </style>

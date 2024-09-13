@@ -89,7 +89,12 @@
           <i class="material-icons terminal-icon">terminal</i>
           <h3>프로젝트</h3>
         </div>
-        <a class="about-me__show-more" :class="{'btn-effect' : showEffectBtn}" href="/projects">Show more Project ➣</a>
+        <a
+          class="about-me__show-more"
+          :class="{ 'btn-effect': showEffectBtn }"
+          href="/projects"
+          >Show more Project ➣</a
+        >
       </div>
     </div>
   </div>
@@ -123,16 +128,16 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['updateShowEffectBtn']),
+    ...mapActions(["updateShowEffectBtn"]),
     checkIfInProjectArea() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
+
       if (scrollPosition + windowHeight >= documentHeight - 230) {
         setTimeout(() => {
           this.showEffectBtn = true;
-        }, 1500)
+        }, 1500);
       } else {
         this.showEffectBtn = false;
       }
@@ -240,8 +245,8 @@ export default {
   margin-right: 10px;
 }
 
-.about-me__info .about-me__show-more{
-  color: #FFF;
+.about-me__info .about-me__show-more {
+  color: #fff;
   font-weight: 500;
   line-height: 40px;
   width: 100%;
@@ -256,17 +261,19 @@ export default {
   cursor: pointer;
 }
 
-.about-me__info .about-me__show-more.btn-effect{
+.about-me__info .about-me__show-more.btn-effect {
   transform: translateY(0);
   animation: sparkle 1.5s infinite alternate;
 }
 
 @keyframes sparkle {
   0% {
-    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #95afc0, 0 0 20px #95afc0, 0 0 25px #95afc0;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #95afc0,
+      0 0 20px #95afc0, 0 0 25px #95afc0;
   }
   100% {
-    box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #95afc0, 0 0 25px #95afc0, 0 0 30px #95afc0;
+    box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #95afc0,
+      0 0 25px #95afc0, 0 0 30px #95afc0;
   }
 }
 
