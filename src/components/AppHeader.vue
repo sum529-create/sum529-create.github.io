@@ -2,11 +2,25 @@
   <header>
     <nav>
       <ul>
-        <li><a href="javascript:;">About</a></li>
-        <li><a href="javascript:;">Careers</a></li>
-        <li><a href="javascript:;">Skills</a></li>
-        <li><a href="javascript:;">Projects</a></li>
-        <li><a href="javascript:;">Contact</a></li>
+        <li>
+          <a href="javascript:;" @click.prevent="scrollTo('about', '/')"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="javascript:;"
+            @click.prevent="scrollTo('projects', '/projects')"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="javascript:;"
+            @click.prevent="scrollTo('contact', '/projects')"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
   </header>
@@ -15,6 +29,12 @@
 <script>
 export default {
   name: "AppHeader",
+  methods: {
+    scrollTo(sectionId, routePath) {
+      // 부모 컴포넌트에 이벤트를 발생시켜 섹션 아이디를 전달
+      this.$emit("scrollToSection", sectionId, routePath);
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="about-me">
+  <div class="about-me" id="about">
     <div class="about-me__photo">
       <div class="about-me__img-area">
         <img
@@ -142,6 +142,18 @@ export default {
         this.showEffectBtn = false;
       }
       this.updateShowEffectBtn(this.showEffectBtn);
+    },
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     },
   },
   components: {

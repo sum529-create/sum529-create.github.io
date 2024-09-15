@@ -2,12 +2,12 @@
   <div class="content">
     <div class="main__content" :class="{ 'in-view': inView }" ref="section">
       <div class="section">
-        <about-me :in-view="inView" />
+        <about-me :in-view="inView" ref="contentComponent" />
       </div>
-      <app-footer/>
+      <app-footer />
     </div>
-    <popup-card/>
-    <left-nav :in-view="inView" />
+    <popup-card />
+    <left-nav :in-view="inView" @scrollToSection="handleScrollToSection" />
   </div>
 </template>
 
@@ -15,10 +15,10 @@
 import LeftNav from "./LeftNav";
 import AboutMe from "./AboutMe";
 import AppFooter from "./AppFooter";
-import PopupCard from './PopupCard';
+import PopupCard from "./PopupCard";
 export default {
   name: "MainSection",
-  components: { LeftNav, AboutMe,AppFooter,PopupCard },
+  components: { LeftNav, AboutMe, AppFooter, PopupCard },
   data() {
     return {
       inView: false,
@@ -48,6 +48,27 @@ export default {
         this.inView = entry.isIntersecting;
       });
     },
+    handleScrollToSection(sectionId, routePath) {
+      if (this.$route.path !== routePath) {
+        /*this.$router.push(routePath).then(() => {
+          this.$nextTick(() => {
+            if (this.$refs.contentComponent) {
+              this.$refs.contentComponent.scrollToSection(sectionId);
+            }
+          });
+        });*/
+        this.$router.push({
+          path: routePath,
+          query: { sectionId: sectionId },
+        });
+      } else {
+        this.$nextTick(() => {
+          if (this.$refs.contentComponent) {
+            this.$refs.contentComponent.scrollToSection(sectionId);
+          }
+        });
+      }
+    },
   },
 };
 </script>
@@ -69,8 +90,8 @@ export default {
   width: 100%;
 }
 
-@media (max-width: 768px){
-  .main__content{
+@media (max-width: 768px) {
+  .main__content {
     padding-left: 0;
   }
 }

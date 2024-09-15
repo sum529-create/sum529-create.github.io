@@ -1,25 +1,40 @@
 <template>
   <div class="main">
-    <app-header/>
+    <app-header @scrollToSection="handleScrollToSection" />
     <app-hero />
-    <main-section/>
+    <main-section ref="contentComponent" />
   </div>
 </template>
 
 <script>
 import AppHeader from "../components/AppHeader.vue";
 import AppHero from "../components/AppHero";
-import MainSection from "../components/MainSection"
+import MainSection from "../components/MainSection";
 export default {
-  components: {AppHeader, AppHero, MainSection },
+  components: { AppHeader, AppHero, MainSection },
   name: "HOME",
   data() {
-    return {
-    };
+    return {};
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
+    handleScrollToSection(sectionId, routePath) {
+      if (this.$route.path !== routePath) {
+        this.$router.push({
+          path: routePath,
+          query: { sectionId: sectionId },
+        });
+      } else {
+        this.$nextTick(() => {
+          if (this.$refs.contentComponent) {
+            this.$refs.contentComponent.handleScrollToSection(
+              sectionId,
+              routePath
+            );
+          }
+        });
+      }
+    },
   },
 };
 </script>
@@ -33,7 +48,7 @@ export default {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: #FFF;
+  color: #fff;
   z-index: 999;
   animation: upDown 1s infinite alternate;
   opacity: 0;
@@ -63,5 +78,4 @@ export default {
     transform: translate(-50%, -10px);
   }
 }
-
 </style>

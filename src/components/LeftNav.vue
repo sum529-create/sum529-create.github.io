@@ -45,7 +45,7 @@
         <div class="nav__section-menu">
           <ul>
             <li class="nav__section-menu-1 highlight-text">
-              <a href="javascript:;">
+              <a href="/">
                 <img
                   src="../assets/gif/menu-selected-01.gif"
                   alt="메뉴 선택1"
@@ -54,7 +54,7 @@
               </a>
             </li>
             <li class="nav__section-menu-2 highlight-text">
-              <a href="javascript:;" @click="scrollToSection('careers')">
+              <a href="javascript:;" @click.prevent="scrollTo('about', '/')">
                 <img
                   src="../assets/gif/menu-selected-02.gif"
                   alt="메뉴 선택2"
@@ -63,7 +63,10 @@
               </a>
             </li>
             <li class="nav__section-menu-3 highlight-text">
-              <a href="javascript:;">
+              <a
+                href="javascript:;"
+                @click.prevent="scrollTo('projects', '/projects')"
+              >
                 <img
                   src="../assets/gif/menu-selected-03.gif"
                   alt="메뉴 선택3"
@@ -72,7 +75,10 @@
               </a>
             </li>
             <li class="nav__section-menu-4 highlight-text">
-              <a href="javascript:;">
+              <a
+                href="javascript:;"
+                @click.prevent="scrollTo('contact', '/projects')"
+              >
                 <img
                   src="../assets/gif/menu-selected-04.gif"
                   alt="메뉴 선택4"
@@ -125,13 +131,10 @@ export default {
       this.showMenuFlag = !this.showMenuFlag;
       this.updateShowMenuFlag(this.showMenuFlag);
     },
-    scrollToSection(sectionId) {
-      // 각 섹션의 ref를 통해 엘리먼트를 가져옴
-      const section = this.$refs[`${sectionId}`];
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-      this.showMenuFlag = false;
+    scrollTo(sectionId, routePath) {
+      // 부모 컴포넌트에 이벤트를 발생시켜 섹션 아이디를 전달
+      this.$emit("scrollToSection", sectionId, routePath);
+      this.showMenuFlag = !this.showMenuFlag;
     },
   },
 };

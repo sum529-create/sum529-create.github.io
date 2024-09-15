@@ -3,7 +3,7 @@
     <div class="curtain" :class="{ open: isCurtainOpen }">
       <div class="curtain-inner"></div>
     </div>
-    <div class="section" ref="sectionRef">
+    <div class="section" ref="sectionRef" id="projects">
       <div class="work__main_cont">
         <div class="work__main_cont-wrapper">
           <h1 class="fs-6 fc_white fade-in-pulse fc_keycolor">
@@ -42,7 +42,7 @@
       </div>
     </div>
     <text-effect :secHeight="secHeight" />
-    <div class="section about_me__section">
+    <div class="section about_me__section" id="contact">
       <div class="contact-header header-title">
         <h2 class="fs-2-5 fc_keycolor mb10">
           <i class="material-icons link-icon mr5 fs-1">link</i>
@@ -122,7 +122,7 @@
       </div>
     </div>
     <app-footer />
-    <left-nav :in-view="true" />
+    <left-nav :in-view="true" @scrollToSection="handleScrollToSection" />
   </div>
 </template>
 
@@ -294,6 +294,11 @@ export default {
     if (section) {
       this.secHeight = section.offsetHeight;
     }
+    const sectionId = this.$route.query.sectionId; // 라우트의 params에서 직접 가져옴
+
+    if (sectionId) {
+      this.scrollToSectionById(sectionId);
+    }
   },
   watch: {
     secHeight(newData) {
@@ -401,16 +406,46 @@ export default {
     },
     updateText() {
       for (let i = 0; i < this.displayedText.length; i++) {
-        document.getElementById(`line${i + 1}`).innerHTML =
-          this.displayedText[i] +
-          (i === this.currentTextIndex ? '<span class="cursor"></span>' : "");
+        const element = document.getElementById(`line${i + 1}`);
+        if (element) {
+          element.innerHTML =
+            this.displayedText[i] +
+            (i === this.currentTextIndex ? '<span class="cursor"></span>' : "");
+        }
       }
     },
     removeCursor() {
       for (let i = 0; i < this.displayedText.length; i++) {
-        document.getElementById(`line${i + 1}`).innerHTML =
-          this.displayedText[i];
+        const element = document.getElementById(`line${i + 1}`);
+        if (element) {
+          element.innerHTML = this.displayedText[i];
+        }
       }
+    },
+    handleScrollToSection(sectionId, routePath) {
+      if (this.$route.path !== routePath) {
+        this.$router.push(routePath).then(() => {
+          this.scrollToSectionById(sectionId);
+        });
+      } else {
+        this.scrollToSectionById(sectionId);
+      }
+    },
+    scrollToSectionById(sectionId) {
+      this.$nextTick(() => {
+        setTimeout(() => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const elementPosition = section.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }, 300);
+      });
     },
   },
 };
