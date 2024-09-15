@@ -529,7 +529,6 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20vh;
   scroll-snap-type: y mandatory;
   overflow-y: hidden;
   scroll-behavior: smooth;
