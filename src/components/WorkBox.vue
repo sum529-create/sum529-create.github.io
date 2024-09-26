@@ -20,10 +20,12 @@
     </div>
     <div class="project-info">
       <div class="img-wrapper">
-        <img
-          :src="require(`@/assets/img/projects/${project.prjImg}`)"
-          :alt="project.title"
-        />
+        <a :href="project.webLink" target="_blank">
+          <img
+            :src="require(`@/assets/img/projects/${project.prjImg}`)"
+            :alt="project.title"
+          />
+        </a>
       </div>
       <div class="description-wrapper">
         <div class="labels-wrapper">

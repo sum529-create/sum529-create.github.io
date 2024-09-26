@@ -8,14 +8,20 @@
       >
         <h1 class="slide-text fc_999">
           Thank you very much for visiting my portfolio site. Thank you very
-          much for visiting my portfolio site. Thank you very much for visiting
-          my portfolio site.
-          <span class="txt_blue_line fc_txt-dark-sdw"
-            >Thank you very much for visiting my portfolio site.</span
-          >
+          much for visiting my portfolio site.
+          <span class="txt_blue_line fc_txt-dark-sdw">
+            Thank you very much for visiting my portfolio site.
+          </span>
+          Thank you very much for visiting my portfolio site.
+          <span class="txt_blue_line fc_txt-dark-sdw">
+            Thank you very much for visiting my portfolio site.
+          </span>
+          Thank you very much for visiting my portfolio site.
+          <span class="txt_blue_line fc_txt-dark-sdw">
+            Thank you very much for visiting my portfolio site.
+          </span>
           Thank you very much for visiting my portfolio site. Thank you very
-          much for visiting my portfolio site. Thank you very much for visiting
-          my portfolio site.
+          much for visiting my portfolio site.
         </h1>
       </div>
       <div
@@ -25,12 +31,20 @@
       >
         <h1 class="slide-text fc_999">
           I'm looking forward to working with you. I'm looking forward to
-          working with you. I'm looking forward to working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw"
-            >I'm looking forward to working with you.</span
-          >
+          working with you.
+          <span class="txt_yellow_line fc_txt-dark-sdw">
+            I'm looking forward to working with you.
+          </span>
+          I'm looking forward to working with you.
+          <span class="txt_yellow_line fc_txt-dark-sdw">
+            I'm looking forward to working with you.
+          </span>
+          I'm looking forward to working with you.
+          <span class="txt_yellow_line fc_txt-dark-sdw">
+            I'm looking forward to working with you.
+          </span>
           I'm looking forward to working with you. I'm looking forward to
-          working with you. I'm looking forward to working with you.
+          working with you.
         </h1>
       </div>
     </div>
@@ -41,6 +55,7 @@
         :style="slideTextStyle(1)"
       >
         <h1 class="slide-text fc_666">
+          Crafting Dynamic User Experiences. Crafting Dynamic User Experiences.
           <span class="fc_cimson fc_txt-dark-sdw"
             >Crafting Dynamic User Experiences.</span
           >
@@ -64,7 +79,7 @@
           <span class="fc_cimson fc_txt-dark-sdw"
             >Crafting Dynamic User Experiences.</span
           >
-          Crafting Dynamic User Experiences.
+          Crafting Dynamic User Experiences. Crafting Dynamic User Experiences.
         </h1>
       </div>
       <div
@@ -73,7 +88,7 @@
         :style="slideTextStyle(2)"
       >
         <h1 class="slide-text fc_666">
-          Empowering Web Interfaces.
+          Empowering Web Interfaces. Empowering Web Interfaces.
           <span class="fc_wildwatermelon fc_txt-dark-sdw"
             >Empowering Web Interfaces.</span
           >
@@ -97,6 +112,7 @@
           <span class="fc_wildwatermelon fc_txt-dark-sdw"
             >Empowering Web Interfaces.</span
           >
+          Empowering Web Interfaces. Empowering Web Interfaces.
         </h1>
       </div>
       <div
@@ -125,6 +141,8 @@
           <span class="fc_slateblue fc_txt-dark-sdw"
             >Proficient in creating responsive web designs.</span
           >
+          Proficient in creating responsive web designs. Proficient in creating
+          responsive web designs.
         </h1>
       </div>
       <div
@@ -133,6 +151,8 @@
         :style="slideTextStyle(4)"
       >
         <h1 class="slide-text fc_666">
+          Excellent problem-solving skills and analytical thinking. Excellent
+          problem-solving skills and analytical thinking.
           <span class="fc_springgreen fc_txt-dark-sdw"
             >Excellent problem-solving skills and analytical thinking.</span
           >
@@ -156,7 +176,8 @@
           <span class="fc_springgreen fc_txt-dark-sdw"
             >Excellent problem-solving skills and analytical thinking.</span
           >
-          Excellent problem-solving skills and analytical thinking.
+          Excellent problem-solving skills and analytical thinking. Excellent
+          problem-solving skills and analytical thinking.
         </h1>
       </div>
       <div
@@ -165,7 +186,8 @@
         :style="slideTextStyle(5)"
       >
         <h1 class="slide-text fc_666">
-          Commitment to continuous learning and self-improvement.
+          Commitment to continuous learning and self-improvement. Commitment to
+          continuous learning and self-improvement.
           <span class="fc_deepskyblue fc_txt-dark-sdw"
             >Commitment to continuous learning and self-improvement.</span
           >
@@ -189,6 +211,8 @@
           <span class="fc_deepskyblue fc_txt-dark-sdw"
             >Commitment to continuous learning and self-improvement.</span
           >
+          Commitment to continuous learning and self-improvement. Commitment to
+          continuous learning and self-improvement.
         </h1>
       </div>
     </div>

@@ -185,14 +185,14 @@ export default {
       const windowHeight = window.innerHeight;
 
       const titleTrigger = windowHeight * 0.1;
-      const subtitle1Trigger = windowHeight * 0.2;
-      const subtitle2Trigger = windowHeight * 0.3;
+      const subtitle1Trigger = windowHeight * 0.1;
+      const subtitle2Trigger = windowHeight * 0.1;
       const description1Trigger = windowHeight * 0.4;
-      const description2Trigger = windowHeight * 0.5;
-      const description3Trigger = windowHeight * 0.6;
-      const description4Trigger = windowHeight * 0.7;
-      const titlebackTrigger = windowHeight * 0.8;
-      const middleTxtFlag = windowHeight * 0.9;
+      const description2Trigger = windowHeight * 0.4;
+      const description3Trigger = windowHeight * 0.4;
+      const description4Trigger = windowHeight * 0.4;
+      const titlebackTrigger = windowHeight * 0.6;
+      const middleTxtFlag = windowHeight * 0.8;
 
       if (scrollPosition > titleTrigger) {
         this.title1InView = true;
