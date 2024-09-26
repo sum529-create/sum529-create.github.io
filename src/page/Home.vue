@@ -46,7 +46,7 @@ export default {
 .arrow-container {
   position: fixed;
   bottom: 10px;
-  left: 50%;
+  left: calc(50% - 40px);
   transform: translateX(-50%);
   color: #fff;
   z-index: 999;
@@ -72,10 +72,10 @@ export default {
 
 @keyframes upDown {
   0% {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
   100% {
-    transform: translate(-50%, -10px);
+    transform: translateY(-10px);
   }
 }
 </style>

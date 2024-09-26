@@ -3,7 +3,9 @@
     <div class="board-header">
       <div class="board-title">
         <h2>EBS OC 운영팀 파견 근무</h2>
-        <i class="material-icons error-icon" @click="togglePopup()">error</i>
+        <i class="material-icons error-icon pt2" @click="togglePopup()"
+          >error</i
+        >
       </div>
       <p class="mt10">
         ※ 온라인 교육 플랫폼의
@@ -256,13 +258,13 @@ export default {
     // eslint-disable-next-line
     inView(newVal, _oldVal) {
       if (!newVal) {
-        this.$store.dispatch('closePopup');
+        this.$store.dispatch("closePopup");
       }
     },
   },
   methods: {
     togglePopup(type) {
-      this.$store.dispatch('togglePopup', type);
+      this.$store.dispatch("togglePopup", type);
     },
     getFormattedDate() {
       const today = new Date();
@@ -290,7 +292,7 @@ export default {
   color: #ffffff;
   text-align: center;
   border-radius: 4px 4px 0 0;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .board-header .board-title {
@@ -457,22 +459,22 @@ export default {
   font-size: 16px;
   cursor: pointer;
 }
-@media (max-width: 768px) and (min-width: 450px){
-  .about-me__details .board .lists-container{
+@media (max-width: 768px) and (min-width: 550px) {
+  .about-me__details .board .lists-container {
     flex-direction: row;
   }
-  .board.board__trello .lists-container{
+  .board.board__trello .lists-container {
     align-items: flex-end;
   }
-  .board.board__default .lists-container{
+  .board.board__default .lists-container {
     align-items: flex-start;
   }
-  .lists-container .list{
+  .lists-container .list {
     width: 45%;
   }
 }
 @media (max-width: 768px) {
-  .list{
+  .list {
     width: 100%;
     min-width: 180px;
   }

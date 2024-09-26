@@ -129,7 +129,7 @@
           </p>
         </div>
         <img
-          src="../assets/img/myPhoto/sumin_img.png"
+          src="../assets/img/myPhoto/sumin_img.jpg"
           alt="노수민 인물사진"
           class="hero__bottom-img"
           ref="portfolioImg"
@@ -475,6 +475,7 @@ export default {
   margin-bottom: 1.5em;
   transition: transform 0.5s, opacity 0.5s;
   opacity: 0;
+  line-height: 1.5;
   transform: translateY(50px);
 }
 .hero__bottom-title,
@@ -506,7 +507,7 @@ export default {
   color: white;
 }
 .hero__bottom-img {
-  height: 50vh;
+  height: 35vh;
   opacity: 0;
   transform: translateY(100px);
   transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
@@ -603,6 +604,7 @@ i.material-icons {
   }
   .hero__bottom-img {
     height: auto;
+    max-height: 25vh;
   }
 }
 </style>

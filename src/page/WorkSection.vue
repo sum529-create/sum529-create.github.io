@@ -531,6 +531,7 @@ export default {
   flex-direction: column;
   scroll-snap-type: y mandatory;
   overflow-y: hidden;
+  gap: 25px;
   scroll-behavior: smooth;
   width: 100%;
   align-items: center;

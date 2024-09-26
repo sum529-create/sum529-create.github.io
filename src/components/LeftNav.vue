@@ -282,10 +282,13 @@ export default {
     width: 100%;
     top: -100%;
     left: 0;
-    transition: top 1.2s ease, width 0.5s ease-out;
+    transition: top 1.2s ease, height 0.5s ease-out;
   }
   .nav__section.in-view {
     top: 0;
+  }
+  .nav__section.show-menu-flag {
+    height: 100vh;
   }
   .nav__section-logo {
     position: absolute;
@@ -304,20 +307,6 @@ export default {
     width: auto !important;
     right: 0;
     transform: translate(-1.5rem, 50%);
-  }
-  .nav__section.show-menu-flag .nav__section-menu {
-    height: 100vh;
-    width: 100%;
-    left: 0;
-    top: 100%;
-    transform: none;
-    background-color: #e9ecf1;
-  }
-  .nav__section.show-menu-flag .nav__section-menu ul {
-    top: calc(50% - 50px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
   }
 }
 </style>

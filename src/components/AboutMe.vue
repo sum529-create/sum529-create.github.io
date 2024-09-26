@@ -3,8 +3,8 @@
     <div class="about-me__photo">
       <div class="about-me__img-area">
         <img
-          src="../assets/img/myPhoto/my_ar_img.jpeg"
-          alt="노수민 AR 이미지"
+          src="../assets/img/myPhoto/card_member.jpeg"
+          alt="노수민 프로필 이미지"
           class="about-me__image"
         />
       </div>
@@ -19,15 +19,20 @@
         <div class="about-me-education tal fs-0-75 pl23">
           <ul>
             <li class="dib">
-              <i class="material-icons school-icon mr5 mln23 fz18">school</i>
+              <i class="material-icons school-icon mr5 mln23 fz18 pb3"
+                >school</i
+              >
               <span>안산대학교 - 글로벌IT비즈니스학과</span>
             </li>
             <li class="dib">
-              <i class="material-icons school-icon mr5 mln23 fz18">school</i>
+              <i class="material-icons school-icon mr5 mln23 fz18 pb3"
+                >school</i
+              >
               <span>건국대학교 - 컴퓨터공학과(편입)</span>
             </li>
             <li class="dib">
-              <i class="material-icons cast_for_education-icon mr5 mln23 fz18"
+              <i
+                class="material-icons cast_for_education-icon mr5 mln23 fz18 pb3"
                 >cast_for_education</i
               >
               <span>코리아정보보안IT아카데미 - 풀스택 개발자 양성과정</span>
@@ -176,11 +181,23 @@ export default {
   flex-direction: column;
 }
 
-.about-me__image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
+.about-me__img-area {
   position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.about-me__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   z-index: 1;
   transition: opacity 1s ease-in-out;
 }
@@ -296,12 +313,15 @@ export default {
   .about-me__photo {
     flex-direction: row;
     margin-bottom: 30px;
+    width: 100%;
+    gap: 40px;
   }
   .about-me__img-area {
-    margin-right: 5vw;
+    padding-bottom: 33%;
+    flex: 1;
   }
-  .about-me__image {
-    max-width: 25vw;
+  .about-me__profile {
+    flex: 2;
   }
   .about-me__details {
     margin-left: 0;
@@ -316,7 +336,9 @@ export default {
     padding: 1rem;
   }
   .about-me__img-area {
-    margin-right: 0;
+    width: 50%;
+    padding-bottom: 50%;
+    margin: 0 auto;
   }
   .about-me-education ul {
     text-align: center;
