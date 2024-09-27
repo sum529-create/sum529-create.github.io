@@ -97,7 +97,7 @@
         <a
           class="about-me__show-more"
           :class="{ 'btn-effect': showEffectBtn }"
-          href="/projects"
+          href="/#/projects"
           >Show more Project ➣</a
         >
       </div>

@@ -2,7 +2,8 @@
   <div class="content">
     <div class="section hero__section">
       <video class="hero__video-container" autoplay muted loop>
-        <source src="../assets/main_video.mp4" type="video/mp4" />
+        <!-- <source src="../assets/main_video.mp4" type="video/mp4" /> -->
+        <source src="/main_video.mp4" type="video/mp4" />
         My browser does not support the video tag.
       </video>
       <div class="hero__headline">
