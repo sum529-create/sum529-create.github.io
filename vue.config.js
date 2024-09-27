@@ -1,8 +1,6 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   runtimeCompiler: true,
   publicPath:
-    // eslint-disable-next-line no-undef
     process.env.NODE_ENV === "production" ? "/sum529-create.github.io/" : "/",
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
@@ -13,7 +11,6 @@ module.exports = {
   configureWebpack: {
     output: {
       publicPath:
-        // eslint-disable-next-line no-undef
         process.env.NODE_ENV === "production"
           ? "/sum529-create.github.io/"
           : "/",

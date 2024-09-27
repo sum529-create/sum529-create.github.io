@@ -7,7 +7,7 @@ import WorkSection from "../page/WorkSection";
 Vue.use(Router);
 
 const router = new Router({
-  mode: "history",
+  mode: "hash",
   routes: [
     {
       path: "/",
