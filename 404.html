@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지를 찾을 수 없습니다 - Redirecting...</title>
     <script type="text/javascript">
         var path = window.location.pathname;
-        window.location = "/sum529-create.github.io/" + (path.startsWith("/") ? path.substring(1) : path);
+
+        // 올바른 경로로 리디렉션
+        window.location = "./" + (path.startsWith("/") ? path.substring(1) : path);
     </script>
 </head>
 
 <body>
-    <h1>Redirecting...</h1>
+    <h1>페이지를 찾을 수 없습니다.</h1>
+    <p>잠시 후, 홈페이지로 리디렉션됩니다...</p>
 </body>
 
 </html>
