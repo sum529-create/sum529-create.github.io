@@ -1,6 +1,7 @@
 {
   "name": "sumin-pf",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "A Vue.js project",
   "author": "smnoh",
   "private": true,
