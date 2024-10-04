@@ -107,7 +107,10 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 
 /*** font color ***/
 .fc_keycolor{color:#007dfe  !important;}
+.fc_blue_line{ color: #007dfe !important; text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,0px 1px 0 #fff,0px -1px 0 #fff,1px 0px 0 #fff,-1px 0px 0 #fff;}
 .fc_subcolor{color:#fdd835 !important;}
+.fc_yellow_line{color: #fdd835 !important;text-shadow:2px 2px 0 #000,-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,0px 2px 0 #000,0px -2px 0 #000,2px 0px 0 #000,-2px 0px 0 #000;}
+.fc_lightgrey{color: #dcdde1;}
 .fc_grey{color:#aaa}
 .fc_999{color: #999;}
 .fc_666{color:#666}
@@ -129,18 +132,19 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .fc_slateblue {color: #6A5ACD;}
 .fc_springgreen {color: #00FF7F;}
 .fc_deepskyblue {color: #00BFFF;}
+.fc_txt-dark-sdw {text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);}
 
 /*** font size ***/
 .fz10{font-size:10px !important}.fz11{font-size:11px !important}.fz12{font-size:12px !important}.fz13{font-size:13px !important}.fz14{font-size:14px !important}.fz15{font-size:15px !important}
 .fz16{font-size:16px !important}.fz17{font-size:17px !important}.fz18{font-size:18px !important}.fz19{font-size:19px !important}.fz20{font-size:20px !important}.fz21{font-size:21px !important}
 .fz22{font-size:22px !important}.fz23{font-size:23px !important}.fz24{font-size:24px !important}.fz25{font-size:25px !important}.fz26{font-size:26px !important}.fz27{font-size:27px !important}.fz28{font-size:28px !important}.fz29{font-size:29px !important}.fz30{font-size:30px !important}
-.fs-0-75 {font-size: 0.75em  !important;}.fs-1 {font-size: 1em  !important;}.fs-1-125 {font-size: 1.125em  !important;}.fs-1-25 {font-size: 1.25em  !important;}.fs-1-5 {font-size: 1.5em  !important;}.fs-2 {font-size: 2em  !important;}.fs-2-5 {font-size: 2.5em  !important;}.fs-3 {font-size: 3em  !important;}.fs-4 {font-size: 4em  !important;}.fs-5 {font-size: 5em  !important;}.fs-6 {font-size: 6em  !important;}
+.fs-0-86 {font-size: 0.86em  !important;}.fs-1 {font-size: 1em  !important;}.fs-1-125 {font-size: 1.125em  !important;}.fs-1-25 {font-size: 1.25em  !important;}.fs-1-5 {font-size: 1.5em  !important;}.fs-2 {font-size: 2em  !important;}.fs-2-5 {font-size: 2.5em  !important;}.fs-3 {font-size: 3em  !important;}.fs-4 {font-size: 4em  !important;}.fs-5 {font-size: 5em  !important;}.fs-6 {font-size: 6em  !important;}
 @media(max-width:1024px){.fs-1 {font-size: 0.9em  !important;}.fs-1-125 {font-size: 1em  !important;}.fs-1-5 {font-size: 1.25em  !important;}.fs-2 {font-size: 1.5em  !important;}.fs-2-5{font-size:1.75em  !important;}.fs-3 {font-size: 2em  !important;}.fs-4 {font-size: 3em  !important;}.fs-5 {font-size: 4em  !important;}.fs-6 {font-size: 5em  !important;}}
 @media(max-width:768px){.fs-1-5 {font-size: 1em  !important;}.fs-2{font-size: 1.25em !important}.fs-5{font-size: 2.5em !important}.fs-6 {font-size: 4em  !important;}}
 /*** font weight ***/
 .fw300{font-weight:300 !important}.fw400{font-weight:400 !important}.fw500{font-weight:500 !important}.fw700{font-weight:700 !important}.fw900{font-weight:900 !important}
 /*** letter spacing ***/
-.ls0{letter-spacing:0 !important}.ls_05{letter-spacing:-0.5px}ls_1{letter-spacing:-1px !important}
+.ls1{letter-spacing: 1px;}.ls0{letter-spacing:0 !important}.ls_05{letter-spacing:-0.5px}.ls_1{letter-spacing:-1px !important}
 /*** align ***/
 .tal{text-align:left !important}
 .tac{text-align:center !important}
@@ -273,14 +277,18 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 
 /*** 추후 정리 예정 디폴트 코드 ***/
 .header-title {
-  text-align: left;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
   font-family: "Black Ops One", system-ui;
+  font-size: 3em;
   font-weight: 400;
   font-style: normal;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: 20px 0;
 }
-@media (max-width:768px){
+@media (max-width:1024px) and (min-width:768px){
   .header-title{
-    text-align: center;
+    font-size: 3.5em;
   }
 }

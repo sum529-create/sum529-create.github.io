@@ -7,13 +7,11 @@
           >error</i
         >
       </div>
-      <p class="mt10 fs-1">
+      <p class="mt10 fs-0-86 ls_1 lh2 fc_lightgrey">
         ※ 온라인 교육 플랫폼의
-        <span class="fc_subcolor fw700">개발 및 운영</span>에 대한 깊은 이해를
-        쌓았으며,<br /><span class="fc_subcolor fw700"
-          >사용자 중심의 서비스 제공</span
-        >과 <span class="fc_subcolor fw700">문제 해결 능력</span>을
-        배양하였습니다.
+        <span class="key_text fw700">개발 및 운영</span>에 대한 깊은 이해를
+        쌓았으며,<br /><span class="fw700">사용자 중심의 서비스 제공</span>과
+        <span class="fw700">문제 해결 능력</span>을 배양하였습니다.
       </p>
     </div>
 
@@ -37,7 +35,7 @@
               <div class="card-actions">
                 <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-86 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
                   <img
@@ -61,7 +59,7 @@
               <div class="card-actions">
                 <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-86 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
                   <img
@@ -89,7 +87,7 @@
               <div class="card-actions">
                 <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-86 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
                   <img
@@ -113,7 +111,7 @@
               <div class="card-actions">
                 <div class="card-date fwc">
                   <i class="material-icons fz16 schedule-icon">schedule</i>
-                  <span class="fs-0-75 pl5 pr5">{{ formattedDate }}</span>
+                  <span class="fs-0-86 pl5 pr5">{{ formattedDate }}</span>
                 </div>
                 <div class="card-member">
                   <img
@@ -299,6 +297,13 @@ export default {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.board-header span {
+  background-color: #171c28;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #fff;
 }
 
 .board__default .lists-container {

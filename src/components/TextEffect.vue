@@ -7,23 +7,23 @@
         :style="slideTextStyle(6)"
       >
         <h1 class="slide-text fc_999 fs-3">
-          <span class="txt_blue_line fc_txt-dark-sdw">
+          <span class="fc_blue_line">
             Thank you very much for visiting my portfolio site.
           </span>
           Thank you very much for visiting my portfolio site.
-          <span class="txt_blue_line fc_txt-dark-sdw">
+          <span class="fc_blue_line">
             Thank you very much for visiting my portfolio site.
           </span>
           Thank you very much for visiting my portfolio site.
-          <span class="txt_blue_line fc_txt-dark-sdw">
+          <span class="fc_blue_line">
             Thank you very much for visiting my portfolio site.
           </span>
           Thank you very much for visiting my portfolio site.
-          <span class="txt_blue_line fc_txt-dark-sdw">
+          <span class="fc_blue_line">
             Thank you very much for visiting my portfolio site.
           </span>
           Thank you very much for visiting my portfolio site.
-          <span class="txt_blue_line fc_txt-dark-sdw">
+          <span class="fc_blue_line">
             Thank you very much for visiting my portfolio site.
           </span>
         </h1>
@@ -36,25 +36,25 @@
         <h1 class="slide-text fc_999 fs-3">
           I'm looking forward to working with you. I'm looking forward to
           working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw">
+          <span class="fc_yellow_line">
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you. I'm looking forward to
           working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw">
+          <span class="fc_yellow_line">
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw">
+          <span class="fc_yellow_line">
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw">
+          <span class="fc_yellow_line">
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you. I'm looking forward to
           working with you.
-          <span class="txt_yellow_line fc_txt-dark-sdw">
+          <span class="fc_yellow_line">
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you. I'm looking forward to
@@ -335,34 +335,5 @@ h1 {
 
 .txt-effect__highlight .odd h1 {
   background: rgba(51, 51, 51, 0.8);
-}
-.txt-effect__highlight h1 span.txt_blue_line {
-  /* text-shadow: -1px 0 #007dfe, 0 1px #007dfe, 1px 0 #007dfe, 0 -1px #007dfe; */
-  color: #007dfe; /* 텍스트 색상 */
-  text-shadow:
-    1px 1px 0 #fff,
-    /* 아래 오른쪽 */ -1px -1px 0 #fff,
-    /* 위 왼쪽 */ 1px -1px 0 #fff,
-    /* 아래 왼쪽 */ -1px 1px 0 #fff,
-    /* 위 오른쪽 */ 0px 1px 0 #fff,
-    /* 아래 */ 0px -1px 0 #fff,
-    /* 위 */ 1px 0px 0 #fff,
-    /* 오른쪽 */ -1px 0px 0 #fff; /* 왼쪽 */
-}
-.txt-effect__highlight h1 span.txt_yellow_line {
-  color: #fdd835;
-  text-shadow:
-    2px 2px 0 #000,
-    /* 아래 오른쪽 */ -2px -2px 0 #000,
-    /* 위 왼쪽 */ 2px -2px 0 #000,
-    /* 아래 왼쪽 */ -2px 2px 0 #000,
-    /* 위 오른쪽 */ 0px 2px 0 #000,
-    /* 아래 */ 0px -2px 0 #000,
-    /* 위 */ 2px 0px 0 #000,
-    /* 오른쪽 */ -2px 0px 0 #000; /* 왼쪽 */
-}
-
-.fc_txt-dark-sdw {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 </style>

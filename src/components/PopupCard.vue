@@ -3,7 +3,7 @@
   <div :class="['popup-overlay', { show: isOpen }]" @click="closePopup">
     <div :class="['popup-content', { show: isOpen }]" @click="closePopup">
       <div class="popup-header">
-        <div class="popup-title fs-1-5">
+        <div class="popup-title">
           <i class="material-icons">lightbulb</i>
           <h2 v-if="typeFlag === '1'">#1 프론트엔드 개발</h2>
           <h2 v-else-if="typeFlag === '2'">#2 서비스 운영 및 유지보수</h2>
@@ -219,6 +219,12 @@ export default {
   display: flex;
   gap: 3px;
   align-items: center;
+  font-size: 1.5em;
+}
+
+.popup-title h2 {
+  padding-left: 25px;
+  text-indent: -25px;
 }
 
 .popup-close {
@@ -303,13 +309,13 @@ export default {
   position: relative;
   align-items: center;
   min-height: 32px;
-  margin: 0 0 4px 40px;
+  margin: 0 0 4px 28px;
   padding: 8px 0;
 }
 
 .popup-description .popup-sub-title i {
   position: absolute;
-  left: -36px;
+  left: -31px;
   display: inline-block;
   line-height: 1;
 }
@@ -322,14 +328,14 @@ export default {
 }
 
 .bull_list {
-  margin: 0 40px;
+  margin-left: 20px;
 }
 
 .bull_list > li {
   position: relative;
   margin-top: 8px;
   padding-left: 8px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 22px;
 }
 .bull_list > li::before {
@@ -362,13 +368,36 @@ export default {
   background-color: #3857cb;
 }
 
+@media (max-width: 1024px) {
+  .popup-title {
+    font-size: 1.25em;
+    line-height: 1.25;
+  }
+}
+
 @media (max-width: 768px) {
   .popup-overlay {
     width: 100%;
     transform: translateX(0px);
   }
   .bull_list {
-    margin: 0 20px;
+    max-height: 200px;
+    overflow: auto;
+  }
+  .bull_list::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .bull_list::-webkit-scrollbar-track {
+    background: #666;
+    border-radius: 10px;
+  }
+  .bull_list::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+  }
+  .bull_list::-webkit-scrollbar-thumb:hover {
+    background: #fff;
   }
 }
 </style>

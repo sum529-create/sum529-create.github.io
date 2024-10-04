@@ -57,7 +57,7 @@
             ref="subtitle"
             :class="{ 'in-view': subtitle1InView }"
           >
-            <span class="fc_keycolor fw700">안정적이고 효율적인 코드</span>를
+            <span class="fc_yellow_line fw700">안정적이고 효율적인 코드</span>를
             작성하는 개발자를 찾으시나요?
           </p>
           <p
@@ -82,7 +82,9 @@
             지속 가능한
             <span
               class="fw700"
-              :class="title3InView ? 'fc_subcolor' : 'fc_cimson'"
+              :class="
+                title3InView ? 'fc_subcolor' : 'fc_cimson fc_txt-dark-sdw'
+              "
               >웹 솔루션</span
             >을 향한 노력
           </p>
@@ -99,7 +101,9 @@
             프로젝트 성공을 위한
             <span
               class="fw700"
-              :class="title3InView ? 'fc_subcolor' : 'fc_darkorange'"
+              :class="
+                title3InView ? 'fc_subcolor' : 'fc_darkorange fc_txt-dark-sdw'
+              "
               >열정과 헌신</span
             >
           </p>
@@ -115,7 +119,9 @@
             >
             <span
               class="fw700"
-              :class="title3InView ? 'fc_subcolor' : 'fc_springgreen'"
+              :class="
+                title3InView ? 'fc_subcolor' : 'fc_springgreen fc_txt-dark-sdw'
+              "
               >팀과의 협업</span
             >을 통해 더 나은 결과를 창출
           </p>
@@ -131,7 +137,9 @@
             >
             <span
               class="fw700"
-              :class="title3InView ? 'fc_subcolor' : 'fc_deepskyblue'"
+              :class="
+                title3InView ? 'fc_subcolor' : 'fc_deepskyblue fc_txt-dark-sdw'
+              "
               >UI/UX 디자인과 개발</span
             >을 통해 가치를 더하는
           </p>
@@ -142,7 +150,11 @@
           <h1
             class="hero__bottom-title hero__bottom-back-title fs-5"
             ref="title"
-            :class="{ 'in-view': title3InView, fc_keycolor: !title2InView }"
+            :class="{
+              'in-view': title3InView,
+              fc_keycolor: !title2InView,
+              'fc_txt-dark-sdw': !title2InView,
+            }"
           >
             FrontEnd-Developer
           </h1>
@@ -152,7 +164,7 @@
             :class="{ 'in-view': title2InView }"
           >
             프론트엔드 개발자
-            <span class="fc_keycolor fw700">노수민</span>입니다.
+            <span class="fc_keycolor fw700 fc_txt-dark-sdw">노수민</span>입니다.
           </h1>
           <p
             class="hero__bottom-description fs-1-5"

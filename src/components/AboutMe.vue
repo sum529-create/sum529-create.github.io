@@ -16,8 +16,18 @@
         <div class="about-me-intro">
           <p>저는 창의적이고 열정적인 프론트엔드 개발자 노수민입니다.</p>
         </div>
-        <div class="about-me-education tal fs-0-75 pl23">
+        <div class="about-me-education tal fs-0-86 pl23">
           <ul>
+            <li class="dib">
+              <i class="material-icons person-icon mr5 mln23 fz18 pb3"
+                >person</i
+              >
+              <span class="ls1">1997.05.29</span>
+            </li>
+            <li class="dib">
+              <i class="material-icons home-icon mr5 mln23 fz18 pb3">home</i>
+              <span>경기 고양시 일산서구</span>
+            </li>
             <li class="dib">
               <i class="material-icons school-icon mr5 mln23 fz18 pb3"
                 >school</i
@@ -35,14 +45,16 @@
                 class="material-icons cast_for_education-icon mr5 mln23 fz18 pb3"
                 >cast_for_education</i
               >
-              <span>코리아정보보안IT아카데미 - 풀스택 개발자 양성과정</span>
+              <span
+                >코리아정보보안IT아카데미 -
+                풀스택&nbsp;개발자&nbsp;양성과정</span
+              >
             </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="about-me__details">
-      <h2 class="about-me__header header-title fc_subcolor fs-2-5">About Me</h2>
       <div class="about-me__info">
         <div class="about-me__sub-title fs-1-125">
           <i class="material-icons work-icon">work</i>
@@ -53,7 +65,7 @@
             <img src="../assets/img/icon/ico_ui_lab.png" alt="UILAB 로고" />
             유아이랩
           </li>
-          <li class="about-me__list-item fs-1">(2021.10 ~ 2024.08)</li>
+          <li class="about-me__list-item fs-1 ls1">(2021.10 ~ 2024.08)</li>
         </ul>
         <card-lists :in-view="inView" :card-type="'trello'" />
       </div>
@@ -79,14 +91,14 @@
             </div>
             <p class="ml34">SQL 개발자(SQLD, SQL Developer)</p>
           </li>
-          <li class="about-me__list-item fs-1">2020.12.20</li>
+          <li class="about-me__list-item fs-1 ls1">2020.12.20</li>
           <li class="about-me__list-item fs-1">
             <div class="list-image">
               <img src="../assets/img/icon/ico_q_net.png" alt="Q-net 아이콘" />
             </div>
             <p class="ml34">정보처리기사</p>
           </li>
-          <li class="about-me__list-item fs-1">2022.06.17</li>
+          <li class="about-me__list-item fs-1 ls1">2022.06.17</li>
         </ul>
       </div>
       <div class="about-me__info">
@@ -217,6 +229,7 @@ export default {
 .about-me-education ul {
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 
 .about-me__details {
