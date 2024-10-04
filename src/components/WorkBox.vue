@@ -134,9 +134,11 @@ export default {
     box-shadow 0.3s;
   width: 100%;
   max-width: 800px;
-  margin: 1rem auto;
   overflow: hidden;
   box-sizing: border-box;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* .project-card:hover {
@@ -154,6 +156,7 @@ export default {
   gap: 5px;
   align-items: center;
   margin-bottom: 1rem;
+  flex: 0 0 auto;
 }
 
 .project-card .project-card-title h2 {
@@ -170,6 +173,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .img-wrapper {
@@ -177,6 +182,7 @@ export default {
   border-radius: 0.5rem;
   position: relative;
   background: #2c2c2c;
+  flex: 0 0 auto;
 }
 
 .img-wrapper img {
@@ -193,10 +199,15 @@ export default {
 
 .description-wrapper {
   color: #d1d1d1;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .labels-wrapper {
   text-align: left;
+  flex: 0 0 auto;
 }
 
 .labels-wrapper span {
@@ -219,6 +230,10 @@ export default {
 .project-description {
   text-align: left;
   margin-bottom: 2rem;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-sub {
@@ -228,6 +243,7 @@ export default {
   min-height: 32px;
   margin: 0 0 4px 40px;
   padding: 8px 0;
+  flex: 0 0 auto;
 }
 
 .project-sub i {
@@ -244,10 +260,32 @@ export default {
   color: #b6c2cf;
 }
 
+.project-description .bull_list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.project-description .bull_list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.project-description .bull_list::-webkit-scrollbar-track {
+  background: #666;
+  border-radius: 10px;
+}
+.project-description .bull_list::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+.project-description .bull_list::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
 .link-wrapper {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex: 0 0 auto;
 }
 
 .link-wrapper a {

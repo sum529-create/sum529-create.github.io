@@ -6,7 +6,7 @@
     <div class="section" ref="sectionRef" id="projects">
       <div class="work__main_cont">
         <div class="work__main_cont-wrapper">
-          <h1 class="fs-6 fc_white fade-in-pulse fc_keycolor">
+          <h1 class="fs-6 fade-in-pulse fc_keycolor fc_txt-dark-sdw">
             MY<br />PROJECTS
           </h1>
           <img
@@ -43,8 +43,8 @@
     </div>
     <text-effect :secHeight="secHeight" />
     <div class="section about_me__section" id="contact">
-      <div class="contact-header header-title">
-        <h2 class="fs-2-5 fc_keycolor mb10">
+      <div class="contact-header">
+        <h2 class="header-title fs-2-5 fc_keycolor mb10">
           <i class="material-icons link-icon mr5 fs-1">link</i>
           Contact Me
         </h2>
@@ -514,7 +514,6 @@ export default {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
   font-style: normal;
-  text-shadow: 2px 2px 4px rgba(233, 236, 241, 0.8);
 }
 .work__main_cont img {
   width: 30%;

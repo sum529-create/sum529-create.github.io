@@ -265,6 +265,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  font-style: italic;
 }
 
 .popup-labels h3 {
@@ -338,6 +339,9 @@ export default {
   font-size: 14px;
   line-height: 22px;
 }
+.bull_list > li:first-child {
+  margin: 0;
+}
 .bull_list > li::before {
   content: "";
   position: absolute;
@@ -380,6 +384,20 @@ export default {
     width: 100%;
     transform: translateX(0px);
   }
+  .project-card .project-card-title svg {
+    height: 24px;
+  }
+  .labels-wrapper .label-wrapper {
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .popup-labels .label,
+  .label {
+    height: 18px;
+    line-height: 18px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
   .bull_list {
     max-height: 200px;
     overflow: auto;
@@ -398,6 +416,13 @@ export default {
   }
   .bull_list::-webkit-scrollbar-thumb:hover {
     background: #fff;
+  }
+  .description-wrapper .project-description {
+    margin-bottom: 1rem;
+  }
+  .link-wrapper svg {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
