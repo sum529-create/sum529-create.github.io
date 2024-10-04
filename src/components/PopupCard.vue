@@ -193,7 +193,9 @@ export default {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transform: translateY(-20px);
   opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   max-width: 500px;
   width: 80%;
 }
@@ -216,7 +218,7 @@ export default {
   margin: 0;
   display: flex;
   gap: 3px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .popup-close {

@@ -6,10 +6,11 @@
         <source src="/main_video.mp4" type="video/mp4" />
         My browser does not support the video tag.
       </video>
-      <div class="hero__headline">
-        <p class="hero__headline-txt fs-2" :class="{ 'in-view': roleInView }">
-          Front-End Developer
-        </p>
+      <div
+        class="hero__headline"
+        :class="{ 'in-view': roleInView && portfolioInView }"
+      >
+        <p class="hero__headline-txt fs-2">Front-End Developer</p>
       </div>
       <div class="hero__portfolio">
         <div
@@ -67,47 +68,81 @@
             그렇다면 잘 찾아오셨습니다!
           </p>
         </div>
-        <div class="hero__middle-description">
+        <div class="hero__middle-description fs-1-5">
           <p
-            class="hero__middle-description-01 highlight-text"
+            class="hero__middle-description-01 highlight-text highlight-text-01"
             ref="description1"
             :class="{ 'in-view': description1InView }"
           >
-            <i class="material-icons check-icon">check</i>
-            지속 가능한 웹 솔루션을 향한 노력
+            <i
+              class="material-icons check-icon"
+              :class="{ checked: title3InView }"
+              >check</i
+            >
+            지속 가능한
+            <span
+              class="fw700"
+              :class="title3InView ? 'fc_subcolor' : 'fc_cimson'"
+              >웹 솔루션</span
+            >을 향한 노력
           </p>
           <p
-            class="hero__middle-description-02 highlight-text"
+            class="hero__middle-description-02 highlight-text highlight-text-02"
             ref="description2"
             :class="{ 'in-view': description2InView }"
           >
-            <i class="material-icons check-icon">check</i>
-            프로젝트 성공을 위한 열정과 헌신
+            <i
+              class="material-icons check-icon"
+              :class="{ checked: title3InView }"
+              >check</i
+            >
+            프로젝트 성공을 위한
+            <span
+              class="fw700"
+              :class="title3InView ? 'fc_subcolor' : 'fc_darkorange'"
+              >열정과 헌신</span
+            >
           </p>
           <p
-            class="hero__middle-description-03 highlight-text"
+            class="hero__middle-description-03 highlight-text highlight-text-03"
             ref="description3"
             :class="{ 'in-view': description3InView }"
           >
-            <i class="material-icons check-icon">check</i>
-            팀과의 협업을 통해 더 나은 결과를 창출
+            <i
+              class="material-icons check-icon"
+              :class="{ checked: title3InView }"
+              >check</i
+            >
+            <span
+              class="fw700"
+              :class="title3InView ? 'fc_subcolor' : 'fc_springgreen'"
+              >팀과의 협업</span
+            >을 통해 더 나은 결과를 창출
           </p>
           <p
-            class="hero__middle-description-04 highlight-text"
+            class="hero__middle-description-04 highlight-text highlight-text-04 mb0"
             ref="description4"
             :class="{ 'in-view': description4InView }"
           >
-            <i class="material-icons check-icon">check</i>
-            UI/UX 디자인과 개발을 통해 가치를 더하는
+            <i
+              class="material-icons check-icon"
+              :class="{ checked: title3InView }"
+              >check</i
+            >
+            <span
+              class="fw700"
+              :class="title3InView ? 'fc_subcolor' : 'fc_deepskyblue'"
+              >UI/UX 디자인과 개발</span
+            >을 통해 가치를 더하는
           </p>
         </div>
       </div>
       <div class="hero__bottom">
         <div class="hero__bottom-txt">
           <h1
-            class="hero__bottom-title fs-3 hero__bottom-back-title fs-5"
+            class="hero__bottom-title hero__bottom-back-title fs-5"
             ref="title"
-            :class="{ 'in-view': title3InView, 'font-white': !title2InView }"
+            :class="{ 'in-view': title3InView, fc_keycolor: !title2InView }"
           >
             FrontEnd-Developer
           </h1>
@@ -120,7 +155,7 @@
             <span class="fc_keycolor fw700">노수민</span>입니다.
           </h1>
           <p
-            class="hero__bottom-description"
+            class="hero__bottom-description fs-1-5"
             ref="subtitle"
             :class="{ 'in-view': description5InView }"
           >
@@ -188,8 +223,8 @@ export default {
       const titleTrigger = windowHeight * 0.1;
       const subtitle1Trigger = windowHeight * 0.1;
       const subtitle2Trigger = windowHeight * 0.1;
-      const description1Trigger = windowHeight * 0.4;
-      const description2Trigger = windowHeight * 0.4;
+      const description1Trigger = windowHeight * 0.2;
+      const description2Trigger = windowHeight * 0.2;
       const description3Trigger = windowHeight * 0.4;
       const description4Trigger = windowHeight * 0.4;
       const titlebackTrigger = windowHeight * 0.6;
@@ -374,15 +409,17 @@ export default {
   position: relative;
   margin: 80px auto 0;
   font-weight: 500;
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    transform 1s,
+    opacity 1s;
 }
 .hero__headline-txt {
   border-bottom: 1px solid #fff;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: transform 1s, opacity 1s;
 }
 
-.hero__headline-txt.in-view {
+.hero__headline.in-view {
   opacity: 1;
   transform: translateX(0);
 }
@@ -402,7 +439,9 @@ export default {
 .hero__img-area {
   opacity: 0;
   transform: translateX(-100px);
-  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  transition:
+    transform 1.5s ease-in-out,
+    opacity 1.5s ease-in-out;
 }
 .hero__img-area.in-view {
   opacity: 1;
@@ -474,14 +513,24 @@ export default {
 .hero__bottom-title,
 .hero__bottom-description {
   margin-bottom: 1.5em;
-  transition: transform 0.5s, opacity 0.5s;
+  transition:
+    transform 0.5s,
+    opacity 0.5s;
   opacity: 0;
   line-height: 1.5;
   transform: translateY(50px);
 }
+
+.hero__middle-description-01,
+.hero__middle-description-02,
+.hero__middle-description-03,
+.hero__middle-description-04 {
+  padding-left: 28px;
+}
+
 .hero__bottom-title,
 .hero__middle-title {
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
 }
 .hero__middle-main {
@@ -490,10 +539,12 @@ export default {
 .hero__middle-description {
   width: fit-content;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .hero__middle-description,
 .hero__bottom-description {
-  font-size: 1.5em;
   transform: translateY(-50%);
   line-height: 1.5;
 }
@@ -511,7 +562,9 @@ export default {
   height: 35vh;
   opacity: 0;
   transform: translateY(100px);
-  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  transition:
+    transform 1.5s ease-in-out,
+    opacity 1.5s ease-in-out;
 }
 .hero__bottom-img.in-view {
   opacity: 1;
@@ -525,14 +578,11 @@ export default {
   color: #fff;
 }
 /* 형광펜 효과와 체크 아이콘 등장 애니메이션 CSS */
-.highlight-text {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
+.highlight-text .fc_subcolor {
   position: relative;
 }
 
-.highlight-text::before {
+.highlight-text .fc_subcolor::before {
   content: "";
   position: absolute;
   left: 0;
@@ -540,22 +590,27 @@ export default {
   transform: translateY(50%);
   width: 0;
   height: 0.4em;
-  background-color: yellow;
+  background-color: #ffcc66;
+  box-shadow: 0px 4px 10px rgba(255, 224, 178, 0.5);
   z-index: -1;
   opacity: 0.3;
-  transition: width 1.3s ease;
+  transition: width 2s ease;
 }
 
 .check-icon {
   opacity: 0;
   transition: opacity 0.5s ease;
+  color: tomato;
+  margin-right: 4px;
+  position: absolute;
+  left: 0px;
 }
 
-.highlight-text.in-view::before {
+.highlight-text.in-view .fc_subcolor::before {
   width: 100%;
 }
 
-.highlight-text.in-view .check-icon {
+.highlight-text.in-view .check-icon.checked {
   opacity: 1;
 }
 i.material-icons {
@@ -602,6 +657,10 @@ i.material-icons {
     flex-direction: column;
     top: 10%;
     text-align: center;
+  }
+  .hero__middle,
+  .hero__bottom {
+    padding: 60px 25px;
   }
   .hero__bottom-img {
     height: auto;

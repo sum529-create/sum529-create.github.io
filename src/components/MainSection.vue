@@ -75,9 +75,13 @@ export default {
 
 <style>
 .main__content {
+  background-image: url("../assets/img/aboutMe/main_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   width: 100%;
-  background: #000;
+  overflow: hidden;
   color: #fff;
   text-align: center;
   z-index: 10; /* 다른 요소들 위에 표시 */

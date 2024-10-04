@@ -7,7 +7,7 @@
           >error</i
         >
       </div>
-      <p class="mt10">
+      <p class="mt10 fs-1">
         ※ 온라인 교육 플랫폼의
         <span class="fc_subcolor fw700">개발 및 운영</span>에 대한 깊은 이해를
         쌓았으며,<br /><span class="fc_subcolor fw700"

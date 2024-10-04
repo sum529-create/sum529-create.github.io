@@ -1,6 +1,6 @@
 <template>
   <div class="project-card">
-    <div class="project-card-title">
+    <div class="project-card-title fs-2-5">
       <svg
         data-slot="icon"
         fill="none"
@@ -129,7 +129,9 @@ export default {
   border-radius: 1rem;
   background-color: #3a3a3a;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   width: 100%;
   max-width: 800px;
   margin: 1rem auto;
@@ -156,7 +158,6 @@ export default {
 
 .project-card .project-card-title h2 {
   font-weight: 600;
-  font-size: 2rem;
   color: #fff;
   text-align: center;
 }
@@ -256,7 +257,9 @@ export default {
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: #fff;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 }
 
 .link-wrapper a:hover {

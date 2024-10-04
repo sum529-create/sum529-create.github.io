@@ -10,8 +10,8 @@
       </div>
       <div class="about-me__profile">
         <div class="about-me__name">
-          <h3 class="about-me__name-kor">노수민</h3>
-          <span class="about-me__name-eng">(NohSuMin)</span>
+          <h1 class="about-me__name-kor">노수민</h1>
+          <span class="about-me__name-eng">(NOH-SUMIN)</span>
         </div>
         <div class="about-me-intro">
           <p>저는 창의적이고 열정적인 프론트엔드 개발자 노수민입니다.</p>
@@ -284,7 +284,9 @@ export default {
   border-radius: 20px;
   display: block;
   background-color: #000; /* 다크 배경 색상 */
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -297,12 +299,20 @@ export default {
 
 @keyframes sparkle {
   0% {
-    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #95afc0,
-      0 0 20px #95afc0, 0 0 25px #95afc0;
+    box-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #95afc0,
+      0 0 20px #95afc0,
+      0 0 25px #95afc0;
   }
   100% {
-    box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #95afc0,
-      0 0 25px #95afc0, 0 0 30px #95afc0;
+    box-shadow:
+      0 0 10px #ffffff,
+      0 0 15px #ffffff,
+      0 0 20px #95afc0,
+      0 0 25px #95afc0,
+      0 0 30px #95afc0;
   }
 }
 
@@ -323,6 +333,9 @@ export default {
   .about-me__profile {
     flex: 2;
   }
+  .about-me__name {
+    font-size: 20px;
+  }
   .about-me__details {
     margin-left: 0;
   }
@@ -339,6 +352,9 @@ export default {
     width: 50%;
     padding-bottom: 50%;
     margin: 0 auto;
+  }
+  .about-me__name {
+    font-size: 24px;
   }
   .about-me-education ul {
     text-align: center;

@@ -6,9 +6,7 @@
         :class="{ even: true }"
         :style="slideTextStyle(6)"
       >
-        <h1 class="slide-text fc_999">
-          Thank you very much for visiting my portfolio site. Thank you very
-          much for visiting my portfolio site.
+        <h1 class="slide-text fc_999 fs-3">
           <span class="txt_blue_line fc_txt-dark-sdw">
             Thank you very much for visiting my portfolio site.
           </span>
@@ -20,8 +18,14 @@
           <span class="txt_blue_line fc_txt-dark-sdw">
             Thank you very much for visiting my portfolio site.
           </span>
-          Thank you very much for visiting my portfolio site. Thank you very
-          much for visiting my portfolio site.
+          Thank you very much for visiting my portfolio site.
+          <span class="txt_blue_line fc_txt-dark-sdw">
+            Thank you very much for visiting my portfolio site.
+          </span>
+          Thank you very much for visiting my portfolio site.
+          <span class="txt_blue_line fc_txt-dark-sdw">
+            Thank you very much for visiting my portfolio site.
+          </span>
         </h1>
       </div>
       <div
@@ -29,7 +33,12 @@
         :class="{ odd: true }"
         :style="slideTextStyle(7)"
       >
-        <h1 class="slide-text fc_999">
+        <h1 class="slide-text fc_999 fs-3">
+          I'm looking forward to working with you. I'm looking forward to
+          working with you.
+          <span class="txt_yellow_line fc_txt-dark-sdw">
+            I'm looking forward to working with you.
+          </span>
           I'm looking forward to working with you. I'm looking forward to
           working with you.
           <span class="txt_yellow_line fc_txt-dark-sdw">
@@ -40,6 +49,11 @@
             I'm looking forward to working with you.
           </span>
           I'm looking forward to working with you.
+          <span class="txt_yellow_line fc_txt-dark-sdw">
+            I'm looking forward to working with you.
+          </span>
+          I'm looking forward to working with you. I'm looking forward to
+          working with you.
           <span class="txt_yellow_line fc_txt-dark-sdw">
             I'm looking forward to working with you.
           </span>
@@ -54,7 +68,7 @@
         :class="{ odd: true }"
         :style="slideTextStyle(1)"
       >
-        <h1 class="slide-text fc_666">
+        <h1 class="slide-text fc_666 fs-3">
           Crafting Dynamic User Experiences. Crafting Dynamic User Experiences.
           <span class="fc_cimson fc_txt-dark-sdw"
             >Crafting Dynamic User Experiences.</span
@@ -87,7 +101,7 @@
         :class="{ even: true }"
         :style="slideTextStyle(2)"
       >
-        <h1 class="slide-text fc_666">
+        <h1 class="slide-text fc_666 fs-3">
           Empowering Web Interfaces. Empowering Web Interfaces.
           <span class="fc_wildwatermelon fc_txt-dark-sdw"
             >Empowering Web Interfaces.</span
@@ -120,7 +134,7 @@
         :class="{ odd: true }"
         :style="slideTextStyle(3)"
       >
-        <h1 class="slide-text fc_666">
+        <h1 class="slide-text fc_666 fs-3">
           Proficient in creating responsive web designs. Proficient in creating
           responsive web designs.
           <span class="fc_slateblue fc_txt-dark-sdw"
@@ -150,7 +164,7 @@
         :class="{ even: true }"
         :style="slideTextStyle(4)"
       >
-        <h1 class="slide-text fc_666">
+        <h1 class="slide-text fc_666 fs-3">
           Excellent problem-solving skills and analytical thinking. Excellent
           problem-solving skills and analytical thinking.
           <span class="fc_springgreen fc_txt-dark-sdw"
@@ -185,7 +199,7 @@
         :class="{ odd: true }"
         :style="slideTextStyle(5)"
       >
-        <h1 class="slide-text fc_666">
+        <h1 class="slide-text fc_666 fs-3">
           Commitment to continuous learning and self-improvement. Commitment to
           continuous learning and self-improvement.
           <span class="fc_deepskyblue fc_txt-dark-sdw"
@@ -325,17 +339,27 @@ h1 {
 .txt-effect__highlight h1 span.txt_blue_line {
   /* text-shadow: -1px 0 #007dfe, 0 1px #007dfe, 1px 0 #007dfe, 0 -1px #007dfe; */
   color: #007dfe; /* 텍스트 색상 */
-  text-shadow: 1px 1px 0 #fff, /* 아래 오른쪽 */ -1px -1px 0 #fff,
-    /* 위 왼쪽 */ 1px -1px 0 #fff, /* 아래 왼쪽 */ -1px 1px 0 #fff,
-    /* 위 오른쪽 */ 0px 1px 0 #fff, /* 아래 */ 0px -1px 0 #fff,
-    /* 위 */ 1px 0px 0 #fff, /* 오른쪽 */ -1px 0px 0 #fff; /* 왼쪽 */
+  text-shadow:
+    1px 1px 0 #fff,
+    /* 아래 오른쪽 */ -1px -1px 0 #fff,
+    /* 위 왼쪽 */ 1px -1px 0 #fff,
+    /* 아래 왼쪽 */ -1px 1px 0 #fff,
+    /* 위 오른쪽 */ 0px 1px 0 #fff,
+    /* 아래 */ 0px -1px 0 #fff,
+    /* 위 */ 1px 0px 0 #fff,
+    /* 오른쪽 */ -1px 0px 0 #fff; /* 왼쪽 */
 }
 .txt-effect__highlight h1 span.txt_yellow_line {
   color: #fdd835;
-  text-shadow: 2px 2px 0 #000, /* 아래 오른쪽 */ -2px -2px 0 #000,
-    /* 위 왼쪽 */ 2px -2px 0 #000, /* 아래 왼쪽 */ -2px 2px 0 #000,
-    /* 위 오른쪽 */ 0px 2px 0 #000, /* 아래 */ 0px -2px 0 #000,
-    /* 위 */ 2px 0px 0 #000, /* 오른쪽 */ -2px 0px 0 #000; /* 왼쪽 */
+  text-shadow:
+    2px 2px 0 #000,
+    /* 아래 오른쪽 */ -2px -2px 0 #000,
+    /* 위 왼쪽 */ 2px -2px 0 #000,
+    /* 아래 왼쪽 */ -2px 2px 0 #000,
+    /* 위 오른쪽 */ 0px 2px 0 #000,
+    /* 아래 */ 0px -2px 0 #000,
+    /* 위 */ 2px 0px 0 #000,
+    /* 오른쪽 */ -2px 0px 0 #000; /* 왼쪽 */
 }
 
 .fc_txt-dark-sdw {

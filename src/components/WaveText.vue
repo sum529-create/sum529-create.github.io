@@ -1,28 +1,32 @@
 <template>
-  <div class="wave-text">
-    <span v-for="(char, index) in text" :key="index" class="wave" :style="{ animationDelay: `${0.1 * index}s` }">
-      {{ char === '_' ? '&nbsp;' : char }}
+  <div class="wave-text fs-2">
+    <span
+      v-for="(char, index) in text"
+      :key="index"
+      class="wave"
+      :style="{ animationDelay: `${0.1 * index}s` }"
+    >
+      {{ char === "_" ? "&nbsp;" : char }}
     </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'WaveText',
+  name: "WaveText",
   props: {
     text: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
-}
+};
 </script>
 
 <style scoped>
 .wave-text {
   display: inline-block;
-  font-size: 2em; /* 텍스트 크기 */
-  color: #F0C300; /* 노란색 */
+  color: #f0c300; /* 노란색 */
 }
 
 .wave {

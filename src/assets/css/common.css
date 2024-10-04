@@ -136,7 +136,7 @@ body{color:#333;font-size:14px;font-family:'Roboto','Noto Sans KR',Malgun Gothic
 .fz22{font-size:22px !important}.fz23{font-size:23px !important}.fz24{font-size:24px !important}.fz25{font-size:25px !important}.fz26{font-size:26px !important}.fz27{font-size:27px !important}.fz28{font-size:28px !important}.fz29{font-size:29px !important}.fz30{font-size:30px !important}
 .fs-0-75 {font-size: 0.75em  !important;}.fs-1 {font-size: 1em  !important;}.fs-1-125 {font-size: 1.125em  !important;}.fs-1-25 {font-size: 1.25em  !important;}.fs-1-5 {font-size: 1.5em  !important;}.fs-2 {font-size: 2em  !important;}.fs-2-5 {font-size: 2.5em  !important;}.fs-3 {font-size: 3em  !important;}.fs-4 {font-size: 4em  !important;}.fs-5 {font-size: 5em  !important;}.fs-6 {font-size: 6em  !important;}
 @media(max-width:1024px){.fs-1 {font-size: 0.9em  !important;}.fs-1-125 {font-size: 1em  !important;}.fs-1-5 {font-size: 1.25em  !important;}.fs-2 {font-size: 1.5em  !important;}.fs-2-5{font-size:1.75em  !important;}.fs-3 {font-size: 2em  !important;}.fs-4 {font-size: 3em  !important;}.fs-5 {font-size: 4em  !important;}.fs-6 {font-size: 5em  !important;}}
-
+@media(max-width:768px){.fs-1-5 {font-size: 1em  !important;}.fs-2{font-size: 1.25em !important}.fs-5{font-size: 2.5em !important}.fs-6 {font-size: 4em  !important;}}
 /*** font weight ***/
 .fw300{font-weight:300 !important}.fw400{font-weight:400 !important}.fw500{font-weight:500 !important}.fw700{font-weight:700 !important}.fw900{font-weight:900 !important}
 /*** letter spacing ***/

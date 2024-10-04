@@ -24,19 +24,19 @@
         <p class="fs-1-5 fw450" id="line3"></p>
       </div>
       <div class="container" ref="container">
-        <div class="box" ref="box1">
+        <div class="box" ref="box1" :class="{ 'in-view': windowWidth <= 768 }">
           <work-box :project="projectProps[0]" />
         </div>
-        <div class="box" ref="box2">
+        <div class="box" ref="box2" :class="{ 'in-view': windowWidth <= 768 }">
           <work-box :project="projectProps[1]" />
         </div>
-        <div class="box" ref="box3">
+        <div class="box" ref="box3" :class="{ 'in-view': windowWidth <= 768 }">
           <work-box :project="projectProps[2]" />
         </div>
-        <div class="box" ref="box4">
+        <div class="box" ref="box4" :class="{ 'in-view': windowWidth <= 768 }">
           <work-box :project="projectProps[3]" />
         </div>
-        <div class="box" ref="box5">
+        <div class="box" ref="box5" :class="{ 'in-view': windowWidth <= 768 }">
           <work-box :project="projectProps[4]" />
         </div>
       </div>
@@ -148,6 +148,7 @@ export default {
       currentTextIndex: 0, // 현재 텍스트 인덱스
       displayedText: ["", "", ""],
       secHeight: 0,
+      windowWidth: window.innerWidth,
       projectProps: [
         {
           title: "Sumin's Portfolio",
@@ -282,9 +283,11 @@ export default {
     };
   },
   mounted() {
-    this.setupIntersectionObserver();
-    this.addScrollListener();
-    this.setInitialView();
+    if (window.innerWidth > 768) {
+      this.setupIntersectionObserver();
+      this.addScrollListener();
+      this.setInitialView();
+    }
     this.typeWriter();
     setTimeout(() => {
       this.openCurtain(); // 커튼 애니메이션 시작
@@ -544,7 +547,9 @@ export default {
   width: 100%;
   color: white;
   opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
   transform: translateY(20px);
   scroll-snap-align: start;
   position: relative;
@@ -570,23 +575,9 @@ export default {
   margin: 10vh 3em;
 }
 
-.contact-card {
-  background: #2c2c2c; /* Dark background for the card */
-  border-radius: 10px; /* Rounded corners for the card */
-  overflow: hidden; /* Hide overflow for rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  height: 50vh;
-}
-
-.contact-card:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* More prominent shadow on hover */
-}
-
 .contact-card .contact-image {
   overflow: hidden;
-  height: 70%;
+  height: 60%;
 }
 
 .contact-card .contact-image img {
@@ -596,17 +587,32 @@ export default {
 }
 
 .contact-link {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background: #2c2c2c;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  height: 50vh;
+}
+
+.contact-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 }
 
 .contact-image img {
-  width: 100%; /* Make image responsive */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  height: auto;
 }
 
 .contact-info {
-  padding: 20px; /* Padding inside the card */
+  padding: 20px;
+  height: 40%;
 }
 
 .contact-info h3 {
@@ -625,6 +631,11 @@ export default {
     margin-bottom: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+}
+@media (max-width: 768px) {
+  .contact-header p {
+    padding-left: 0;
   }
 }
 </style>
