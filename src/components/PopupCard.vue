@@ -402,27 +402,27 @@ export default {
     max-height: 200px;
     overflow: auto;
   }
-  .bull_list::-webkit-scrollbar {
+  .popup-description .bull_list::-webkit-scrollbar,
+  .project-description .bull_list::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-  .bull_list::-webkit-scrollbar-track {
+  .popup-description .bull_list::-webkit-scrollbar-track,
+  .project-description .bull_list::-webkit-scrollbar-track {
     background: #666;
     border-radius: 10px;
   }
-  .bull_list::-webkit-scrollbar-thumb {
+  .popup-description .bull_list::-webkit-scrollbar-thumb,
+  .project-description .bull_list::-webkit-scrollbar-thumb {
     background: #999;
     border-radius: 10px;
   }
-  .bull_list::-webkit-scrollbar-thumb:hover {
+  .popup-description .bull_list::-webkit-scrollbar-thumb:hover,
+  .project-description .bull_list::-webkit-scrollbar-thumb:hover {
     background: #fff;
   }
   .description-wrapper .project-description {
-    margin-bottom: 1rem;
-  }
-  .link-wrapper svg {
-    width: 20px;
-    height: 20px;
+    margin-bottom: 0.5rem;
   }
 }
 </style>

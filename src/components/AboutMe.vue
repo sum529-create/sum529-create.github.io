@@ -346,8 +346,11 @@ export default {
   .about-me__profile {
     flex: 2;
   }
-  .about-me__name {
+  .about-me__name-kor {
     font-size: 20px;
+  }
+  .about-me__name-eng {
+    font-size: 16px;
   }
   .about-me__details {
     margin-left: 0;
@@ -365,9 +368,6 @@ export default {
     width: 50%;
     padding-bottom: 50%;
     margin: 0 auto;
-  }
-  .about-me__name {
-    font-size: 24px;
   }
   .about-me-education ul {
     text-align: center;

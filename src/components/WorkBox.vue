@@ -310,4 +310,17 @@ export default {
   filter: invert(20%) sepia(10%) saturate(400%) hue-rotate(200deg)
     brightness(90%) contrast(90%);
 }
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1rem;
+    margin-top: 50px;
+  }
+  .link-wrapper a {
+    padding: 0.3rem;
+  }
+  .link-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 </style>

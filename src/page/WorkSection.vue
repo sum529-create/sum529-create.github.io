@@ -51,7 +51,7 @@
     </div>
     <div class="section about_me__section" id="contact">
       <div class="contact-header">
-        <h2 class="header-title fs-2-5 fc_keycolor mb10">
+        <h2 class="header-title fc_keycolor mb10">
           <i class="material-icons link-icon mr5 fs-1">link</i>
           Contact Me
         </h2>
@@ -296,6 +296,11 @@ export default {
     //   this.addScrollListener();
     //   this.setInitialView();
     // }
+    // 페이지 진입 시 스크롤을 맨 위로 이동
+    window.scrollTo({
+      top: 0,
+      behavior: "auto", // 로드 시에는 부드러운 스크롤 대신 즉시 이동
+    });
     this.typeWriter();
     setTimeout(() => {
       this.openCurtain(); // 커튼 애니메이션 시작
@@ -310,6 +315,26 @@ export default {
     if (sectionId) {
       this.scrollToSectionById(sectionId);
     }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.intersectionRatio >= 0.3) {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      },
+      {
+        threshold: [0.3], // 요소가 50% 보일 때 트리거
+      }
+    );
+
+    observer.observe(section);
   },
   watch: {
     secHeight(newData) {
@@ -569,10 +594,32 @@ export default {
   gap: 25px;
   scroll-behavior: smooth;
   align-items: center;
+  max-width: 100%;
+  scrollbar-width: thin; /* Firefox용 - 얇은 스크롤바 */
+  scrollbar-color: #4a90e2 #1c1c1c; /* 스크롤바 색상 및 배경색 (Firefox) */
+}
+.work__section::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 너비 */
+}
+
+.work__section::-webkit-scrollbar-track {
+  background: #1c1c1c; /* 트랙 배경색 */
+  border-radius: 10px; /* 둥근 모서리 */
+}
+
+.work__section::-webkit-scrollbar-thumb {
+  background-color: #4a90e2; /* 스크롤바 색상 */
+  border-radius: 10px; /* 둥근 모서리 */
+  border: 2px solid #1c1c1c; /* 트랙과 thumb 간격 */
+}
+
+.work__section::-webkit-scrollbar-thumb:hover {
+  background-color: #3b7ddf; /* hover 상태에서 thumb 색상 */
 }
 
 .slider {
   height: 100vh;
+  max-width: 1280px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   flex: 0 0 auto;
