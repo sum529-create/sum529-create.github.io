@@ -288,14 +288,14 @@ export default {
   box-sizing: border-box;
   min-width: 48px;
   max-width: 100%;
-  height: 32px;
+  height: 28px;
   margin-bottom: 0;
   padding: 0 12px;
   overflow: hidden;
   border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 28px;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;

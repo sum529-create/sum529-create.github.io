@@ -3,45 +3,52 @@
     <div class="curtain" :class="{ open: isCurtainOpen }">
       <div class="curtain-inner"></div>
     </div>
-    <div class="section" ref="sectionRef" id="projects">
-      <div class="work__main_cont">
-        <div class="work__main_cont-wrapper">
-          <h1 class="fs-6 fade-in-pulse fc_keycolor fc_txt-dark-sdw">
-            MY<br />PROJECTS
-          </h1>
-          <img
-            class="fade-in-slide-up"
-            src="../assets/img/projects/work_main_img.png"
-            alt="Projects 페이지 인트로 이미지"
-          />
+    <div
+      class="section work__section"
+      ref="sectionRef"
+      id="projects"
+      @scroll="handleScroll"
+    >
+      <div class="work__main slider">
+        <div class="work__main_cont">
+          <div class="work__main_cont-wrapper">
+            <h1 class="fs-6 fade-in-pulse fc_keycolor fc_txt-dark-sdw">
+              MY<br />PROJECTS
+            </h1>
+            <img
+              class="fade-in-slide-up"
+              src="../assets/img/projects/work_main_img.png"
+              alt="Projects 페이지 인트로 이미지"
+            />
+          </div>
+        </div>
+        <div class="work__main_text fc_white lh2 mb60">
+          <!-- <h1 class="fs-2 fw450" id="line1"></h1> -->
+          <wave-text text="제가_작업한_프로젝트들을_보여드릴게요!" />
+          <p class="fs-1-5 fw450" id="line1"></p>
+          <p class="fs-1-5 fw450" id="line2"></p>
+          <p class="fs-1-5 fw450" id="line3"></p>
         </div>
       </div>
-      <div class="work__intro-wrapper fc_white lh2 mb60">
-        <!-- <h1 class="fs-2 fw450" id="line1"></h1> -->
-        <wave-text text="제가_작업한_프로젝트들을_보여드릴게요!" />
-        <p class="fs-1-5 fw450" id="line1"></p>
-        <p class="fs-1-5 fw450" id="line2"></p>
-        <p class="fs-1-5 fw450" id="line3"></p>
+      <div class="box slider">
+        <work-box :project="projectProps[0]" />
       </div>
-      <div class="container" ref="container">
-        <div class="box" ref="box1" :class="{ 'in-view': windowWidth <= 768 }">
-          <work-box :project="projectProps[0]" />
-        </div>
-        <div class="box" ref="box2" :class="{ 'in-view': windowWidth <= 768 }">
-          <work-box :project="projectProps[1]" />
-        </div>
-        <div class="box" ref="box3" :class="{ 'in-view': windowWidth <= 768 }">
-          <work-box :project="projectProps[2]" />
-        </div>
-        <div class="box" ref="box4" :class="{ 'in-view': windowWidth <= 768 }">
-          <work-box :project="projectProps[3]" />
-        </div>
-        <div class="box" ref="box5" :class="{ 'in-view': windowWidth <= 768 }">
-          <work-box :project="projectProps[4]" />
-        </div>
+      <div class="box slider">
+        <work-box :project="projectProps[1]" />
+      </div>
+      <div class="box slider">
+        <work-box :project="projectProps[2]" />
+      </div>
+      <div class="box slider">
+        <work-box :project="projectProps[3]" />
+      </div>
+      <div class="box slider">
+        <work-box :project="projectProps[4]" />
       </div>
     </div>
-    <text-effect :secHeight="secHeight" />
+    <div ref="textEffectRef">
+      <text-effect :secHeight="secHeight" />
+    </div>
     <div class="section about_me__section" id="contact">
       <div class="contact-header">
         <h2 class="header-title fs-2-5 fc_keycolor mb10">
@@ -148,6 +155,7 @@ export default {
       currentTextIndex: 0, // 현재 텍스트 인덱스
       displayedText: ["", "", ""],
       secHeight: 0,
+      isScrollingToNext: true,
       windowWidth: window.innerWidth,
       projectProps: [
         {
@@ -283,11 +291,11 @@ export default {
     };
   },
   mounted() {
-    if (window.innerWidth > 768) {
-      this.setupIntersectionObserver();
-      this.addScrollListener();
-      this.setInitialView();
-    }
+    // if (window.innerWidth > 768) {
+    //   this.setupIntersectionObserver();
+    //   this.addScrollListener();
+    //   this.setInitialView();
+    // }
     this.typeWriter();
     setTimeout(() => {
       this.openCurtain(); // 커튼 애니메이션 시작
@@ -310,6 +318,20 @@ export default {
   },
   methods: {
     ...mapActions(["updateShowEffectBtn"]),
+    handleScroll() {
+      const box1 = this.$refs.sectionRef;
+      const box1Height = box1.clientHeight;
+      const scrollTop = box1.scrollTop;
+
+      // 첫 번째 박스의 스크롤이 끝에 도달했는지 확인
+      if (scrollTop + box1Height >= box1.scrollHeight - 10) {
+        // 두 번째 박스로 스크롤
+        window.scrollTo({
+          top: box1Height,
+          behavior: "smooth",
+        });
+      }
+    },
     setupIntersectionObserver() {
       const options = {
         root: null,
@@ -354,7 +376,7 @@ export default {
             this.scrollToPreviousSection();
           }
           isScrolling = false;
-        }, 150); // 150ms debounce delay
+        }, 300); // 150ms debounce delay
       };
 
       window.addEventListener("wheel", handleWheel, { passive: false });
@@ -492,6 +514,13 @@ export default {
   z-index: 96;
 }
 
+.work__main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .work__main_cont {
   position: relative;
   height: 43vh;
@@ -505,7 +534,10 @@ export default {
   gap: 30px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: row;
+  width: 100%;
   text-align: left;
   align-items: center;
 }
@@ -522,22 +554,28 @@ export default {
 .work__main_cont h1 {
   flex: 1;
 }
-.work__intro-wrapper {
+.work__main_text {
   position: relative;
   width: 100%;
   min-height: 150px;
   text-align: left;
 }
-.container {
+.work__section {
   display: flex;
   flex-direction: column;
   scroll-snap-type: y mandatory;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  height: 100vh;
   gap: 25px;
   scroll-behavior: smooth;
-  width: 100%;
   align-items: center;
-  padding: 30vh 0;
+}
+
+.slider {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 auto;
 }
 
 .box {
@@ -545,15 +583,16 @@ export default {
   justify-content: center;
   width: 100%;
   color: white;
-  opacity: 0;
+  /*opacity: 0;
   transition:
     opacity 0.5s ease-out,
     transform 0.5s ease-out;
-  transform: translateY(20px);
-  scroll-snap-align: start;
+  transform: translateY(20px);*/
+  /* scroll-snap-align: start; */
   position: relative;
   max-width: 800px;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .in-view {
@@ -577,6 +616,7 @@ export default {
 .contact-card .contact-image {
   overflow: hidden;
   height: 60%;
+  flex: 0 0 auto;
 }
 
 .contact-card .contact-image img {
@@ -588,7 +628,6 @@ export default {
 .contact-link {
   text-decoration: none;
   color: inherit;
-  display: block;
   background: #2c2c2c;
   border-radius: 10px;
   overflow: hidden;
@@ -596,7 +635,9 @@ export default {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  height: 50vh;
+  flex-direction: column;
+  display: flex;
+  height: 350px;
 }
 
 .contact-link:hover {
@@ -612,6 +653,7 @@ export default {
 .contact-info {
   padding: 20px;
   height: 40%;
+  flex: 1;
 }
 
 .contact-info h3 {

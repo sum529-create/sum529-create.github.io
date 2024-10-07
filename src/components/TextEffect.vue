@@ -277,7 +277,7 @@ export default {
   height: 80vh; /* 20vh * 4 섹션 */
   color: #ffffff;
   scroll-behavior: smooth;
-  margin-bottom: 30vh;
+  margin: 30vh 0;
   perspective: 800px;
   position: relative;
 }

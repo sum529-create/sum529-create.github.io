@@ -125,7 +125,7 @@ export default {
 
 <style>
 .project-card {
-  padding: 2rem;
+  padding: 1.5rem 3rem;
   border-radius: 1rem;
   background-color: #3a3a3a;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
@@ -136,7 +136,7 @@ export default {
   max-width: 800px;
   overflow: hidden;
   box-sizing: border-box;
-  max-height: 95vh;
+  max-height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
 }
@@ -152,10 +152,9 @@ export default {
   align-items: center;
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   gap: 5px;
   align-items: center;
-  margin-bottom: 1rem;
   flex: 0 0 auto;
 }
 
@@ -224,12 +223,12 @@ export default {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .project-description {
   text-align: left;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   flex: 1;
   overflow-y: auto;
   display: flex;
