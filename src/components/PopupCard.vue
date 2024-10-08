@@ -265,7 +265,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  font-style: italic;
 }
 
 .popup-labels h3 {
@@ -283,6 +282,7 @@ export default {
 
 .popup-labels .label,
 .label {
+  font-style: italic;
   display: inline-block;
   position: relative;
   box-sizing: border-box;

@@ -68,6 +68,11 @@ export default {
   display: block;
   font-size: 16px;
   margin-top: 5px;
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.5),
+    -1px -1px 2px rgba(0, 0, 0, 0.5),
+    1px -1px 2px rgba(0, 0, 0, 0.5),
+    -1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes upDown {
