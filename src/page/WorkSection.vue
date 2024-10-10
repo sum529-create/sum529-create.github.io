@@ -22,7 +22,7 @@
             />
           </div>
         </div>
-        <div class="work__main_text fc_white lh2 mb60">
+        <div class="work__main_text fc_white lh2">
           <!-- <h1 class="fs-2 fw450" id="line1"></h1> -->
           <wave-text text="제가_작업한_프로젝트들을_보여드릴게요!" />
           <p class="fs-1-5 fw450" id="line1"></p>
@@ -171,7 +171,7 @@ export default {
             "Node.js",
             "Css",
           ],
-          gitHubUrl: "https://github.com/sum529-create",
+          gitHubUrl: "https://github.com/sum529-create/sum529-create.github.io",
           webLink: "https://sum529-create.github.io/",
           desTxt: [
             "프론트엔드 3년차 개발자 노수민의 포트폴리오입니다.",
@@ -220,9 +220,9 @@ export default {
             "Vite",
             "Firebase",
             "Node.js",
-            "CSS-in-JS",
+            "Css",
           ],
-          gitHubUrl: "https://github.com/sum529-create/echo-wave",
+          gitHubUrl: "https://github.com/sum529-create/buzz-chatly",
           webLink: "https://buzz-chatly.web.app/",
           desTxt: [
             "React를 기반으로 한 프로젝트이며, 소셜 네트워크 서비스 웹입니다.",
@@ -248,7 +248,6 @@ export default {
             "Glitch",
             "Css",
             "Sass",
-            "CSS-in-JS",
           ],
           gitHubUrl: "https://github.com/sum529-create/AirView",
           webLink: "https://sum529-create.github.io/AirView/",
@@ -273,7 +272,7 @@ export default {
             "JavaScript",
             "Node.js",
             "Glitch",
-            "CSS-in-JS",
+            "Css",
           ],
           gitHubUrl: "https://github.com/sum529-create/cultural-event-info",
           webLink: "https://sum529-create.github.io/cultural-event-info/",
@@ -542,13 +541,15 @@ export default {
 .work__main {
   width: 100%;
   display: flex;
+  gap: 15px;
   flex-direction: column;
   justify-content: center;
 }
 
 .work__main_cont {
-  position: relative;
-  height: 43vh;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .work__main_cont .work__main_cont-wrapper {
@@ -557,10 +558,10 @@ export default {
   align-content: center;
   justify-content: space-between;
   gap: 30px;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  /*top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
   flex-direction: row;
   width: 100%;
   text-align: left;
@@ -581,6 +582,7 @@ export default {
 }
 .work__main_text {
   position: relative;
+  flex: 1;
   width: 100%;
   min-height: 150px;
   text-align: left;
@@ -722,8 +724,18 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .work__section {
+    height: calc(100vh - 50px);
+    top: 50px;
+  }
+  .work__main_cont {
+    align-items: center;
+  }
   .contact-header p {
     padding-left: 0;
+  }
+  .contact-info h3 {
+    font-size: 1.25rem;
   }
 }
 </style>

@@ -42,7 +42,7 @@
                 'label-yellow': lang === 'JavaScript',
                 'label-babel': lang === 'Babel',
                 'label-darkgreen': lang === 'Node.js',
-                'label-darkblue': lang === 'Css' || lang === 'CSS-in-JS',
+                'label-darkblue': lang === 'Css',
                 'label-vite': lang === 'Vite',
                 'label-firebase': lang === 'Firebase',
                 'label-blue': lang === 'TypeScript',
@@ -181,12 +181,14 @@ export default {
   border-radius: 0.5rem;
   position: relative;
   background: #2c2c2c;
-  flex: 0 0 auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-wrapper img {
-  width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
   cursor: pointer;
