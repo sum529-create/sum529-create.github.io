@@ -315,7 +315,12 @@ export default {
 @media (max-width: 768px) {
   .project-card {
     padding: 1rem;
-    margin-top: 50px;
+  }
+  .project-card .project-card-title svg {
+    height: 24px;
+  }
+  .project-info {
+    gap: 0.5rem;
   }
   .link-wrapper a {
     padding: 0.3rem;

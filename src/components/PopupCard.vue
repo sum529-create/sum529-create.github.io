@@ -384,9 +384,6 @@ export default {
     width: 100%;
     transform: translateX(0px);
   }
-  .project-card .project-card-title svg {
-    height: 24px;
-  }
   .labels-wrapper .label-wrapper {
     gap: 0.25rem;
     margin-bottom: 0.5rem;

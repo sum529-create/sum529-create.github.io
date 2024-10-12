@@ -660,7 +660,7 @@ i.material-icons {
 }
 @media (max-width: 768px) {
   .section {
-    padding: 75px 25px;
+    padding: 25px;
   }
   .hero__headline {
     margin: 0;

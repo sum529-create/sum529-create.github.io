@@ -319,7 +319,7 @@ export default {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (entry.intersectionRatio >= 0.3) {
+            if (entry.intersectionRatio >= 0.1) {
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",
@@ -329,7 +329,7 @@ export default {
         });
       },
       {
-        threshold: [0.3], // 요소가 50% 보일 때 트리거
+        threshold: [0.1],
       }
     );
 
@@ -540,6 +540,8 @@ export default {
 
 .work__main {
   width: 100%;
+  max-width: 1280px;
+  padding: 60px 0;
   display: flex;
   gap: 15px;
   flex-direction: column;
@@ -621,7 +623,6 @@ export default {
 
 .slider {
   height: 100vh;
-  max-width: 1280px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   flex: 0 0 auto;
@@ -727,6 +728,9 @@ export default {
   .work__section {
     height: calc(100vh - 50px);
     top: 50px;
+  }
+  .slider {
+    height: calc(100vh - 50px);
   }
   .work__main_cont {
     align-items: center;

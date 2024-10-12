@@ -48,7 +48,7 @@ header {
 nav {
   ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0 55px;
     li {
       display: inline;
       margin-right: 20px;
@@ -57,6 +57,11 @@ nav {
         text-decoration: none;
       }
     }
+  }
+}
+@media (max-width: 768px) {
+  nav ul {
+    padding: 0 25px;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="content">
     <div class="main__content" :class="{ 'in-view': inView }" ref="section">
       <div class="section">
-        <h2 class="header-title fc_subcolor">About Me</h2>
+        <h2 class="header-title fc_keycolor">About Me</h2>
         <about-me :in-view="inView" ref="contentComponent" />
       </div>
       <app-footer />
