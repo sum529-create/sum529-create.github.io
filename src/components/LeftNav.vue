@@ -151,7 +151,9 @@ export default {
   width: 55px;
   background: #e9ecf1;
   padding: 5rem 0;
-  transition: left 1.2s ease, width 0.5s ease-out;
+  transition:
+    left 1.2s ease,
+    width 0.5s ease-out;
 }
 .nav__section.in-view {
   left: 0;
@@ -261,7 +263,9 @@ export default {
   background-color: #ed682c;
 }
 .nav__section.show-menu-flag .nav__section-menu li:hover {
-  animation: wave 1s infinite, glitch 1s infinite;
+  animation:
+    wave 1s infinite,
+    glitch 1s infinite;
 }
 .nav__section.show-menu-flag .nav__section-menu li:hover::before {
   width: 100%;
@@ -282,7 +286,9 @@ export default {
     width: 100%;
     top: -100%;
     left: 0;
-    transition: top 1.2s ease, height 0.5s ease-out;
+    transition:
+      top 1.2s ease,
+      height 0.5s ease-out;
   }
   .nav__section.in-view {
     top: 0;
